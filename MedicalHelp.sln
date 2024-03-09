@@ -13,6 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "项目其他文档", "项�
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
 		基于Qt的疾病交流互助平台的项目管理.mpp = 基于Qt的疾病交流互助平台的项目管理.mpp
+		小组编码规范.md = 小组编码规范.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "文档", "文档", "{6393C748-0C52-47E6-A662-2C526DE3459A}"

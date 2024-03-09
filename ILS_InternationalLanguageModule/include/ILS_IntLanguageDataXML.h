@@ -18,7 +18,7 @@ public:
 
     ErrorInfo changeString(const String& id, const String& language, const String& s) override;
 
-    ErrorInfo delString(const String& id, const String& language, const String& s) override;
+    ErrorInfo delString(const String& id, const String& language) override;
 
     ErrorInfo getMap(IntLanMap* intLanMap )const override;
 
