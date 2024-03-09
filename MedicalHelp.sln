@@ -13,6 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ILS", "ILS", "{FBD938A1-6C6
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "项目其他文档", "项目其他文档", "{6F89A899-72A2-4871-8DA9-D4CE3FA4A2D6}"
 	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
 		基于Qt的疾病交流互助平台的项目管理.mpp = 基于Qt的疾病交流互助平台的项目管理.mpp
 	EndProjectSection
 EndProject

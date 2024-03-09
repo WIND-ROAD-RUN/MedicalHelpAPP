@@ -154,6 +154,9 @@
     <ClInclude Include="include\ITS_IntLanguageDataXML.h" />
     <ClInclude Include="include\ITS_IntLanguageDataAbstract.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="README.md" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
