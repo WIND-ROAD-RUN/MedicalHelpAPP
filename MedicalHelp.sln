@@ -10,13 +10,15 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ITS_InternationalLanguageCom", "ITS_InternationalLanguageCom\ITS_InternationalLanguageCom.vcxproj", "{CCF24E56-4632-4D9F-B0B5-CC8972D1CAD5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ILS", "ILS", "{FBD938A1-6C6C-4529-ADD6-7568EDE665A6}"
-	ProjectSection(SolutionItems) = preProject
-		国际化语言模块架构图.vsdx = 国际化语言模块架构图.vsdx
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "项目其他文档", "项目其他文档", "{6F89A899-72A2-4871-8DA9-D4CE3FA4A2D6}"
 	ProjectSection(SolutionItems) = preProject
 		基于Qt的疾病交流互助平台的项目管理.mpp = 基于Qt的疾病交流互助平台的项目管理.mpp
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "文档", "文档", "{6393C748-0C52-47E6-A662-2C526DE3459A}"
+	ProjectSection(SolutionItems) = preProject
+		国际化语言模块架构图.vsdx = 国际化语言模块架构图.vsdx
 	EndProjectSection
 EndProject
 Global
@@ -59,6 +61,7 @@ Global
 		{2948ACAA-73C3-4658-8370-0985EEC1971C} = {FBD938A1-6C6C-4529-ADD6-7568EDE665A6}
 		{0FDD8650-4F5D-471B-91EE-61380EC5BD78} = {FBD938A1-6C6C-4529-ADD6-7568EDE665A6}
 		{CCF24E56-4632-4D9F-B0B5-CC8972D1CAD5} = {FBD938A1-6C6C-4529-ADD6-7568EDE665A6}
+		{6393C748-0C52-47E6-A662-2C526DE3459A} = {FBD938A1-6C6C-4529-ADD6-7568EDE665A6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {23E2F876-2B5D-4938-9FC1-20C825507F15}
