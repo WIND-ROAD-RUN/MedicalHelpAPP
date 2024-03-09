@@ -18,7 +18,10 @@ public:
         }
     }
 private:
-    
+    IntLanguageDataAbstract* m_intLanguageData{nullptr};
+public:
+    bool iniCom();
+    bool desCom();
 };
 
 
