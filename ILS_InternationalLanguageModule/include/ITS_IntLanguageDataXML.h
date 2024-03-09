@@ -7,7 +7,7 @@ class IntLanguageDataXML
     :public IntLanguageDataAbstract{
 
 public:
-    // Í¨¹ý IntLanguageDataAbstract ¼Ì³Ð
+    // Í¨é€šè¿‡IntLanguageDataAbstract ç»§æ‰¿
     ErrorInfo iniCom() override;
 
     ErrorInfo desCom() override;
