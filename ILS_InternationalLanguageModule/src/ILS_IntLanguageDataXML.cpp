@@ -1,4 +1,4 @@
-#include "ITS_IntLanguageDataXML.h"
+#include "ILS_IntLanguageDataXML.h"
 
 IntLanguageDataAbstract::ErrorInfo 
 IntLanguageDataXML::iniCom()

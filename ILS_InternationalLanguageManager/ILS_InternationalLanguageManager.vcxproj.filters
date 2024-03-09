@@ -20,7 +20,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\ITS_IntLanguageManager.h">
+    <ClInclude Include="include\ILS_IntLanguageManager.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

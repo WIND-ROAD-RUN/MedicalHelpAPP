@@ -1,7 +1,7 @@
-#ifndef ITS_INTLANGUAGEDATAXML_H_
-#define ITS_INTLANGUAGEDATAXML_H_
+#ifndef ILS_INTLANGUAGEDATAXML_H_
+#define ILS_INTLANGUAGEDATAXML_H_
 
-#include"ITS_IntLanguageDataAbstract.h"
+#include"ILS_IntLanguageDataAbstract.h"
 
 class IntLanguageDataXML 
     :public IntLanguageDataAbstract{
@@ -29,5 +29,5 @@ public:
 };
 
 
-#endif // !ITS_INTLANGUAGEDATAXML_H_
+#endif // !ILS_INTLANGUAGEDATAXML_H_
 

@@ -1,5 +1,5 @@
-﻿#ifndef ITS_INTLANGUAGEDATAABSTRACT_H_
-#define ITS_INTLANGUAGEDATAABSTRACT_H_
+﻿#ifndef ILS_INTLANGUAGEDATAABSTRACT_H_
+#define ILS_INTLANGUAGEDATAABSTRACT_H_
 
 #include<string>
 #include<vector>
@@ -76,4 +76,4 @@ public:
     virtual ErrorInfo clearData() = 0;
 };
 
-#endif // !ITS_INTLANGUAGEDATAABSTRACT_H_
+#endif // !ILS_INTLANGUAGEDATAABSTRACT_H_
