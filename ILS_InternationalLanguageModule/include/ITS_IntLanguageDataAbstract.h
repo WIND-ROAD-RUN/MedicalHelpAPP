@@ -1,0 +1,10 @@
+#ifndef ITS_INTLANGUAGEDATAABSTRACT_H_
+#define ITS_INTLANGUAGEDATAABSTRACT_H_
+
+class IntLanguageDataAbstract {
+    
+
+
+};
+
+#endif // !ITS_INTLANGUAGEDATAABSTRACT_H_
