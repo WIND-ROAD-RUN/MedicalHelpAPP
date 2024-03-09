@@ -35,7 +35,7 @@ IntLanguageDataXML::changeString
 
 IntLanguageDataAbstract::ErrorInfo 
 IntLanguageDataXML::delString
-(const IntLanguageDataAbstract::String& id, const IntLanguageDataAbstract::String& language, const IntLanguageDataAbstract::String& s)
+(const IntLanguageDataAbstract::String& id, const IntLanguageDataAbstract::String& language)
 {
     return IntLanguageDataAbstract::ErrorInfo();
 }

@@ -20,8 +20,8 @@ struct IntLanguageData
         DEL_STRING_ERROR_LANGUAGE,
         GET_MAP_ERROR,
         GET_MAP_ERROR_LANGUAGE,
-        ERROR,
         CLEAR_ERROR,
+        ERROR,
         SUCCESS
     };
 
@@ -67,7 +67,7 @@ public:
 
     virtual ErrorInfo changeString(const String& id,const String& language,const String& s)=0;
 
-    virtual ErrorInfo delString(const String& id,const String& language,const String& s)=0;
+    virtual ErrorInfo delString(const String& id,const String& language)=0;
      
     virtual ErrorInfo getMap(IntLanMap * intLanMap) const = 0;
 
