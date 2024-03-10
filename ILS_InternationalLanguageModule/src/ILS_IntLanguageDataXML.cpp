@@ -14,28 +14,35 @@ IntLanguageDataXML::desCom()
 
 IntLanguageDataAbstract::ErrorInfo 
 IntLanguageDataXML::searchString
-(const IntLanguageDataAbstract::String& id, const IntLanguageDataAbstract::String& language, IntLanguageDataAbstract::String& s )const
+(const IntLanguageDataAbstract::String& id, 
+    const IntLanguageDataAbstract::String& language,
+    IntLanguageDataAbstract::String& s )const
 {
     return IntLanguageDataAbstract::ErrorInfo();
 }
 
 IntLanguageDataAbstract::ErrorInfo 
 IntLanguageDataXML::storeString
-(const IntLanguageDataAbstract::String& id, const IntLanguageDataAbstract::String& language, const IntLanguageDataAbstract::String& s)
+(const IntLanguageDataAbstract::String& id,
+    const IntLanguageDataAbstract::String& language, 
+    const IntLanguageDataAbstract::String& s)
 {
     return IntLanguageDataAbstract::ErrorInfo();
 }
 
 IntLanguageDataAbstract::ErrorInfo 
 IntLanguageDataXML::changeString
-(const IntLanguageDataAbstract::String& id, const IntLanguageDataAbstract::String& language, const IntLanguageDataAbstract::String& s)
+(const IntLanguageDataAbstract::String& id,
+    const IntLanguageDataAbstract::String& language,
+    const IntLanguageDataAbstract::String& s)
 {
     return IntLanguageDataAbstract::ErrorInfo();
 }
 
 IntLanguageDataAbstract::ErrorInfo 
 IntLanguageDataXML::delString
-(const IntLanguageDataAbstract::String& id, const IntLanguageDataAbstract::String& language)
+(const IntLanguageDataAbstract::String& id,
+    const IntLanguageDataAbstract::String& language)
 {
     return IntLanguageDataAbstract::ErrorInfo();
 }
@@ -49,7 +56,8 @@ IntLanguageDataXML::getMap
 
 IntLanguageDataAbstract::ErrorInfo 
 IntLanguageDataXML::getMap
-(const IntLanguageDataAbstract::String& language, IntLanguageDataAbstract::LanStringMap* lanStringMap )const
+(const IntLanguageDataAbstract::String& language,
+    IntLanguageDataAbstract::LanStringMap* lanStringMap )const
 {
     return IntLanguageDataAbstract::ErrorInfo();
 }

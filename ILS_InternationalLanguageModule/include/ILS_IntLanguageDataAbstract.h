@@ -41,6 +41,7 @@ struct IntLanguageData
 class IntLanguageDataAbstract {
 public:
     using String = IntLanguageData::String;
+
     using ErrorInfo = IntLanguageData::ErrorInfo;
     
     template<typename T>
@@ -53,6 +54,7 @@ public:
     using Pair = IntLanguageData::Pair<T1,T2>;
     
     using IntLanMap = Map<String, Map<String, String>>;
+
     using LanStringMap = Map<String, String>;
 
 public:

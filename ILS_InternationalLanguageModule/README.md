@@ -127,7 +127,7 @@ struct IntLanguageData
 };
 ```
 
-## 枚举变量`ErrorInfo`
+## 枚举变量`ErrorInfo` 
 
 ```cpp
 enum ErrorInfo {
