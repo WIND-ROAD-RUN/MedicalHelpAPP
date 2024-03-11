@@ -280,7 +280,7 @@ virtual ErrorInfo clearData() = 0;
 - `delString(const String& id,const String& language,const String& s)`:通过ID、language直接在文件中删除对应字符串，并返回运行信息。
 - `getMap(IntLanMap * intLanMap)`:将所有的国际化语言字符串存储到`intLanMap`中
 - `getMap(const String & language, LanStringMap * lanStringMap)`:将`language`的国际化语言字符串存储到`lanStringMap`中。
-- `clearData()`:清除文件中所有的数据。
+- `clearData()`:清除当前实现所对应的所有存储数据（文件\内存）。
 
 ---
 

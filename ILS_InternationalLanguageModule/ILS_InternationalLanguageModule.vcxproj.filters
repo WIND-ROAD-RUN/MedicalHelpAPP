@@ -21,12 +21,18 @@
     <ClCompile Include="src\ILS_IntLanguageDataXML.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\ILS_IntLanguage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\ILS_IntLanguageDataXML.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="include\ILS_IntLanguageDataAbstract.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ILS_IntLanguage.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

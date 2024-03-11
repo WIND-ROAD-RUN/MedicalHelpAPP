@@ -147,10 +147,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\ILS_IntLanguage.cpp" />
     <ClCompile Include="src\ILS_IntLanguageDataXML.cpp" />
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\ILS_IntLanguage.h" />
     <ClInclude Include="include\ILS_IntLanguageDataXML.h" />
     <ClInclude Include="include\ILS_IntLanguageDataAbstract.h" />
   </ItemGroup>
