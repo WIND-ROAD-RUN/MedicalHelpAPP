@@ -25,3 +25,12 @@ bool IntLanguageCom::desCom()
 
     return false;
 }
+
+IntLanguageDataAbstract::ErrorInfo 
+IntLanguageCom::searchString
+(const String& id, const String& language, String& s)
+{
+    auto result=m_intLanguageData->searchString(id,language,s);
+
+    return result;
+}
