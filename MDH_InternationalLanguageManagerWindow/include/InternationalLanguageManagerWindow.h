@@ -13,8 +13,15 @@ class InternationalLanguageManagerWindow : public QMainWindow
 
 public:
     InternationalLanguageManagerWindow(QWidget *parent = nullptr);
+
     ~InternationalLanguageManagerWindow();
+
+public:
+    void build_ui();
+
+    void build_connect();
 
 private:
     Ui::InternationalLanguageManagerWindowClass *ui;
+
 };
