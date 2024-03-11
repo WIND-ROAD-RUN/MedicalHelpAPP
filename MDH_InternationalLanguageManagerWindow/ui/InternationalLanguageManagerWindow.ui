@@ -1,0 +1,28 @@
+<UI version="4.0" >
+ <class>InternationalLanguageManagerWindowClass</class>
+ <widget class="QMainWindow" name="InternationalLanguageManagerWindowClass" >
+  <property name="objectName" >
+   <string notr="true">InternationalLanguageManagerWindowClass</string>
+  </property>
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>InternationalLanguageManagerWindow</string>
+  </property>  <widget class="QMenuBar" name="menuBar" />
+  <widget class="QToolBar" name="mainToolBar" />
+  <widget class="QWidget" name="centralWidget" />
+  <widget class="QStatusBar" name="statusBar" />
+ </widget>
+ <layoutDefault spacing="6" margin="11" />
+ <pixmapfunction></pixmapfunction>
+ <resources>
+   <include location="InternationalLanguageManagerWindow.qrc"/>
+ </resources>
+ <connections/>
+</UI>

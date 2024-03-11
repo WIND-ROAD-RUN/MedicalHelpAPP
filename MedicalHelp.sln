@@ -24,6 +24,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "文档", "文档", "{6393C7
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ILS_InternationalLanguageCom", "ILS_InternationalLanguageCom\ILS_InternationalLanguageCom.vcxproj", "{86206E23-909E-4C5A-BD60-169C4C1DC1A8}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MDH", "MDH", "{BD8CB07B-9D29-477F-84CC-F04B7799AB25}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BackgroundManager", "BackgroundManager", "{AE58E697-D945-4C74-B05F-F16E66E1A6A7}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MDH_InternationalLanguageManagerWindow", "MDH_InternationalLanguageManagerWindow\MDH_InternationalLanguageManagerWindow.vcxproj", "{32CED62A-0F83-4F64-BADA-9B3345DCF0C8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -56,6 +62,14 @@ Global
 		{86206E23-909E-4C5A-BD60-169C4C1DC1A8}.Release|x64.Build.0 = Release|x64
 		{86206E23-909E-4C5A-BD60-169C4C1DC1A8}.Release|x86.ActiveCfg = Release|Win32
 		{86206E23-909E-4C5A-BD60-169C4C1DC1A8}.Release|x86.Build.0 = Release|Win32
+		{32CED62A-0F83-4F64-BADA-9B3345DCF0C8}.Debug|x64.ActiveCfg = Debug|x64
+		{32CED62A-0F83-4F64-BADA-9B3345DCF0C8}.Debug|x64.Build.0 = Debug|x64
+		{32CED62A-0F83-4F64-BADA-9B3345DCF0C8}.Debug|x86.ActiveCfg = Debug|x64
+		{32CED62A-0F83-4F64-BADA-9B3345DCF0C8}.Debug|x86.Build.0 = Debug|x64
+		{32CED62A-0F83-4F64-BADA-9B3345DCF0C8}.Release|x64.ActiveCfg = Release|x64
+		{32CED62A-0F83-4F64-BADA-9B3345DCF0C8}.Release|x64.Build.0 = Release|x64
+		{32CED62A-0F83-4F64-BADA-9B3345DCF0C8}.Release|x86.ActiveCfg = Release|x64
+		{32CED62A-0F83-4F64-BADA-9B3345DCF0C8}.Release|x86.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -65,6 +79,8 @@ Global
 		{0FDD8650-4F5D-471B-91EE-61380EC5BD78} = {FBD938A1-6C6C-4529-ADD6-7568EDE665A6}
 		{6393C748-0C52-47E6-A662-2C526DE3459A} = {FBD938A1-6C6C-4529-ADD6-7568EDE665A6}
 		{86206E23-909E-4C5A-BD60-169C4C1DC1A8} = {FBD938A1-6C6C-4529-ADD6-7568EDE665A6}
+		{AE58E697-D945-4C74-B05F-F16E66E1A6A7} = {BD8CB07B-9D29-477F-84CC-F04B7799AB25}
+		{32CED62A-0F83-4F64-BADA-9B3345DCF0C8} = {AE58E697-D945-4C74-B05F-F16E66E1A6A7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {23E2F876-2B5D-4938-9FC1-20C825507F15}
