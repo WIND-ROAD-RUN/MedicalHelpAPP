@@ -63,7 +63,6 @@ IntLanguage::searchString(const String& id, const String& language, String& s) c
 IntLanguageDataAbstract::ErrorInfo 
 IntLanguage::storeString(const String& id, const String& language, const String& s)
 {
-    auto storeStringResult=m_intLanData->storeString();
 
 
     return ErrorInfo();
