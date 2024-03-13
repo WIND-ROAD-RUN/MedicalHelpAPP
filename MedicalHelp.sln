@@ -15,6 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "项目其他文档", "项�
 		基于Qt的疾病交流互助平台的架构图.vsdx = 基于Qt的疾病交流互助平台的架构图.vsdx
 		基于Qt的疾病交流互助平台的项目管理.mpp = 基于Qt的疾病交流互助平台的项目管理.mpp
 		小组编码规范.md = 小组编码规范.md
+		疑难杂症医疗平台搭建需求.docx = 疑难杂症医疗平台搭建需求.docx
+		项目需求.docx = 项目需求.docx
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "文档", "文档", "{6393C748-0C52-47E6-A662-2C526DE3459A}"
@@ -29,6 +31,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BackgroundManager", "BackgroundManager", "{AE58E697-D945-4C74-B05F-F16E66E1A6A7}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MDH_InternationalLanguageManagerWindow", "MDH_InternationalLanguageManagerWindow\MDH_InternationalLanguageManagerWindow.vcxproj", "{32CED62A-0F83-4F64-BADA-9B3345DCF0C8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ILS_Test", "ILS_Test", "{7FE97054-9A70-414C-8316-F71039330C9C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ILS_InternationalLanguageModule_Test", "ILS_InternationalLanguageModule_Test\ILS_InternationalLanguageModule_Test.vcxproj", "{E2ECA210-1DB3-4FC4-835E-FA210EA47590}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -70,6 +76,14 @@ Global
 		{32CED62A-0F83-4F64-BADA-9B3345DCF0C8}.Release|x64.Build.0 = Release|x64
 		{32CED62A-0F83-4F64-BADA-9B3345DCF0C8}.Release|x86.ActiveCfg = Release|x64
 		{32CED62A-0F83-4F64-BADA-9B3345DCF0C8}.Release|x86.Build.0 = Release|x64
+		{E2ECA210-1DB3-4FC4-835E-FA210EA47590}.Debug|x64.ActiveCfg = Debug|x64
+		{E2ECA210-1DB3-4FC4-835E-FA210EA47590}.Debug|x64.Build.0 = Debug|x64
+		{E2ECA210-1DB3-4FC4-835E-FA210EA47590}.Debug|x86.ActiveCfg = Debug|Win32
+		{E2ECA210-1DB3-4FC4-835E-FA210EA47590}.Debug|x86.Build.0 = Debug|Win32
+		{E2ECA210-1DB3-4FC4-835E-FA210EA47590}.Release|x64.ActiveCfg = Release|x64
+		{E2ECA210-1DB3-4FC4-835E-FA210EA47590}.Release|x64.Build.0 = Release|x64
+		{E2ECA210-1DB3-4FC4-835E-FA210EA47590}.Release|x86.ActiveCfg = Release|Win32
+		{E2ECA210-1DB3-4FC4-835E-FA210EA47590}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -81,6 +95,8 @@ Global
 		{86206E23-909E-4C5A-BD60-169C4C1DC1A8} = {FBD938A1-6C6C-4529-ADD6-7568EDE665A6}
 		{AE58E697-D945-4C74-B05F-F16E66E1A6A7} = {BD8CB07B-9D29-477F-84CC-F04B7799AB25}
 		{32CED62A-0F83-4F64-BADA-9B3345DCF0C8} = {AE58E697-D945-4C74-B05F-F16E66E1A6A7}
+		{7FE97054-9A70-414C-8316-F71039330C9C} = {FBD938A1-6C6C-4529-ADD6-7568EDE665A6}
+		{E2ECA210-1DB3-4FC4-835E-FA210EA47590} = {7FE97054-9A70-414C-8316-F71039330C9C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {23E2F876-2B5D-4938-9FC1-20C825507F15}
