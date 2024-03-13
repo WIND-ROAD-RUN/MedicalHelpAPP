@@ -1,8 +1,5 @@
 #include"pch.h"
 
-const static IntLanguageDataAbstract::String DEFAULT_PATH = R"(.\database\dataFile.xml)";
-
-
 namespace INT_LANGUAGE_DATA_XML {
 	TEST(FIRST_SHALLOW, INI_COM) {
 		IntLanguageDataAbstract* test;
