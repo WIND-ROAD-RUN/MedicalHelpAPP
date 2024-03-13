@@ -3,8 +3,14 @@
 
 #include"ILS_IntLanguageDataAbstract.h"
 
-class IntLanguageDataXML 
-    :public IntLanguageDataAbstract{
+#define DEFAULT_PATH R"(.\database\dataFile.xml)"
+
+namespace pugi {
+    class xml_document;
+}
+
+class IntLanguageDataXML
+    :public IntLanguageDataAbstract {
 
 public:
     // ͨ通过IntLanguageDataAbstract 继承
@@ -12,7 +18,7 @@ public:
 
     ErrorInfo desCom() override;
 
-    ErrorInfo searchString(const String& id, const String& language, String& s )const override;
+    ErrorInfo searchString(const String& id, const String& language, String& s)const override;
 
     ErrorInfo storeString(const String& id, const String& language, const String& s) override;
 
@@ -20,11 +26,16 @@ public:
 
     ErrorInfo delString(const String& id, const String& language) override;
 
-    ErrorInfo getMap(IntLanMap* intLanMap )const override;
+    ErrorInfo getMap(IntLanMap* intLanMap)const override;
 
-    ErrorInfo getMap(const String& language, LanStringMap* lanStringMap )const override;
+    ErrorInfo getMap(const String& language, LanStringMap* lanStringMap)const override;
 
     ErrorInfo clearData() override;
+
+private:
+    pugi::xml_document* m_operatorDoc;
+
+    String m_filePath;
 
 };
 
