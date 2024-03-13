@@ -3,15 +3,15 @@
 
 #include"ILS_IntLanguageDataAbstract.h"
 
-#define DEFAULT_PATH R"(.\database\dataFile.xml)"
-
 namespace pugi {
     class xml_document;
 }
 
 class IntLanguageDataXML
     :public IntLanguageDataAbstract {
-
+public:
+    IntLanguageDataXML(const String & filtPath);
+    ~IntLanguageDataXML();
 public:
     // ͨ通过IntLanguageDataAbstract 继承
     ErrorInfo iniCom() override;
@@ -33,7 +33,7 @@ public:
     ErrorInfo clearData() override;
 
 private:
-    pugi::xml_document* m_operatorDoc;
+    pugi::xml_document* m_operatorDoc{nullptr};
 
     String m_filePath;
 

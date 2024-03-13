@@ -1,9 +1,12 @@
 #include"pch.h"
 
+const static IntLanguageDataAbstract::String DEFAULT_PATH = R"(.\database\dataFile.xml)";
+
+
 namespace INT_LANGUAGE_DATA_XML {
 	TEST(FIRST_SHALLOW, INI_COM) {
 		IntLanguageDataAbstract* test;
-		test = new IntLanguageDataXML();
+		test = new IntLanguageDataXML(DEFAULT_PATH);
 
 		auto result = test->iniCom();
 
@@ -17,7 +20,7 @@ namespace INT_LANGUAGE_DATA_XML {
 	TEST(FIRST_SHALLOW, DES_COM)
 	{
 		IntLanguageDataAbstract* test;
-		test = new IntLanguageDataXML();
+		test = new IntLanguageDataXML(DEFAULT_PATH);
 
 		auto result = test->iniCom();
 		result = test->desCom();
@@ -32,7 +35,7 @@ namespace INT_LANGUAGE_DATA_XML {
 	TEST(FIRST_SHALLOW, SEARCH_STRING)
 	{
 		IntLanguageDataAbstract* test;
-		test = new IntLanguageDataXML();
+		test = new IntLanguageDataXML(DEFAULT_PATH);
 
 		auto result = test->iniCom();
 
@@ -51,7 +54,7 @@ namespace INT_LANGUAGE_DATA_XML {
 	TEST(FIRST_SHALLOW, STORE_STRING)
 	{
 		IntLanguageDataAbstract* test;
-		test = new IntLanguageDataXML();
+		test = new IntLanguageDataXML(DEFAULT_PATH);
 		auto result = test->iniCom();
 
 		IntLanguageDataAbstract::String s = "ABABAB";
@@ -68,7 +71,7 @@ namespace INT_LANGUAGE_DATA_XML {
 	TEST(FIRST_SHALLOW, CHANGE_STRING)
 	{
 		IntLanguageDataAbstract* test;
-		test = new IntLanguageDataXML();
+		test = new IntLanguageDataXML(DEFAULT_PATH);
 		auto result = test->iniCom();
 
 		IntLanguageDataAbstract::String s = "BCS";
@@ -85,7 +88,7 @@ namespace INT_LANGUAGE_DATA_XML {
 	TEST(FIRST_SHALLOW, DEL_STRING)
 	{
 		IntLanguageDataAbstract* test;
-		test = new IntLanguageDataXML();
+		test = new IntLanguageDataXML(DEFAULT_PATH);
 		auto result = test->iniCom();
 
 		result = test->delString("1", "CHN");
@@ -101,7 +104,7 @@ namespace INT_LANGUAGE_DATA_XML {
 	TEST(FIRST_SHALLOW, GET_MAP1)
 	{
 		IntLanguageDataAbstract* test;
-		test = new IntLanguageDataXML();
+		test = new IntLanguageDataXML(DEFAULT_PATH);
 		auto result = test->iniCom();
 
 		IntLanguageDataAbstract::IntLanMap* intLanMap = new IntLanguageDataAbstract::IntLanMap();
@@ -118,7 +121,7 @@ namespace INT_LANGUAGE_DATA_XML {
 	TEST(FIRST_SHALLOW, GET_MAP2)
 	{
 		IntLanguageDataAbstract* test;
-		test = new IntLanguageDataXML();
+		test = new IntLanguageDataXML(DEFAULT_PATH);
 		auto result = test->iniCom();
 
 		const IntLanguageDataAbstract::String& language = "CHN";
@@ -136,7 +139,7 @@ namespace INT_LANGUAGE_DATA_XML {
 	TEST(FIRST_SHALLOW, CLEAR_DATA)
 	{
 		IntLanguageDataAbstract* test;
-		test = new IntLanguageDataXML();
+		test = new IntLanguageDataXML(DEFAULT_PATH);
 		auto result = test->iniCom();
 
 		result = test->clearData();
@@ -154,7 +157,7 @@ namespace INT_LANGUAGE_DATA_XML {
 	TEST(FIRST_DEEP, SEARCH_STRING)
 	{
 		IntLanguageDataAbstract* test;
-		test = new IntLanguageDataXML();
+		test = new IntLanguageDataXML(DEFAULT_PATH);
 		auto result = test->iniCom();
 
 		IntLanguageDataAbstract::String  s, s1, s2;
@@ -206,7 +209,7 @@ namespace INT_LANGUAGE_DATA_XML {
 	TEST(FIRST_DEEP, STORE_STRING)
 	{
 		IntLanguageDataAbstract* test;
-		test = new IntLanguageDataXML();
+		test = new IntLanguageDataXML(DEFAULT_PATH);
 		auto result = test->iniCom();
 
 		IntLanguageDataAbstract::String s, s1;
@@ -239,7 +242,7 @@ namespace INT_LANGUAGE_DATA_XML {
 	TEST(FIRST_DEEP, CHANGE_STRING)
 	{
 		IntLanguageDataAbstract* test;
-		test = new IntLanguageDataXML();
+		test = new IntLanguageDataXML(DEFAULT_PATH);
 		auto result = test->iniCom();
 
 		IntLanguageDataAbstract::String s{ "CBD" }, s1, s2 = "abbb", s3;
@@ -275,7 +278,7 @@ namespace INT_LANGUAGE_DATA_XML {
 	TEST(FIRST_DEEP, DEL_STRING)
 	{
 		IntLanguageDataAbstract* test;
-		test = new IntLanguageDataXML();
+		test = new IntLanguageDataXML(DEFAULT_PATH);
 		auto result = test->iniCom();
 
 		IntLanguageDataAbstract::String s = "CBDA", s1, s2;
@@ -343,7 +346,7 @@ namespace INT_LANGUAGE_DATA_XML {
 	TEST(FIRST_DEEP, CLEAR_DATA)
 	{
 		IntLanguageDataAbstract* test;
-		test = new IntLanguageDataXML();
+		test = new IntLanguageDataXML(DEFAULT_PATH);
 		auto result = test->iniCom();
 
 		IntLanguageDataAbstract::String s{ "abbb" }, s1, s2;
@@ -378,7 +381,7 @@ namespace INT_LANGUAGE_DATA_XML {
 	TEST(SECOND_DEEP, SEARCH_STRING)
 	{
 		IntLanguageDataAbstract* test;
-		test = new IntLanguageDataXML();
+		test = new IntLanguageDataXML(DEFAULT_PATH);
 		auto result = test->iniCom();
 
 		IntLanguageDataAbstract::String s, s1 = "CBD", s2 = "abbb";
@@ -433,7 +436,7 @@ namespace INT_LANGUAGE_DATA_XML {
 	TEST(SECOND_DEEP, STORE_STRING)
 	{
 		IntLanguageDataAbstract* test;
-		test = new IntLanguageDataXML();
+		test = new IntLanguageDataXML(DEFAULT_PATH);
 		auto result = test->iniCom();
 
 		IntLanguageDataAbstract::String s, s1 = "CBD", s2 = "abbb";
@@ -476,7 +479,7 @@ namespace INT_LANGUAGE_DATA_XML {
 	TEST(SECOND_DEEP, CHANGE_STRING)
 	{
 		IntLanguageDataAbstract* test;
-		test = new IntLanguageDataXML();
+		test = new IntLanguageDataXML(DEFAULT_PATH);
 		auto result = test->iniCom();
 
 		IntLanguageDataAbstract::String s, s1{ "CBD" }, s2 = "abbb", s3;
@@ -520,7 +523,7 @@ namespace INT_LANGUAGE_DATA_XML {
 	TEST(SECOND_DEEP, DEL_STRING)
 	{
 		IntLanguageDataAbstract* test;
-		test = new IntLanguageDataXML();
+		test = new IntLanguageDataXML(DEFAULT_PATH);
 		auto result = test->iniCom();
 
 		IntLanguageDataAbstract::String s, s1 = "CBD", s2 = "abbb", s3;
@@ -576,7 +579,7 @@ namespace INT_LANGUAGE_DATA_XML {
 	TEST(DEEP, SOME)
 	{
 		IntLanguageDataAbstract* test;
-		test = new IntLanguageDataXML();
+		test = new IntLanguageDataXML(DEFAULT_PATH);
 		auto result = test->iniCom();
 
 		IntLanguageDataAbstract::String  s1 = "CBD", s2 = "abbb", s3, s4, s;

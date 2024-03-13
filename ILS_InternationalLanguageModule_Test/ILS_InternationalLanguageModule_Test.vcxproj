@@ -144,6 +144,9 @@
       <Project>{2948acaa-73c3-4658-8370-0985eec1971c}</Project>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Xml Include="database\dataFile.xml" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
     <Import Project="..\packages\Microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.1.7\build\native\Microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.targets" Condition="Exists('..\packages\Microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.1.7\build\native\Microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.targets')" />

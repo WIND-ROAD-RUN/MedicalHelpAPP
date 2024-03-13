@@ -3,10 +3,18 @@
 
 #include"pugixml.hpp"
 
+IntLanguageDataXML::IntLanguageDataXML(const String& filtPath)
+    :m_filePath(m_filePath),m_operatorDoc(nullptr)
+{
+}
+
+IntLanguageDataXML::~IntLanguageDataXML()
+{
+}
+
 IntLanguageDataAbstract::ErrorInfo
 IntLanguageDataXML::iniCom()
 {
-    m_filePath = DEFAULT_PATH;
     m_operatorDoc = new pugi::xml_document;
     auto result = m_operatorDoc->load_file(m_filePath.c_str());
     /*if (!result) {
