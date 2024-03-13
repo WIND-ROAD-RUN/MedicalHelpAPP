@@ -3,7 +3,7 @@
 
 bool IntLanguageManagerManager::iniCom()
 {
-    m_intLanguageData = new IntLanguageDataXML();
+    m_intLanguageData = new IntLanguageDataXML("");
     auto result=m_intLanguageData->iniCom();
 
     if (result!=IntLanguageDataAbstract::ErrorInfo::SUCCESS) {

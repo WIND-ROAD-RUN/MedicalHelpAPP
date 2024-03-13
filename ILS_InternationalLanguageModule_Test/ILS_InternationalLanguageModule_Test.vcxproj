@@ -127,6 +127,7 @@
     <ClInclude Include="include\pch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\ILS_IntLanguageDataXML.cpp" />
     <ClCompile Include="src\ILS_IntLanguageDataXML.t.cpp" />
     <ClCompile Include="src\pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

@@ -3,8 +3,8 @@
 
 #include"pugixml.hpp"
 
-IntLanguageDataXML::IntLanguageDataXML(const String& filtPath)
-    :m_filePath(m_filePath),m_operatorDoc(nullptr)
+IntLanguageDataXML::IntLanguageDataXML(const String& filePath)
+    :m_filePath(filePath),m_operatorDoc(nullptr)
 {
 }
 

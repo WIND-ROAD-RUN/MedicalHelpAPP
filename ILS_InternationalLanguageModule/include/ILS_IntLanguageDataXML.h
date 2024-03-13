@@ -11,7 +11,11 @@ class IntLanguageDataXML
     :public IntLanguageDataAbstract {
 public:
     IntLanguageDataXML(const String & filtPath);
+
     ~IntLanguageDataXML();
+public:
+    void setFilePath(const String& filtPath) { m_filePath = filtPath; }
+
 public:
     // ͨ通过IntLanguageDataAbstract 继承
     ErrorInfo iniCom() override;
