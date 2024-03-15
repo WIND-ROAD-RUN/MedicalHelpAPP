@@ -1,19 +1,23 @@
 #include "ILS_IntLanguageDataXML.h"
 #include <iostream>
-
 #include"pugixml.hpp"
 
+namespace HiddenButNotExposed {
+
+namespace ILS {
+        
+
 IntLanguageDataXML::IntLanguageDataXML(const String& filePath)
-    :m_filePath(filePath),m_operatorDoc(nullptr)
-{
-}
+            :m_filePath(filePath), m_operatorDoc(nullptr)
+        {
+        }
 
 IntLanguageDataXML::~IntLanguageDataXML()
 {
 }
 
 IntLanguageDataAbstract::ErrorInfo
-IntLanguageDataXML::iniCom()
+    IntLanguageDataXML::iniCom()
 {
     m_operatorDoc = new pugi::xml_document;
     auto result = m_operatorDoc->load_file(m_filePath.c_str());
@@ -27,7 +31,7 @@ IntLanguageDataXML::iniCom()
 }
 
 IntLanguageDataAbstract::ErrorInfo
-IntLanguageDataXML::desCom()
+    IntLanguageDataXML::desCom()
 {
     if (m_operatorDoc != NULL) {
         //std::cout << "YES" << '\n';
@@ -39,10 +43,10 @@ IntLanguageDataXML::desCom()
 }
 
 IntLanguageDataAbstract::ErrorInfo
-IntLanguageDataXML::searchString
-(const IntLanguageDataAbstract::String& id,
-    const IntLanguageDataAbstract::String& language,
-    IntLanguageDataAbstract::String& s)const
+    IntLanguageDataXML::searchString
+    (const IntLanguageDataAbstract::String& id,
+        const IntLanguageDataAbstract::String& language,
+        IntLanguageDataAbstract::String& s)const
 {
     for (pugi::xml_node& tool : m_operatorDoc->child("LanguageTranslate")) {
         if (tool.first_attribute().value() == id) {
@@ -59,10 +63,10 @@ IntLanguageDataXML::searchString
 }
 
 IntLanguageDataAbstract::ErrorInfo
-IntLanguageDataXML::storeString
-(const IntLanguageDataAbstract::String& id,
-    const IntLanguageDataAbstract::String& language,
-    const IntLanguageDataAbstract::String& s)
+    IntLanguageDataXML::storeString
+    (const IntLanguageDataAbstract::String& id,
+        const IntLanguageDataAbstract::String& language,
+        const IntLanguageDataAbstract::String& s)
 {
     for (pugi::xml_node& tool : m_operatorDoc->child("LanguageTranslate")) {
         if (tool.first_attribute().value() == id) {
@@ -90,10 +94,10 @@ IntLanguageDataXML::storeString
 }
 
 IntLanguageDataAbstract::ErrorInfo
-IntLanguageDataXML::changeString
-(const IntLanguageDataAbstract::String& id,
-    const IntLanguageDataAbstract::String& language,
-    const IntLanguageDataAbstract::String& s)
+    IntLanguageDataXML::changeString
+    (const IntLanguageDataAbstract::String& id,
+        const IntLanguageDataAbstract::String& language,
+        const IntLanguageDataAbstract::String& s)
 {
     for (pugi::xml_node& tool : m_operatorDoc->child("LanguageTranslate")) {
         if (tool.first_attribute().value() == id) {
@@ -110,8 +114,8 @@ IntLanguageDataXML::changeString
 }
 
 IntLanguageDataAbstract::ErrorInfo
-IntLanguageDataXML::delString
-(const IntLanguageDataAbstract::String& id, const IntLanguageDataAbstract::String& language)
+    IntLanguageDataXML::delString
+    (const IntLanguageDataAbstract::String& id, const IntLanguageDataAbstract::String& language)
 {
     for (pugi::xml_node& tool : m_operatorDoc->child("LanguageTranslate")) {
         if (tool.first_attribute().value() == id) {
@@ -128,8 +132,8 @@ IntLanguageDataXML::delString
 }
 
 IntLanguageDataAbstract::ErrorInfo
-IntLanguageDataXML::getMap
-(IntLanguageDataAbstract::IntLanMap* intLanMap)const
+    IntLanguageDataXML::getMap
+    (IntLanguageDataAbstract::IntLanMap* intLanMap)const
 {
     if (!intLanMap)intLanMap = new IntLanMap;
     intLanMap->clear();
@@ -144,9 +148,9 @@ IntLanguageDataXML::getMap
 }
 
 IntLanguageDataAbstract::ErrorInfo
-IntLanguageDataXML::getMap
-(const IntLanguageDataAbstract::String& language,
-    IntLanguageDataAbstract::LanStringMap* lanStringMap)const
+    IntLanguageDataXML::getMap
+    (const IntLanguageDataAbstract::String& language,
+        IntLanguageDataAbstract::LanStringMap* lanStringMap)const
 {
     if (!lanStringMap)lanStringMap = new LanStringMap;
     lanStringMap->clear();
@@ -161,8 +165,13 @@ IntLanguageDataXML::getMap
 }
 
 IntLanguageDataAbstract::ErrorInfo
-IntLanguageDataXML::clearData()
+    IntLanguageDataXML::clearData()
 {
     m_operatorDoc->remove_children();
     return IntLanguageDataAbstract::ErrorInfo::SUCCESS;
 }
+
+
+} // package
+} // company
+
