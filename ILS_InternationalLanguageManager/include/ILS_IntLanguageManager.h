@@ -8,7 +8,7 @@ public:
     using String = IntLanguageDataAbstract::String;
 
 private:
-    IntLanguageManagerManager() {}
+    IntLanguageManagerManager(IntLanguageDataAbstract* intLanguageDataAbstract) {}
 
 private:
     static IntLanguageManagerManager* m_instance;
@@ -17,9 +17,9 @@ public:
     ~IntLanguageManagerManager() {}
 
     static IntLanguageManagerManager*
-        getInstance() {
+        getInstance(IntLanguageDataAbstract* intLanguageDataAbstract) {
         if (!m_instance) {
-            return new IntLanguageManagerManager();
+            return new IntLanguageManagerManager(intLanguageDataAbstract);
         }
     }
 

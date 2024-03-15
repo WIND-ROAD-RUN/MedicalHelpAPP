@@ -8,7 +8,7 @@ public:
     using String = IntLanguageDataAbstract::String;
 
 private:
-    IntLanguageCom() {}
+    IntLanguageCom(IntLanguageDataAbstract * intLanguageDataAbstract) {}
 
 private:
     static IntLanguageCom* m_instance;
@@ -17,9 +17,9 @@ public:
     ~IntLanguageCom() {}
 
     static IntLanguageCom*
-        getInstance() {
+        getInstance(IntLanguageDataAbstract* intLanguageDataAbstract) {
         if (!m_instance) {
-            return new IntLanguageCom();
+            return new IntLanguageCom(intLanguageDataAbstract);
         }
     }
 
