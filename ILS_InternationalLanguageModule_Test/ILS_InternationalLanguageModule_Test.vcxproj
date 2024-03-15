@@ -128,7 +128,7 @@
     <ClInclude Include="include\pch.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\ILS_IntLanguageDataXML.cpp" />
+    <ClCompile Include="src\ILS_IntLanguage.t.cpp" />
     <ClCompile Include="src\ILS_IntLanguageDataXML.t.cpp" />
     <ClCompile Include="src\ILS_IntLanguageDataAbstractTest.cpp" />
     <ClCompile Include="src\pch.cpp">

@@ -1,13 +1,14 @@
 #include"pch.h"
 
+#include"ILS_IntLanguage.h"
 #include"ILS_IntLanguageDataAbstractTest.h"
 
 namespace HiddenButNotExposed {
 	namespace ILS {
 
-		namespace INT_LANGUAGE_DATA_XML {
+		namespace INT_LANGUAGE {
 			TEST(FIRST_SHALLOW, INI_COM) {
-				IntLanguageDataXMLTest testObject;
+				IntLanguageTest testObject;
 				auto test = testObject.getTestObject();
 
 				auto result = test->iniCom();
@@ -19,7 +20,7 @@ namespace HiddenButNotExposed {
 
 			TEST(FIRST_SHALLOW, DES_COM)
 			{
-				IntLanguageDataXMLTest testObject;
+				IntLanguageTest testObject;
 				auto test = testObject.getTestObject();
 
 				auto result = test->iniCom();
@@ -32,7 +33,7 @@ namespace HiddenButNotExposed {
 
 			TEST(FIRST_SHALLOW, SEARCH_STRING)
 			{
-				IntLanguageDataXMLTest testObject;
+				IntLanguageTest testObject;
 				auto test = testObject.getTestObject();
 
 				auto result = test->iniCom();
@@ -50,7 +51,7 @@ namespace HiddenButNotExposed {
 
 			TEST(FIRST_SHALLOW, STORE_STRING)
 			{
-				IntLanguageDataXMLTest testObject;
+				IntLanguageTest testObject;
 				auto test = testObject.getTestObject();
 
 				auto result = test->iniCom();
@@ -67,7 +68,7 @@ namespace HiddenButNotExposed {
 
 			TEST(FIRST_SHALLOW, CHANGE_STRING)
 			{
-				IntLanguageDataXMLTest testObject;
+				IntLanguageTest testObject;
 				auto test = testObject.getTestObject();
 
 				auto result = test->iniCom();
@@ -84,7 +85,7 @@ namespace HiddenButNotExposed {
 
 			TEST(FIRST_SHALLOW, DEL_STRING)
 			{
-				IntLanguageDataXMLTest testObject;
+				IntLanguageTest testObject;
 				auto test = testObject.getTestObject();
 
 				auto result = test->iniCom();
@@ -99,7 +100,7 @@ namespace HiddenButNotExposed {
 
 			TEST(FIRST_SHALLOW, GET_MAP1)
 			{
-				IntLanguageDataXMLTest testObject;
+				IntLanguageTest testObject;
 				auto test = testObject.getTestObject();
 
 				auto result = test->iniCom();
@@ -115,7 +116,7 @@ namespace HiddenButNotExposed {
 
 			TEST(FIRST_SHALLOW, GET_MAP2)
 			{
-				IntLanguageDataXMLTest testObject;
+				IntLanguageTest testObject;
 				auto test = testObject.getTestObject();
 
 				auto result = test->iniCom();
@@ -133,7 +134,7 @@ namespace HiddenButNotExposed {
 
 			TEST(FIRST_SHALLOW, CLEAR_DATA)
 			{
-				IntLanguageDataXMLTest testObject;
+				IntLanguageTest testObject;
 				auto test = testObject.getTestObject();
 
 				auto result = test->iniCom();
@@ -150,7 +151,7 @@ namespace HiddenButNotExposed {
 
 			TEST(FIRST_DEEP, SEARCH_STRING)
 			{
-				IntLanguageDataXMLTest testObject;
+				IntLanguageTest testObject;
 				auto test = testObject.getTestObject();
 
 				auto result = test->iniCom();
@@ -200,7 +201,7 @@ namespace HiddenButNotExposed {
 
 			TEST(FIRST_DEEP, STORE_STRING)
 			{
-				IntLanguageDataXMLTest testObject;
+				IntLanguageTest testObject;
 				auto test = testObject.getTestObject();
 
 				auto result = test->iniCom();
@@ -232,7 +233,7 @@ namespace HiddenButNotExposed {
 
 			TEST(FIRST_DEEP, CHANGE_STRING)
 			{
-				IntLanguageDataXMLTest testObject;
+				IntLanguageTest testObject;
 				auto test = testObject.getTestObject();
 
 				auto result = test->iniCom();
@@ -266,7 +267,7 @@ namespace HiddenButNotExposed {
 
 			TEST(FIRST_DEEP, DEL_STRING)
 			{
-				IntLanguageDataXMLTest testObject;
+				IntLanguageTest testObject;
 				auto test = testObject.getTestObject();
 
 				auto result = test->iniCom();
@@ -333,7 +334,7 @@ namespace HiddenButNotExposed {
 
 			TEST(FIRST_DEEP, CLEAR_DATA)
 			{
-				IntLanguageDataXMLTest testObject;
+				IntLanguageTest testObject;
 				auto test = testObject.getTestObject();
 
 				auto result = test->iniCom();
@@ -366,7 +367,7 @@ namespace HiddenButNotExposed {
 
 			TEST(SECOND_DEEP, SEARCH_STRING)
 			{
-				IntLanguageDataXMLTest testObject;
+				IntLanguageTest testObject;
 				auto test = testObject.getTestObject();
 
 				auto result = test->iniCom();
@@ -399,7 +400,7 @@ namespace HiddenButNotExposed {
 
 				result = test->storeString("1", "CHN", s2);
 
-			//	//EXPECT_EQ(result, IntLanguageDataAbstract::ErrorInfo::SUCCESS) << "字符串存储失败";
+				//	//EXPECT_EQ(result, IntLanguageDataAbstract::ErrorInfo::SUCCESS) << "字符串存储失败";
 
 				result = test->searchString("1", "CHN", s);
 
@@ -407,7 +408,7 @@ namespace HiddenButNotExposed {
 
 				EXPECT_EQ(s, s1) << "检索的字符串不是先存入的那个";
 
-			//	EXPECT_EQ(s, s2) << "检索的字符串是先存入的那个";
+				//	EXPECT_EQ(s, s2) << "检索的字符串是先存入的那个";
 
 				result = test->clearData();
 
@@ -419,7 +420,7 @@ namespace HiddenButNotExposed {
 
 			TEST(SECOND_DEEP, STORE_STRING)
 			{
-				IntLanguageDataXMLTest testObject;
+				IntLanguageTest testObject;
 				auto test = testObject.getTestObject();
 
 				auto result = test->iniCom();
@@ -461,7 +462,7 @@ namespace HiddenButNotExposed {
 
 			TEST(SECOND_DEEP, CHANGE_STRING)
 			{
-				IntLanguageDataXMLTest testObject;
+				IntLanguageTest testObject;
 				auto test = testObject.getTestObject();
 
 				auto result = test->iniCom();
@@ -503,7 +504,7 @@ namespace HiddenButNotExposed {
 
 			TEST(SECOND_DEEP, DEL_STRING)
 			{
-				IntLanguageDataXMLTest testObject;
+				IntLanguageTest testObject;
 				auto test = testObject.getTestObject();
 
 				auto result = test->iniCom();
@@ -558,7 +559,7 @@ namespace HiddenButNotExposed {
 
 			TEST(DEEP, SOME)
 			{
-				IntLanguageDataXMLTest testObject;
+				IntLanguageTest testObject;
 				auto test = testObject.getTestObject();
 
 				auto result = test->iniCom();
@@ -575,7 +576,7 @@ namespace HiddenButNotExposed {
 
 				result = test->storeString("1", "CHN", s2);
 
-			//	//EXPECT_EQ(result, IntLanguageDataAbstract::ErrorInfo::SUCCESS) << "将字符串s2存储到文件中失败";
+				//	//EXPECT_EQ(result, IntLanguageDataAbstract::ErrorInfo::SUCCESS) << "将字符串s2存储到文件中失败";
 
 				result = test->searchString("1", "CHN", s4);
 

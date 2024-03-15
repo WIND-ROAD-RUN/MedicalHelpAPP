@@ -5,18 +5,36 @@
 
 namespace HiddenButNotExposed {
 namespace ILS {
-    class IntLanguageDataAbstractTest {
+
+    const static IntLanguageDataAbstract::String DEFAULT_PATH = R"(E:\code_place\vs_place\MedicalHelpApp\ILS_InternationalLanguageModule_Test\database\dataFile.xml)";
+
+    class IntLanguageDataXMLTest {
     private:
         IntLanguageDataAbstract* m_intLanguage{ nullptr };
     public:
-        IntLanguageDataAbstractTest() {
+        IntLanguageDataXMLTest() {
             m_intLanguage = new IntLanguageDataXML(DEFAULT_PATH);
         }
-        ~IntLanguageDataAbstractTest() { delete m_intLanguage; }
+        ~IntLanguageDataXMLTest() { delete m_intLanguage; }
     public:
         IntLanguageDataAbstract* getTestObject() { return m_intLanguage; }
 
     };
+
+    class IntLanguageTest {
+    private:
+        IntLanguageDataAbstract* m_intLanguage{ nullptr };
+    public:
+        IntLanguageTest() {
+            m_intLanguage = new IntLanguage(new IntLanguageDataXML(DEFAULT_PATH));
+        }
+        ~IntLanguageTest() { delete m_intLanguage; }
+    public:
+        IntLanguageDataAbstract* getTestObject() { return m_intLanguage; }
+
+    };
+
+
 
 }//package
 }//company

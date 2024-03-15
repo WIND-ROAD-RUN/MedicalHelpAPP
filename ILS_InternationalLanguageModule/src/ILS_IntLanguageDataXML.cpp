@@ -20,10 +20,11 @@ IntLanguageDataAbstract::ErrorInfo
     IntLanguageDataXML::iniCom()
 {
     m_operatorDoc = new pugi::xml_document;
-    auto result = m_operatorDoc->load_file(m_filePath.c_str());
+    auto result=m_operatorDoc->load_file(m_filePath.c_str());
     /*if (!result) {
         return IntLanguageDataAbstract::ErrorInfo::INI_ERROR;
     }*/
+
     if (!(m_operatorDoc->child("LanguageTranslate"))) {
         m_operatorDoc->append_child("LanguageTranslate");
     }

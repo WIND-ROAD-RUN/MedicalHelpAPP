@@ -14,6 +14,7 @@ class IntLanguageDataXML
     :public IntLanguageDataAbstract {
 public:
     IntLanguageDataXML(const String& filePath);
+    IntLanguageDataXML()=default;
 
     ~IntLanguageDataXML();
 public:
@@ -42,7 +43,7 @@ public:
 private:
     pugi::xml_document* m_operatorDoc{ nullptr };
 
-    String m_filePath;
+    String m_filePath{};
 
 };
 

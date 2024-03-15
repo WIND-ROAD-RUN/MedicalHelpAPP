@@ -17,6 +17,7 @@ private:
 
 public:
     IntLanguage(IntLanguageDataAbstract* intLanguageData);
+    IntLanguage() = default;
 
     ~IntLanguage();
 public:
