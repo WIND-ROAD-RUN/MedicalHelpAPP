@@ -7,21 +7,28 @@ QT_BEGIN_NAMESPACE
 namespace Ui { class InternationalLanguageManagerWindowClass; };
 QT_END_NAMESPACE
 
-class InternationalLanguageManagerWindow : public QMainWindow
-{
-    Q_OBJECT
+namespace HiddenButNotExposed {
+    namespace MDH {
+        class InternationalLanguageManagerWindow : public QMainWindow
+        {
+            Q_OBJECT
 
-public:
-    InternationalLanguageManagerWindow(QWidget *parent = nullptr);
+        public:
+            InternationalLanguageManagerWindow(QWidget* parent = nullptr);
 
-    ~InternationalLanguageManagerWindow();
+            ~InternationalLanguageManagerWindow();
 
-public:
-    void build_ui();
+        public:
+            void build_ui();
 
-    void build_connect();
+            void build_connect();
 
-private:
-    Ui::InternationalLanguageManagerWindowClass *ui;
+        private:
+            Ui::InternationalLanguageManagerWindowClass* ui;
 
-};
+        };
+    }//package
+
+}// company
+
+
