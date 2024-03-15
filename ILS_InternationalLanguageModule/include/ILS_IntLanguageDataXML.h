@@ -17,7 +17,7 @@ public:
 
     ~IntLanguageDataXML();
 public:
-    void setFilePath(const String& filePath) { m_filePath = filePath; }
+    void setFilePath(const String& filePath);
 
 public:
     // ͨ通过IntLanguageDataAbstract 继承
@@ -45,6 +45,11 @@ private:
     String m_filePath;
 
 };
+
+
+inline void IntLanguageDataXML::setFilePath(const IntLanguageDataAbstract::String& filePath) {
+    m_filePath = filePath;
+}
 
 } // package
 } //company
