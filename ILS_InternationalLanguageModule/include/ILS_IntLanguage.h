@@ -3,16 +3,20 @@
 
 #include"ILS_IntLanguageDataAbstract.h"
 
+namespace HiddenButNotExposed {
+namespace ILS {
+
+
 class IntLanguage
-    :public IntLanguageDataAbstract { 
+    :public IntLanguageDataAbstract {
 private:
-    IntLanguageDataAbstract* m_intLanData{nullptr};
+    IntLanguageDataAbstract* m_intLanData{ nullptr };
 
 private:
-    IntLanMap* m_intLanMap{nullptr};
+    IntLanMap* m_intLanMap{ nullptr };
 
 public:
-    IntLanguage(IntLanguageDataAbstract * intLanguageData);
+    IntLanguage(IntLanguageDataAbstract* intLanguageData);
 
     ~IntLanguage();
 public:
@@ -39,6 +43,15 @@ public:
     ErrorInfo clearData() override;
 
 };
+
+} //Packages 
+
+
+} //Company
+
+
+
+
 
 
 

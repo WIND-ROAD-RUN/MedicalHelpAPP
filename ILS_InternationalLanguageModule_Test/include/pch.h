@@ -9,4 +9,10 @@
 #include"ILS_IntLanguageDataAbstract.h"
 #include"ILS_IntLanguageDataXML.h"
 
-const static IntLanguageDataAbstract::String DEFAULT_PATH = R"(.\database\dataFile.xml)";
+namespace HiddenButNotExposed {
+namespace ILS {
+
+    const static IntLanguageDataAbstract::String DEFAULT_PATH = R"(.\database\dataFile.xml)";
+
+}//package
+}//company

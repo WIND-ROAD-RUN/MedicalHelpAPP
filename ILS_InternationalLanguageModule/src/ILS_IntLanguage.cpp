@@ -1,6 +1,9 @@
 #include "ILS_IntLanguage.h"
 #include"ILS_IntLanguageDataXML.h"
 
+namespace HiddenButNotExposed {
+namespace ILS {
+
 IntLanguage::IntLanguage
 (IntLanguageDataAbstract* intLanguageData)
     :m_intLanData(intLanguageData)
@@ -19,12 +22,12 @@ void IntLanguage::setLanguageData(IntLanguageDataAbstract* intLanData)
     if (m_intLanData) {
         delete m_intLanData;
     }
-    
+
     m_intLanData = intLanData;
 }
 
 IntLanguageDataAbstract::ErrorInfo
-IntLanguage::iniCom()
+    IntLanguage::iniCom()
 {
     auto iniResult = m_intLanData->iniCom();
     if (iniResult != ErrorInfo::SUCCESS) {
@@ -40,7 +43,7 @@ IntLanguage::iniCom()
 }
 
 IntLanguageDataAbstract::ErrorInfo
-IntLanguage::desCom()
+    IntLanguage::desCom()
 {
     if (m_intLanMap) {
         delete m_intLanMap;
@@ -59,7 +62,7 @@ IntLanguage::desCom()
 }
 
 IntLanguageDataAbstract::ErrorInfo
-IntLanguage::searchString(const String& id, const String& language, String& s)const
+    IntLanguage::searchString(const String& id, const String& language, String& s)const
 {
     if (m_intLanMap->find(id) != m_intLanMap->end()) {
         if ((*m_intLanMap)[id].find(language) != (*m_intLanMap)[id].end()) {
@@ -73,7 +76,7 @@ IntLanguage::searchString(const String& id, const String& language, String& s)co
 }
 
 IntLanguageDataAbstract::ErrorInfo
-IntLanguage::storeString(const String& id, const String& language, const String& s)
+    IntLanguage::storeString(const String& id, const String& language, const String& s)
 {
     if (m_intLanMap->find(id) != m_intLanMap->end()) {
         if ((*m_intLanMap)[id].find(language) != (*m_intLanMap)[id].end()) {
@@ -87,7 +90,7 @@ IntLanguage::storeString(const String& id, const String& language, const String&
 }
 
 IntLanguageDataAbstract::ErrorInfo
-IntLanguage::changeString(const String& id, const String& language, const String& s)
+    IntLanguage::changeString(const String& id, const String& language, const String& s)
 {
     if (m_intLanMap->find(id) != m_intLanMap->end()) {
         if ((*m_intLanMap)[id].find(language) != (*m_intLanMap)[id].end()) {
@@ -101,7 +104,7 @@ IntLanguage::changeString(const String& id, const String& language, const String
 }
 
 IntLanguageDataAbstract::ErrorInfo
-IntLanguage::delString(const String& id, const String& language)
+    IntLanguage::delString(const String& id, const String& language)
 {
     if (m_intLanMap->find(id) != m_intLanMap->end()) {
         if ((*m_intLanMap)[id].find(language) != (*m_intLanMap)[id].end()) {
@@ -115,7 +118,7 @@ IntLanguage::delString(const String& id, const String& language)
 }
 
 IntLanguageDataAbstract::ErrorInfo
-IntLanguage::getMap(IntLanMap* intLanMap) const
+    IntLanguage::getMap(IntLanMap* intLanMap) const
 {
     if (!intLanMap)intLanMap = new IntLanMap;
     intLanMap->clear();
@@ -125,7 +128,7 @@ IntLanguage::getMap(IntLanMap* intLanMap) const
 }
 
 IntLanguageDataAbstract::ErrorInfo
-IntLanguage::getMap(const String& language, LanStringMap* lanStringMap) const
+    IntLanguage::getMap(const String& language, LanStringMap* lanStringMap) const
 {
     if (!lanStringMap)lanStringMap = new LanStringMap;
     if (!m_intLanMap)return ErrorInfo::GET_MAP_ERROR;
@@ -140,9 +143,14 @@ IntLanguage::getMap(const String& language, LanStringMap* lanStringMap) const
 }
 
 IntLanguageDataAbstract::ErrorInfo
-IntLanguage::clearData()
+    IntLanguage::clearData()
 {
     m_intLanMap->clear();
     m_intLanData->clearData();
     return ErrorInfo::SUCCESS;
 }
+
+
+}//package
+}//company
+

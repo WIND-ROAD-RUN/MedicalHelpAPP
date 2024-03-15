@@ -7,14 +7,17 @@ namespace pugi {
     class xml_document;
 }
 
+namespace HiddenButNotExposed {
+namespace ILS {
+
 class IntLanguageDataXML
     :public IntLanguageDataAbstract {
 public:
-    IntLanguageDataXML(const String & filtPath);
+    IntLanguageDataXML(const String& filePath);
 
     ~IntLanguageDataXML();
 public:
-    void setFilePath(const String& filtPath) { m_filePath = filtPath; }
+    void setFilePath(const String& filePath) { m_filePath = filePath; }
 
 public:
     // ͨ通过IntLanguageDataAbstract 继承
@@ -37,11 +40,18 @@ public:
     ErrorInfo clearData() override;
 
 private:
-    pugi::xml_document* m_operatorDoc{nullptr};
+    pugi::xml_document* m_operatorDoc{ nullptr };
 
     String m_filePath;
 
 };
+
+} // package
+} //company
+
+
+
+
 
 
 #endif // !ILS_INTLANGUAGEDATAXML_H_
