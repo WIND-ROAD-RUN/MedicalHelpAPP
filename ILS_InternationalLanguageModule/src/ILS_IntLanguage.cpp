@@ -22,7 +22,7 @@ void IntLanguage::setLanguageData(IntLanguageDataAbstract* intLanData)
     if (m_intLanData) {
         delete m_intLanData;
     }
-
+    //if (!intLanData)intLanData = new IntLanguageDataXML;
     m_intLanData = intLanData;
 }
 

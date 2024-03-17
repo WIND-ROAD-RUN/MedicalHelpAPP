@@ -17,25 +17,25 @@ IntLanguageDataXML::~IntLanguageDataXML()
 }
 
 IntLanguageDataAbstract::ErrorInfo
-    IntLanguageDataXML::iniCom()
+IntLanguageDataXML::iniCom()
 {
     m_operatorDoc = new pugi::xml_document;
-    auto result=m_operatorDoc->load_file(m_filePath.c_str());
-    /*if (!result) {
-        return IntLanguageDataAbstract::ErrorInfo::INI_ERROR;
-    }*/
-
+    auto result = m_operatorDoc->load_file(m_filePath.c_str());
     if (!(m_operatorDoc->child("LanguageTranslate"))) {
         m_operatorDoc->append_child("LanguageTranslate");
+        m_operatorDoc->save_file(m_filePath.c_str());
+    }
+    result = m_operatorDoc->load_file(m_filePath.c_str());
+    if (!result) {
+        return IntLanguageDataAbstract::ErrorInfo::INI_ERROR;
     }
     return IntLanguageDataAbstract::ErrorInfo::SUCCESS;
 }
 
 IntLanguageDataAbstract::ErrorInfo
-    IntLanguageDataXML::desCom()
+IntLanguageDataXML::desCom()
 {
     if (m_operatorDoc != NULL) {
-        //std::cout << "YES" << '\n';
         m_operatorDoc->save_file(m_filePath.c_str());
         delete m_operatorDoc;
     }
@@ -44,10 +44,10 @@ IntLanguageDataAbstract::ErrorInfo
 }
 
 IntLanguageDataAbstract::ErrorInfo
-    IntLanguageDataXML::searchString
-    (const IntLanguageDataAbstract::String& id,
-        const IntLanguageDataAbstract::String& language,
-        IntLanguageDataAbstract::String& s)const
+IntLanguageDataXML::searchString
+(const IntLanguageDataAbstract::String& id,
+    const IntLanguageDataAbstract::String& language,
+    IntLanguageDataAbstract::String& s)const
 {
     for (pugi::xml_node& tool : m_operatorDoc->child("LanguageTranslate")) {
         if (tool.first_attribute().value() == id) {
@@ -64,10 +64,10 @@ IntLanguageDataAbstract::ErrorInfo
 }
 
 IntLanguageDataAbstract::ErrorInfo
-    IntLanguageDataXML::storeString
-    (const IntLanguageDataAbstract::String& id,
-        const IntLanguageDataAbstract::String& language,
-        const IntLanguageDataAbstract::String& s)
+IntLanguageDataXML::storeString
+(const IntLanguageDataAbstract::String& id,
+    const IntLanguageDataAbstract::String& language,
+    const IntLanguageDataAbstract::String& s)
 {
     for (pugi::xml_node& tool : m_operatorDoc->child("LanguageTranslate")) {
         if (tool.first_attribute().value() == id) {
@@ -95,10 +95,10 @@ IntLanguageDataAbstract::ErrorInfo
 }
 
 IntLanguageDataAbstract::ErrorInfo
-    IntLanguageDataXML::changeString
-    (const IntLanguageDataAbstract::String& id,
-        const IntLanguageDataAbstract::String& language,
-        const IntLanguageDataAbstract::String& s)
+IntLanguageDataXML::changeString
+(const IntLanguageDataAbstract::String& id,
+    const IntLanguageDataAbstract::String& language,
+    const IntLanguageDataAbstract::String& s)
 {
     for (pugi::xml_node& tool : m_operatorDoc->child("LanguageTranslate")) {
         if (tool.first_attribute().value() == id) {
@@ -115,8 +115,8 @@ IntLanguageDataAbstract::ErrorInfo
 }
 
 IntLanguageDataAbstract::ErrorInfo
-    IntLanguageDataXML::delString
-    (const IntLanguageDataAbstract::String& id, const IntLanguageDataAbstract::String& language)
+IntLanguageDataXML::delString
+(const IntLanguageDataAbstract::String& id, const IntLanguageDataAbstract::String& language)
 {
     for (pugi::xml_node& tool : m_operatorDoc->child("LanguageTranslate")) {
         if (tool.first_attribute().value() == id) {
@@ -133,8 +133,8 @@ IntLanguageDataAbstract::ErrorInfo
 }
 
 IntLanguageDataAbstract::ErrorInfo
-    IntLanguageDataXML::getMap
-    (IntLanguageDataAbstract::IntLanMap* intLanMap)const
+IntLanguageDataXML::getMap
+(IntLanguageDataAbstract::IntLanMap* intLanMap)const
 {
     if (!intLanMap)intLanMap = new IntLanMap;
     intLanMap->clear();
@@ -149,9 +149,9 @@ IntLanguageDataAbstract::ErrorInfo
 }
 
 IntLanguageDataAbstract::ErrorInfo
-    IntLanguageDataXML::getMap
-    (const IntLanguageDataAbstract::String& language,
-        IntLanguageDataAbstract::LanStringMap* lanStringMap)const
+IntLanguageDataXML::getMap
+(const IntLanguageDataAbstract::String& language,
+    IntLanguageDataAbstract::LanStringMap* lanStringMap)const
 {
     if (!lanStringMap)lanStringMap = new LanStringMap;
     lanStringMap->clear();
@@ -166,9 +166,9 @@ IntLanguageDataAbstract::ErrorInfo
 }
 
 IntLanguageDataAbstract::ErrorInfo
-    IntLanguageDataXML::clearData()
+IntLanguageDataXML::clearData()
 {
-    m_operatorDoc->remove_children();
+    m_operatorDoc->child("LanguageTranslate").remove_children();
     return IntLanguageDataAbstract::ErrorInfo::SUCCESS;
 }
 

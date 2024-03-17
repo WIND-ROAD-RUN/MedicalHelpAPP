@@ -6,7 +6,7 @@
 namespace HiddenButNotExposed {
 namespace ILS {
 
-    const static IntLanguageDataAbstract::String DEFAULT_PATH = R"(E:\code_place\vs_place\MedicalHelpApp\ILS_InternationalLanguageModule_Test\database\dataFile.xml)";
+    const static IntLanguageDataAbstract::String DEFAULT_PATH = R"(.\database\dataFile.xml)";
 
     class IntLanguageDataXMLTest {
     private:
