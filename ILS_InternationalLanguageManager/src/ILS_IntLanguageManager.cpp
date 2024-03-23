@@ -24,7 +24,9 @@ namespace HiddenButNotExposed {
                 return false;
             }
 
-            delete m_intLanguageData;
+            if (m_intLanguageData) {
+                delete m_intLanguageData;
+            }
 
             return false;
         }

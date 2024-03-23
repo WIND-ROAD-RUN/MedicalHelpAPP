@@ -11,7 +11,8 @@ namespace HiddenButNotExposed {
             using String = IntLanguageDataAbstract::String;
 
         private:
-            IntLanguageManagerManager(IntLanguageDataAbstract* intLanguageDataAbstract) {}
+            IntLanguageManagerManager(IntLanguageDataAbstract* intLanguageDataAbstract)
+                :m_intLanguageData(intLanguageDataAbstract) {}
 
         private:
             static IntLanguageManagerManager* m_instance;
