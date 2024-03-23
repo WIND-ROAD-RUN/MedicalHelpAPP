@@ -65,7 +65,7 @@
       <SubSystem>Console</SubSystem>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories>$(SolutionDir)\ILS_InternationalLanguageManager\bin\$(Platform)\$(Configuration)\;$(SolutionDir)\ILS_InternationalLanguageModule\bin\$(Platform)\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>ILS_InternationalLanguageManager.lib;ILS_InternationalLanguageMoudle.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ILS_InternationalLanguageManager.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -84,7 +84,7 @@
       <SubSystem>Console</SubSystem>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories>$(SolutionDir)\ILS_InternationalLanguageManager\bin\$(Platform)\$(Configuration)\;$(SolutionDir)\ILS_InternationalLanguageModule\bin\$(Platform)\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>ILS_InternationalLanguageManager.lib;ILS_InternationalLanguageMoudle.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ILS_InternationalLanguageManager.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -104,7 +104,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories>$(SolutionDir)\ILS_InternationalLanguageManager\bin\$(Platform)\$(Configuration)\;$(SolutionDir)\ILS_InternationalLanguageModule\bin\$(Platform)\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>ILS_InternationalLanguageManager.lib;ILS_InternationalLanguageMoudle.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ILS_InternationalLanguageManager.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -124,7 +124,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories>$(SolutionDir)\ILS_InternationalLanguageManager\bin\$(Platform)\$(Configuration)\;$(SolutionDir)\ILS_InternationalLanguageModule\bin\$(Platform)\$(Configuration)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>ILS_InternationalLanguageManager.lib;ILS_InternationalLanguageMoudle.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ILS_InternationalLanguageManager.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>

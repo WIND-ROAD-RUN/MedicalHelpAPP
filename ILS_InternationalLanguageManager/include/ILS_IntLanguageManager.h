@@ -46,6 +46,8 @@ namespace HiddenButNotExposed {
             IntLanguageDataAbstract::ErrorInfo getMap(IntLanguageDataAbstract::IntLanMap* intLanMap) const;
 
             IntLanguageDataAbstract::ErrorInfo getMap(const String& language, IntLanguageDataAbstract::LanStringMap* lanStringMap) const;
+        
+            bool clearData();
         };
 
     }
