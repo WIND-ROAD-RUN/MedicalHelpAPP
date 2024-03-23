@@ -155,11 +155,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\COL_ConfigLoader.cpp" />
     <ClCompile Include="src\COL_ConfigLoaderAbstract.cpp" />
     <ClCompile Include="src\COL_ConfigLoaderUtility.cpp" />
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\COL_ConfigLoader.h" />
     <ClInclude Include="include\COL_ConfigLoaderAbstract.h" />
     <ClInclude Include="include\COL_ConfigLoaderUtility.h" />
   </ItemGroup>
