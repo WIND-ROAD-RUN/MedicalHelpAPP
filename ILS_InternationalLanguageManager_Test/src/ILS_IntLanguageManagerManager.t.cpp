@@ -53,6 +53,9 @@ namespace HiddenButNotExposed {
 
 				CRUDResult = test->delString("1", "CHN");
 
+				iniDesResult = test->clearData();
+
+
 				iniDesResult = test->desCom();
 
 				delete test;
@@ -74,6 +77,8 @@ namespace HiddenButNotExposed {
 
 				CRUDResult = test->delString("1", "CHN");
 
+				iniDesResult = test->clearData();
+
 				iniDesResult = test->desCom();
 
 				delete test;
@@ -90,6 +95,8 @@ namespace HiddenButNotExposed {
 				auto CRUDResult = test->delString("1", "CHN");
 
 				EXPECT_NE(CRUDResult, IntLanguageDataAbstract::ErrorInfo::SUCCESS) << "未存储的字符串应当不能被删除";
+
+				iniDesResult = test->clearData();
 
 				iniDesResult = test->desCom();
 
@@ -108,6 +115,8 @@ namespace HiddenButNotExposed {
 				auto CRUDResult = test->getMap(intLanMap);
 
 				EXPECT_EQ(CRUDResult, IntLanguageDataAbstract::ErrorInfo::SUCCESS) << "将所有的国际化语言字符串存放到intLanMap失败";
+
+				iniDesResult = test->clearData();
 
 				iniDesResult = test->desCom();
 
@@ -160,6 +169,8 @@ namespace HiddenButNotExposed {
 
 				CRUDResult = test->delString("1", "CHN");
 
+				iniDesResult = test->clearData();
+
 				iniDesResult = test->desCom();
 
 				delete test;
@@ -191,6 +202,8 @@ namespace HiddenButNotExposed {
 				//EXPECT_EQ(result, IntLanguageDataAbstract::ErrorInfo::SUCCESS) << "将字符串存储到文件中失败";
 
 				CRUDResult = test->delString("1", "CHN");
+
+				iniDesResult = test->clearData();
 
 				iniDesResult = test->desCom();
 
@@ -224,6 +237,8 @@ namespace HiddenButNotExposed {
 
 				EXPECT_NE(CRUDResult, IntLanguageDataAbstract::ErrorInfo::SUCCESS) << "删除模块失败";
 				EXPECT_NE(s, s2) << "字符串删除失败";
+
+				iniDesResult = test->clearData();
 
 				iniDesResult = test->desCom();
 
@@ -269,6 +284,8 @@ namespace HiddenButNotExposed {
 
 				CRUDResult = test->delString("1", "CHN");
 
+				iniDesResult = test->clearData();
+
 				iniDesResult = test->desCom();
 
 				delete test;
@@ -307,6 +324,8 @@ namespace HiddenButNotExposed {
 				EXPECT_EQ(CRUDResult, IntLanguageDataAbstract::ErrorInfo::SUCCESS) << "不能为空id和language存入字符串";
 
 				CRUDResult = test->delString("1", "CHN");
+
+				iniDesResult = test->clearData();
 
 				iniDesResult = test->desCom();
 
@@ -360,6 +379,8 @@ namespace HiddenButNotExposed {
 
 				EXPECT_EQ(CRUDResult, IntLanguageDataAbstract::ErrorInfo::SUCCESS) << "在文件中删除字符串失败";
 
+				iniDesResult = test->clearData();
+
 				iniDesResult = test->desCom();
 
 				delete test;
@@ -398,6 +419,8 @@ namespace HiddenButNotExposed {
 				CRUDResult = test->searchString("1", "CHN", s);
 
 				EXPECT_NE(s, s1) << "删除字符串失败";
+
+				iniDesResult = test->clearData();
 
 				iniDesResult = test->desCom();
 
