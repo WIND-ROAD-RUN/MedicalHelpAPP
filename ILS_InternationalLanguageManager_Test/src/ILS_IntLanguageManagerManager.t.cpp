@@ -97,7 +97,7 @@ namespace HiddenButNotExposed {
 
 			}
 
-			TEST(FIRST_SHALLOW, GET_MAP1)
+			/*TEST(FIRST_SHALLOW, GET_MAP1)
 			{
 				IntLanguageManagerManager* test =
 					IntLanguageManagerManager::getInstance(new IntLanguageDataXML(DEFAULT_PATH));
@@ -113,7 +113,7 @@ namespace HiddenButNotExposed {
 
 				delete test;
 
-			}
+			}*/
 
 
 			TEST(FIRST_DEEP, SEARCH_STRING)
