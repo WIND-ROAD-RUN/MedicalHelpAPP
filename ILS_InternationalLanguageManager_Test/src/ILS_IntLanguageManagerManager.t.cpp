@@ -36,24 +36,24 @@ namespace HiddenButNotExposed {
 				IntLanguageManagerManager* test =
 					IntLanguageManagerManager::getInstance(new IntLanguageDataXML(DEFAULT_PATH));
 
-				auto result = test->iniCom();
+				auto iniDesResult = test->iniCom();
 
 				IntLanguageManagerManager::String s;
-				result = test->searchString("1", "CHN", s);
+				auto CRUDResult = test->searchString("1", "CHN", s);
 
-				EXPECT_NE(result, IntLanguageDataAbstract::ErrorInfo::SUCCESS) << "请检查是否存在内存未清理的异常情况";
+				EXPECT_NE(CRUDResult, IntLanguageDataAbstract::ErrorInfo::SUCCESS) << "请检查是否存在内存未清理的异常情况";
 
-				result = test->storeString("1", "CHN", "CBD");
+				CRUDResult = test->storeString("1", "CHN", "CBD");
 
-				EXPECT_EQ(result, IntLanguageDataAbstract::ErrorInfo::SUCCESS) << "将字符串存储到文件中失败";
+				EXPECT_EQ(CRUDResult, IntLanguageDataAbstract::ErrorInfo::SUCCESS) << "将字符串存储到文件中失败";
 
-				result = test->searchString("1", "CHN", s);
+				CRUDResult = test->searchString("1", "CHN", s);
 
-				EXPECT_EQ(result, IntLanguageDataAbstract::ErrorInfo::SUCCESS) << "字符串搜索失败";
+				EXPECT_EQ(CRUDResult, IntLanguageDataAbstract::ErrorInfo::SUCCESS) << "字符串搜索失败";
 
-				result = test->delString("1", "CHN");
+				CRUDResult = test->delString("1", "CHN");
 
-				result = test->desCom();
+				iniDesResult = test->desCom();
 
 				delete test;
 
@@ -67,12 +67,12 @@ namespace HiddenButNotExposed {
 				auto result = test->iniCom();
 
 				IntLanguageManagerManager::String s = "ABABAB";
-				result = test->storeString("1", "CHN", s);
+				auto CRUDResult = test->storeString("1", "CHN", s);
 
-				EXPECT_EQ(result, IntLanguageDataAbstract::ErrorInfo::SUCCESS) << "将字符串存储到文件中失败";
+				EXPECT_EQ(CRUDResult, IntLanguageDataAbstract::ErrorInfo::SUCCESS) << "将字符串存储到文件中失败";
 				EXPECT_EQ(s, "ABABAB");
 
-				result = test->delString("1", "CHN");
+				CRUDResult = test->delString("1", "CHN");
 
 				result = test->desCom();
 

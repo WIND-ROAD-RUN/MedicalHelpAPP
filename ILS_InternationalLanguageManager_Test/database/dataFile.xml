@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<LanguageTranslate>
+	<String id="1">
+		<Country />
+	</String>
+	<String id=" ">
+		<Country>
+			<language language=" ">CBD</language>
+		</Country>
+	</String>
+</LanguageTranslate>
