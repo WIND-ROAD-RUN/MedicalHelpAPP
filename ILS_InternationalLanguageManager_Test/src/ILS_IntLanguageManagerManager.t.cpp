@@ -97,14 +97,14 @@ namespace HiddenButNotExposed {
 
 			}
 
-			/*TEST(FIRST_SHALLOW, GET_MAP1)
+			TEST(FIRST_SHALLOW, GET_MAP1)
 			{
 				IntLanguageManagerManager* test =
 					IntLanguageManagerManager::getInstance(new IntLanguageDataXML(DEFAULT_PATH));
 
 				auto result = test->iniCom();
 
-				IntLanguageDaaAbstract::IntLanMap* intLanMap = new IntLanguageDataAbstract::IntLanMap();
+				IntLanguageDataAbstract::IntLanMap* intLanMap = new IntLanguageDataAbstract::IntLanMap();
 				result = test->getMap(intLanMap);
 
 				EXPECT_EQ(result, IntLanguageDataAbstract::ErrorInfo::SUCCESS) << "将所有的国际化语言字符串存放到intLanMap失败";
@@ -113,7 +113,7 @@ namespace HiddenButNotExposed {
 
 				delete test;
 
-			}*/
+			}
 
 
 			TEST(FIRST_DEEP, SEARCH_STRING)
