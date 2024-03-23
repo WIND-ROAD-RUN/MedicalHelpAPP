@@ -6,25 +6,27 @@
 namespace HiddenButNotExposed {
     namespace ILS {
 
-        class IntLanguageManagerManager {
+        class IntLanguageManager {
         public:
             using String = IntLanguageDataAbstract::String;
 
         private:
-            IntLanguageManagerManager(IntLanguageDataAbstract* intLanguageDataAbstract)
+            IntLanguageManager(IntLanguageDataAbstract* intLanguageDataAbstract)
                 :m_intLanguageData(intLanguageDataAbstract) {}
 
         private:
-            static IntLanguageManagerManager* m_instance;
+            static IntLanguageManager* m_instance;
 
         public:
-            ~IntLanguageManagerManager() {}
+            ~IntLanguageManager() {}
 
-            static IntLanguageManagerManager*
+            static IntLanguageManager*
                 getInstance(IntLanguageDataAbstract* intLanguageDataAbstract) {
                 if (!m_instance) {
-                    return new IntLanguageManagerManager(intLanguageDataAbstract);
+                    return new IntLanguageManager(intLanguageDataAbstract);
                 }
+
+                return m_instance;
             }
 
         private:
@@ -46,6 +48,8 @@ namespace HiddenButNotExposed {
             IntLanguageDataAbstract::ErrorInfo getMap(IntLanguageDataAbstract::IntLanMap* intLanMap) const;
 
             IntLanguageDataAbstract::ErrorInfo getMap(const String& language, IntLanguageDataAbstract::LanStringMap* lanStringMap) const;
+        
+            bool clearData();
         };
 
     }
