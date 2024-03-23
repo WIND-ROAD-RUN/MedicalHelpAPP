@@ -54,6 +54,8 @@ namespace HiddenButNotExposed {
 				EXPECT_EQ(result, IntLanguageDataAbstract::ErrorInfo::SUCCESS) << "查找字符串失败";
 				EXPECT_EQ(s, "CBD");
 
+				result = test->clearData();
+
 				result = test->desCom();
 			}
 
@@ -219,6 +221,8 @@ namespace HiddenButNotExposed {
 
 				result = test->searchString("1", "CHN", s2);
 				EXPECT_NE(result, IntLanguageDataAbstract::ErrorInfo::SUCCESS) << "清空数据有误或者内存错误";
+
+				result = test->clearData();
 
 				result = test->desCom();
 

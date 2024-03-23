@@ -1,23 +1,28 @@
 #include "pch.h"
 
-#include "ILS_IntLanguageComTest.h"
+static const std::string DEFAULT_PATH = R"(.\database\dataFile.xml)";
 
 namespace HiddenButNotExposed {
     namespace ILS {
 
         namespace ILS_INT_LANGUAGE_COM {
             TEST(INT_LAN_COM, INI_COM) {
-                IntLanguageComTest testObject;
-                auto test = testObject.getTestObject();
+                /*IntLanguageComTest testObject;
+                auto test = testObject.getTestObject();*/
+               
+                IntLanguageCom* test = 
+                    IntLanguageCom::getInstance(new IntLanguageDataXML(DEFAULT_PATH));
 
                 auto result = test->iniCom();
-
                 EXPECT_EQ(result, true) << "初始化失败";
             }
 
             TEST(INT_LAN_COM, DES_COM) {
-                IntLanguageComTest testObject;
-                auto test = testObject.getTestObject();
+               /* IntLanguageComTest testObject;
+                auto test = testObject.getTestObject();*/
+
+                IntLanguageCom* test =
+                    IntLanguageCom::getInstance(new IntLanguageDataXML(DEFAULT_PATH));
 
                 auto result = test->iniCom();
 
@@ -30,12 +35,15 @@ namespace HiddenButNotExposed {
             }
 
             TEST(INT_LAN_COM, SEARCH_STRING) {
-                IntLanguageComTest testObject;
-                auto test = testObject.getTestObject();
+                /*IntLanguageComTest testObject;
+                auto test = testObject.getTestObject();*/
+
+                IntLanguageCom* test =
+                    IntLanguageCom::getInstance(new IntLanguageDataXML(DEFAULT_PATH));
 
                 auto result = test->iniCom();
 
-                const IntLanguageCom::String s = "0";
+                IntLanguageCom::String s = "0";
 
                 result = test->searchString("1", "2", s);
 
@@ -47,16 +55,3 @@ namespace HiddenButNotExposed {
 }//company
 
 
-//namespace HiddenButNotExposed {
-//	namespace ILS {
-//
-//		namespace ILS_INT_LANGUAGE_COM {
-//			TEST(INT_LAN_COM, INI_COM) {
-//				IntLanguageCom* test;
-//
-//			}
-//
-//		}
-//
-//	}
-//}
