@@ -2,7 +2,6 @@
 
 namespace HiddenButNotExposed {
     namespace COL {
-
         ConfigLoaderDatabaseXML::ErrorInfo 
             ConfigLoaderDatabaseXML::iniCom()
         {

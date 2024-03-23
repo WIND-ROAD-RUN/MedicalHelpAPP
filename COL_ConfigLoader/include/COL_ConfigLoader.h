@@ -17,7 +17,7 @@ namespace HiddenButNotExposed {
         private:
             ConfigLoader_Database();
 
-            ConfigLoader_Database();
+            ~ConfigLoader_Database();
 
             friend class ConfigLoader;
   
