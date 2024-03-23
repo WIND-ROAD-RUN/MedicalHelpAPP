@@ -18,19 +18,34 @@
     <ClCompile Include="src\main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\COL_ConfigLoaderAbstract.cpp">
+    <ClCompile Include="src\COL_ConfigLoaderUtility.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\COL_ConfigLoaderUtility.cpp">
+    <ClCompile Include="src\COL_ConfigLoaderDatabaseXML.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\COL_ConfigLoader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\COL_ConfigLoaderDatabaseAbstract.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\COL_ConfigLoaderAbstract.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="include\COL_ConfigLoaderUtility.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="include\COL_ConfigLoader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\COL_ConfigLoaderDatabaseAbstract.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\COL_ConfigLoaderDatabaseXML.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="README.md" />
   </ItemGroup>
 </Project>

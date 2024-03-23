@@ -29,6 +29,8 @@ namespace HiddenButNotExposed {
 
             ErrorInfo getConfigMap(ConfigMap* map) override;
 
+            ErrorInfo clearData() override;
+
         };
         
     }//package

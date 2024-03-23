@@ -39,6 +39,8 @@ namespace HiddenButNotExposed {
 
             virtual ErrorInfo getConfigMap(ConfigMap* map) = 0;
 
+            virtual ErrorInfo clearData() = 0;
+
 
 
         };

@@ -57,6 +57,16 @@ namespace HiddenButNotExposed {
             return ErrorInfo::SUCCESS;
         }
 
+        ConfigLoader_Database::ErrorInfo 
+            ConfigLoader_Database::clearData() {
+            auto clearDataResult = m_database->clearData();
+            if (clearDataResult != ErrorInfo::SUCCESS) {
+                return clearDataResult;
+            }
+            //内存实现
+            return ErrorInfo::SUCCESS;
+        }
+
         //==================================================================
         //          ConfigLoader FUNCTION RELIZE
         //==================================================================
@@ -95,6 +105,12 @@ namespace HiddenButNotExposed {
             auto searchConfigResult = m_databaseLoader->searchConfig(name, value);
 
             return searchConfigResult;
+        }
+
+        ConfigLoader::ErrorInfo
+            ConfigLoader::clearData() {
+            auto clearDataResult = m_databaseLoader->clearData();
+            return clearDataResult;
         }
 
     }//package

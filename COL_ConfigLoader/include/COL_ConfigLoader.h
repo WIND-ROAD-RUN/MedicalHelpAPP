@@ -40,6 +40,8 @@ namespace HiddenButNotExposed {
 
             ErrorInfo searchConfig(const String& name, String& value) const;
 
+            ErrorInfo clearData();
+
         };
 
 
@@ -74,6 +76,8 @@ namespace HiddenButNotExposed {
             ErrorInfo changeConfig(const String& name, const String& value) ;
 
             ErrorInfo searchConfig(const String& name, String& value) const ;
+
+            ErrorInfo clearData();
 
         };
 
