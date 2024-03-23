@@ -4,48 +4,48 @@
 #include"ILS_IntLanguageDataAbstract.h"
 
 namespace HiddenButNotExposed {
-namespace ILS {
+    namespace ILS {
 
 
-class IntLanguage
-    :public IntLanguageDataAbstract {
-private:
-    IntLanguageDataAbstract* m_intLanData{ nullptr };
+        class IntLanguage
+            :public IntLanguageDataAbstract {
+        private:
+            IntLanguageDataAbstract* m_intLanData{ nullptr };
 
-private:
-    IntLanMap* m_intLanMap{ nullptr };
+        private:
+            IntLanMap* m_intLanMap{ nullptr };
 
-public:
-    IntLanguage(IntLanguageDataAbstract* intLanguageData);
-    IntLanguage() = default;
+        public:
+            IntLanguage(IntLanguageDataAbstract* intLanguageData);
+            IntLanguage() = default;
 
-    ~IntLanguage();
-public:
-    void setLanguageData(IntLanguageDataAbstract* intLanData);
+            ~IntLanguage();
+        public:
+            void setLanguageData(IntLanguageDataAbstract* intLanData);
 
-public:
-    // 通过 IntLanguageDataAbstract 继承
-    ErrorInfo iniCom() override;
+        public:
+            // 通过 IntLanguageDataAbstract 继承
+            ErrorInfo iniCom() override;
 
-    ErrorInfo desCom() override;
+            ErrorInfo desCom() override;
 
-    ErrorInfo searchString(const String& id, const String& language, String& s) const override;
+            ErrorInfo searchString(const String& id, const String& language, String& s) const override;
 
-    ErrorInfo storeString(const String& id, const String& language, const String& s) override;
+            ErrorInfo storeString(const String& id, const String& language, const String& s) override;
 
-    ErrorInfo changeString(const String& id, const String& language, const String& s) override;
+            ErrorInfo changeString(const String& id, const String& language, const String& s) override;
 
-    ErrorInfo delString(const String& id, const String& language) override;
+            ErrorInfo delString(const String& id, const String& language) override;
 
-    ErrorInfo getMap(IntLanMap* intLanMap) const override;
+            ErrorInfo getMap(IntLanMap* intLanMap) const override;
 
-    ErrorInfo getMap(const String& language, LanStringMap* lanStringMap) const override;
+            ErrorInfo getMap(const String& language, LanStringMap* lanStringMap) const override;
 
-    ErrorInfo clearData() override;
+            ErrorInfo clearData() override;
 
-};
+        };
 
-} //Packages 
+    } //Packages 
 
 
 } //Company
