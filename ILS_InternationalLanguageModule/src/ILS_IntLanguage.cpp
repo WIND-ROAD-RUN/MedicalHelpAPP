@@ -4,7 +4,7 @@
 namespace HiddenButNotExposed {
     namespace ILS {
 
-        IntLanguage::IntLanguage
+        IntLanguage_Database::IntLanguage_Database
         (IntLanguageDataAbstract* intLanguageData)
             :m_intLanData(intLanguageData)
         {
@@ -12,12 +12,12 @@ namespace HiddenButNotExposed {
             m_intLanMap = new IntLanMap;
         }
 
-        IntLanguage::~IntLanguage()
+        IntLanguage_Database::~IntLanguage_Database()
         {
             if (m_intLanMap)delete m_intLanMap;
         }
 
-        void IntLanguage::setLanguageData(IntLanguageDataAbstract* intLanData)
+        void IntLanguage_Database::setLanguageData(IntLanguageDataAbstract* intLanData)
         {
             if (m_intLanData) {
                 delete m_intLanData;
@@ -27,7 +27,7 @@ namespace HiddenButNotExposed {
         }
 
         IntLanguageDataAbstract::ErrorInfo
-            IntLanguage::iniCom()
+            IntLanguage_Database::iniCom()
         {
             auto iniResult = m_intLanData->iniCom();
             if (iniResult != ErrorInfo::SUCCESS) {
@@ -43,7 +43,7 @@ namespace HiddenButNotExposed {
         }
 
         IntLanguageDataAbstract::ErrorInfo
-            IntLanguage::desCom()
+            IntLanguage_Database::desCom()
         {
             if (m_intLanMap) {
                 delete m_intLanMap;
@@ -62,7 +62,7 @@ namespace HiddenButNotExposed {
         }
 
         IntLanguageDataAbstract::ErrorInfo
-            IntLanguage::searchString(const String& id, const String& language, String& s)const
+            IntLanguage_Database::searchString(const String& id, const String& language, String& s)const
         {
             if (m_intLanMap->find(id) != m_intLanMap->end()) {
                 if ((*m_intLanMap)[id].find(language) != (*m_intLanMap)[id].end()) {
@@ -76,7 +76,7 @@ namespace HiddenButNotExposed {
         }
 
         IntLanguageDataAbstract::ErrorInfo
-            IntLanguage::storeString(const String& id, const String& language, const String& s)
+            IntLanguage_Database::storeString(const String& id, const String& language, const String& s)
         {
             if (m_intLanMap->find(id) != m_intLanMap->end()) {
                 if ((*m_intLanMap)[id].find(language) != (*m_intLanMap)[id].end()) {
@@ -90,7 +90,7 @@ namespace HiddenButNotExposed {
         }
 
         IntLanguageDataAbstract::ErrorInfo
-            IntLanguage::changeString(const String& id, const String& language, const String& s)
+            IntLanguage_Database::changeString(const String& id, const String& language, const String& s)
         {
             if (m_intLanMap->find(id) != m_intLanMap->end()) {
                 if ((*m_intLanMap)[id].find(language) != (*m_intLanMap)[id].end()) {
@@ -104,7 +104,7 @@ namespace HiddenButNotExposed {
         }
 
         IntLanguageDataAbstract::ErrorInfo
-            IntLanguage::delString(const String& id, const String& language)
+            IntLanguage_Database::delString(const String& id, const String& language)
         {
             if (m_intLanMap->find(id) != m_intLanMap->end()) {
                 if ((*m_intLanMap)[id].find(language) != (*m_intLanMap)[id].end()) {
@@ -118,7 +118,7 @@ namespace HiddenButNotExposed {
         }
 
         IntLanguageDataAbstract::ErrorInfo
-            IntLanguage::getMap(IntLanMap* intLanMap) const
+            IntLanguage_Database::getMap(IntLanMap* intLanMap) const
         {
             if (!intLanMap)intLanMap = new IntLanMap;
             intLanMap->clear();
@@ -128,7 +128,7 @@ namespace HiddenButNotExposed {
         }
 
         IntLanguageDataAbstract::ErrorInfo
-            IntLanguage::getMap(const String& language, LanStringMap* lanStringMap) const
+            IntLanguage_Database::getMap(const String& language, LanStringMap* lanStringMap) const
         {
             if (!lanStringMap)lanStringMap = new LanStringMap;
             if (!m_intLanMap)return ErrorInfo::GET_MAP_ERROR;
@@ -143,7 +143,7 @@ namespace HiddenButNotExposed {
         }
 
         IntLanguageDataAbstract::ErrorInfo
-            IntLanguage::clearData()
+            IntLanguage_Database::clearData()
         {
             m_intLanMap->clear();
             m_intLanData->clearData();

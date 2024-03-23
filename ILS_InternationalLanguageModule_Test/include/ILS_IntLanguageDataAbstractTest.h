@@ -26,7 +26,7 @@ namespace ILS {
         IntLanguageDataAbstract* m_intLanguage{ nullptr };
     public:
         IntLanguageTest() {
-            m_intLanguage = new IntLanguage(new IntLanguageDataXML(DEFAULT_PATH));
+            m_intLanguage = new IntLanguage_Database(new IntLanguageDataXML(DEFAULT_PATH));
         }
         ~IntLanguageTest() { delete m_intLanguage; }
     public:

@@ -1,13 +1,15 @@
 #ifndef ILS_INTLANGUAGE_H_
 #define ILS_INTLANGUAGE_H_
 
-#include"ILS_IntLanguageDataAbstract.h"
+#include<ILS_IntLanguageDataAbstract.h>
+
+#include<ILS_IntLanguageUtility.h>
 
 namespace HiddenButNotExposed {
     namespace ILS {
 
 
-        class IntLanguage
+        class IntLanguage_Database
             :public IntLanguageDataAbstract {
         private:
             IntLanguageDataAbstract* m_intLanData{ nullptr };
@@ -16,10 +18,10 @@ namespace HiddenButNotExposed {
             IntLanMap* m_intLanMap{ nullptr };
 
         public:
-            IntLanguage(IntLanguageDataAbstract* intLanguageData);
-            IntLanguage() = default;
+            IntLanguage_Database(IntLanguageDataAbstract* intLanguageData);
+            IntLanguage_Database() = default;
 
-            ~IntLanguage();
+            ~IntLanguage_Database();
         public:
             void setLanguageData(IntLanguageDataAbstract* intLanData);
 

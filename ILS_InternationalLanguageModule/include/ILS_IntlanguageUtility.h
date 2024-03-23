@@ -1,5 +1,5 @@
-#ifndef ILS_INTLANGUAGEDATA_H_
-#define ILS_INTLANGUAGEDATA_H_
+#ifndef ILS_INTLANGUAGEUTILITY_H_ 
+#define ILS_INTLANGUAGEUTILITY_H_
 
 #include<string>
 #include<vector>
@@ -7,7 +7,7 @@
 
 namespace HiddenButNotExposed {
     namespace ILS {
-        struct IntLanguageData
+        struct IntLanguageUtility
         {
             enum ErrorInfo {
                 INI_ERROR,
@@ -45,4 +45,4 @@ namespace HiddenButNotExposed {
     }//package
 }//company
 
-#endif // !ILS_INTLANGUAGEDATA_H_
+#endif // !ILS_INTLANGUAGEUTILITY_H_
