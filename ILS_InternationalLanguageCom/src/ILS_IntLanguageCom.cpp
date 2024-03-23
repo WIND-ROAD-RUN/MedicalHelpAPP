@@ -30,7 +30,7 @@ namespace HiddenButNotExposed {
             }
 
 
-            return false;
+            return true;
         }
 
         IntLanguageDataAbstract::ErrorInfo
