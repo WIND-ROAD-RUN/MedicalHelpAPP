@@ -28,7 +28,7 @@ namespace HiddenButNotExposed {
                 delete m_intLanguageData;
             }
 
-            return false;
+            return true;
         }
 
         IntLanguageDataAbstract::ErrorInfo IntLanguageManagerManager::searchString(const String& id, const String& language, String& s) const
@@ -62,6 +62,13 @@ namespace HiddenButNotExposed {
         IntLanguageDataAbstract::ErrorInfo IntLanguageManagerManager::getMap(const String& language, IntLanguageDataAbstract::LanStringMap* lanStringMap) const
         {
             auto result = m_intLanguageData->getMap(language, lanStringMap);
+
+            return result;
+        }
+
+        bool IntLanguageManagerManager::clearData()
+        {
+            auto result = m_intLanguageData->clearData();
 
             return result;
         }

@@ -25,6 +25,8 @@ namespace HiddenButNotExposed {
                 if (!m_instance) {
                     return new IntLanguageManagerManager(intLanguageDataAbstract);
                 }
+
+                return m_instance;
             }
 
         private:
@@ -46,6 +48,8 @@ namespace HiddenButNotExposed {
             IntLanguageDataAbstract::ErrorInfo getMap(IntLanguageDataAbstract::IntLanMap* intLanMap) const;
 
             IntLanguageDataAbstract::ErrorInfo getMap(const String& language, IntLanguageDataAbstract::LanStringMap* lanStringMap) const;
+        
+            bool clearData();
         };
 
     }
