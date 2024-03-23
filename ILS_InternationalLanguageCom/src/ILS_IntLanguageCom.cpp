@@ -7,6 +7,7 @@ namespace HiddenButNotExposed {
 
         bool IntLanguageCom::iniCom()
         {
+
             auto result = m_intLanguageData->iniCom();
 
             if (result != IntLanguageDataAbstract::ErrorInfo::SUCCESS) {
@@ -24,7 +25,10 @@ namespace HiddenButNotExposed {
                 return false;
             }
 
-            delete m_intLanguageData;
+            if (m_intLanguageData) {
+                delete m_intLanguageData;
+            }
+
 
             return false;
         }

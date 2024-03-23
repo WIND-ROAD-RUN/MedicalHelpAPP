@@ -32,7 +32,6 @@ namespace HiddenButNotExposed {
             inline ErrorInfo desCom();
 
         public:
-
             ErrorInfo addConfig(const String& name, const String& value);
 
             ErrorInfo deleteConfig(const String& name, const String& value);

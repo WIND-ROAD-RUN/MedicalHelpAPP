@@ -10,7 +10,8 @@ namespace HiddenButNotExposed {
             using String = IntLanguageDataAbstract::String;
 
         private:
-            IntLanguageCom(IntLanguageDataAbstract* intLanguageDataAbstract) {}
+            IntLanguageCom(IntLanguageDataAbstract* intLanguageDataAbstract)
+                :m_intLanguageData(intLanguageDataAbstract) {}
 
         private:
             static IntLanguageCom* m_instance;
