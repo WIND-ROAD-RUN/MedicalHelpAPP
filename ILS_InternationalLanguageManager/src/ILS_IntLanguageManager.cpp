@@ -66,6 +66,13 @@ namespace HiddenButNotExposed {
             return result;
         }
 
+        bool IntLanguageManagerManager::clearData()
+        {
+            auto result = m_intLanguageData->clearData();
+
+            return result;
+        }
+
 
     }
 }
