@@ -3,6 +3,7 @@
 # `ConfigLoader`组件
 
 先给出`COL_ConfigLoader.h`的头文件
+
 ```cpp
 #ifndef COL_CONFIGLOADER_H_
 #define COL_CONFIGLOADER_H_
@@ -173,7 +174,7 @@ namespace HiddenButNotExposed {
 ```
 
 ## `ConfigLoader_Database`
-`ConfigLoader_Database`是组件`ConfigLoader`的私有类，它封装了`ConfigLoaderDatabaseAbstract`类族，并且提供了对内存进行存取的操作。
+`ConfigLoader_Database`是组件`ConfigLoader`的私有类，它封装了`ConfigLoaderDatabaseAbstract`类族，并且提供了对内存进行存取的操作。这是项目所有组件的封装。
 
 以下是它的类声明：
 ```cpp
@@ -256,6 +257,14 @@ public:
 
 };
 ```
+- `addConfig(const String& name, const String& value)`:添加名为`name`,值为`value`的配置信息，并返回运行信息。
+- `deleteConfig(const String& name, const String& value)`:删除名为`name`,值为`value`的配置信息，并返回运行信息。
+- `changeConfig(const String& name, const String& value)`:更改名为`name`,值为`value`的配置信息，并返回运行信息。
+- `searchConfig(const String& name, String& value)const`:查找名为`name`的配置信息,将结果存储在`value`中，并返回运行信息。
+- `getConfigMap(ConfigMap* map)`：返回所有的配置信息。
+- `clearData()`:清除所有的配置信息。
+
+
 
 
 # `ConfigLoaderDatabaseAbstract`存储实现族
@@ -348,7 +357,9 @@ namespace HiddenButNotExposed {
 
 #endif // !COL_CONFIGLOADERUTILITY_H_
 
+
 ```
+
 
 ## 结构体`ConfigLoaderDataUtility`
 
@@ -446,8 +457,15 @@ public:
 
 
 };
+
 ```
 定义了配置文件使用的通用接口
+- `addConfig(const String& name, const String& value)`:添加名为`name`,值为`value`的配置信息，并返回运行信息。
+- `deleteConfig(const String& name, const String& value)`:删除名为`name`,值为`value`的配置信息，并返回运行信息。
+- `changeConfig(const String& name, const String& value)`:更改名为`name`,值为`value`的配置信息，并返回运行信息。
+- `searchConfig(const String& name, String& value)const`:查找名为`name`的配置信息,将结果存储在`value`中，并返回运行信息。
+- `getConfigMap(ConfigMap* map)`：返回所有的配置信息。
+- `clearData()`:清除所有的配置信息。
 
 ### 类型别名
 
@@ -507,14 +525,11 @@ virtual ErrorInfo getConfigMap(ConfigMap* map) = 0;
 virtual ErrorInfo clearData() = 0;
 ```
 上述定义了一组实现的接口
-
 - `addConfig(const String& name, const String& value)`:添加名为`name`,值为`value`的配置信息，并返回运行信息。
 - `deleteConfig(const String& name, const String& value)`:删除名为`name`,值为`value`的配置信息，并返回运行信息。
 - `changeConfig(const String& name, const String& value)`:更改名为`name`,值为`value`的配置信息，并返回运行信息。
 - `searchConfig(const String& name, String& value)const`:查找名为`name`的配置信息,将结果存储在`value`中，并返回运行信息。
 - `getConfigMap(ConfigMap* map)`：返回所有的配置信息。
 - `clearData()`:清除所有的配置信息。
-
----
 
 ## `ConfigLoaderDatabaseXML`XML实现法的子类
