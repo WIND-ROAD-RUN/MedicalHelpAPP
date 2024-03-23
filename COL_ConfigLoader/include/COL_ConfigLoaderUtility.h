@@ -11,7 +11,8 @@ namespace HiddenButNotExposed {
         struct ConfigLoaderDataUtility
         {
             enum ErrorInfo {
-             
+                SUCCESS,
+
             };
 
             using String = std::string;

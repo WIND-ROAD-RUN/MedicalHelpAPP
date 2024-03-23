@@ -155,14 +155,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\COL_ConfigLoaderDatabaseXML.cpp" />
     <ClCompile Include="src\COL_ConfigLoader.cpp" />
-    <ClCompile Include="src\COL_ConfigLoaderAbstract.cpp" />
+    <ClCompile Include="src\COL_ConfigLoaderDatabaseAbstract.cpp" />
     <ClCompile Include="src\COL_ConfigLoaderUtility.cpp" />
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\COL_ConfigLoader.h" />
-    <ClInclude Include="include\COL_ConfigLoaderAbstract.h" />
+    <ClInclude Include="include\COL_ConfigLoaderDatabaseAbstract.h" />
+    <ClInclude Include="include\COL_ConfigLoaderDatabaseXML.h" />
     <ClInclude Include="include\COL_ConfigLoaderUtility.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

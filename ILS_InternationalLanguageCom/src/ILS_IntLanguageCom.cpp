@@ -3,6 +3,8 @@
 
 namespace HiddenButNotExposed {
     namespace ILS {
+        IntLanguageCom* IntLanguageCom::m_instance=nullptr;
+
         bool IntLanguageCom::iniCom()
         {
             auto result = m_intLanguageData->iniCom();

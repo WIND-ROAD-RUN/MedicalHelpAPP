@@ -1,5 +1,5 @@
-#ifndef COL_CONFIGLOADERABSTRACT_H_
-#define COL_CONFIGLOADERABSTRACT_H_
+#ifndef COL_CONFIGLOADERDATABASEABSTRACT_H_
+#define COL_CONFIGLOADERDATABASEABSTRACT_H_
 
 #include<COL_ConfigLoaderUtility.h>
 
@@ -24,20 +24,20 @@ namespace COL {
         using ConfigMap = Map<String, String>;
 
     public:
-        virtual ErrorInfo iniCom() = 0;
+        inline virtual ErrorInfo iniCom() = 0;
 
-        virtual ErrorInfo desCom() = 0;
+        inline virtual ErrorInfo desCom() = 0;
 
     public:
-        virtual ErrorInfo addConfig(const String & name, const String & value);
+        virtual ErrorInfo addConfig(const String & name, const String & value) =0;
 
-        virtual ErrorInfo deleteConfig(const String& name, const String& value);
+        virtual ErrorInfo deleteConfig(const String& name, const String& value)=0;
 
-        virtual ErrorInfo changeConfig(const String & name,const String & value);
+        virtual ErrorInfo changeConfig(const String & name,const String & value)=0;
 
-        virtual ErrorInfo searchConfig(const String & name,String & value)const;
+        virtual ErrorInfo searchConfig(const String & name,String & value)const=0;
 
-        virtual ErrorInfo getConfigMap(ConfigMap * map);
+        virtual ErrorInfo getConfigMap(ConfigMap * map)=0;
 
 
 
@@ -52,4 +52,4 @@ namespace COL {
 
 
 
-#endif // !COL_CONFIGLOADERABSTRACT_H_
+#endif // !COL_CONFIGLOADERDATABASEABSTRACT_H_
