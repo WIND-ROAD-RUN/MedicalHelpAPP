@@ -28,7 +28,7 @@ namespace HiddenButNotExposed {
                 delete m_intLanguageData;
             }
 
-            return false;
+            return true;
         }
 
         IntLanguageDataAbstract::ErrorInfo IntLanguageManagerManager::searchString(const String& id, const String& language, String& s) const
