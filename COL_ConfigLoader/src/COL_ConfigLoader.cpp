@@ -67,6 +67,11 @@ namespace HiddenButNotExposed {
             return ErrorInfo::SUCCESS;
         }
 
+        ConfigLoader_Database::ErrorInfo ConfigLoader_Database::saveData() {
+            auto saveDataResult = m_database->saveData();
+            return saveDataResult;
+        }
+
         //==================================================================
         //          ConfigLoader FUNCTION RELIZE
         //==================================================================
@@ -111,6 +116,12 @@ namespace HiddenButNotExposed {
             ConfigLoader::clearData() {
             auto clearDataResult = m_databaseLoader->clearData();
             return clearDataResult;
+        }
+
+        ConfigLoader::ErrorInfo 
+            ConfigLoader::saveData() {
+            auto saveDataResult = m_databaseLoader->saveData();
+            return saveDataResult;
         }
 
     }//package

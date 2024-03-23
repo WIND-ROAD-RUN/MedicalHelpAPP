@@ -41,6 +41,7 @@ namespace HiddenButNotExposed {
 
             virtual ErrorInfo clearData() = 0;
 
+            virtual ErrorInfo saveData() = 0;
 
 
         };

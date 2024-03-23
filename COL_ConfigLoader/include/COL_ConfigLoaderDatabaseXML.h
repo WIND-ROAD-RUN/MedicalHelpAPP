@@ -31,6 +31,8 @@ namespace HiddenButNotExposed {
 
             ErrorInfo clearData() override;
 
+            ErrorInfo saveData() override;
+
         };
         
     }//package

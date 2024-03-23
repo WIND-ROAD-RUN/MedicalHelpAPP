@@ -50,5 +50,11 @@ namespace HiddenButNotExposed {
             return ErrorInfo();
         }
 
+        ConfigLoaderDatabaseXML::ErrorInfo 
+            ConfigLoaderDatabaseXML::saveData()
+        {
+            return ErrorInfo();
+        }
+
     }//package
 }//Company
