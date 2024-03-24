@@ -24,6 +24,8 @@ namespace HiddenButNotExposed {
                 if (!m_instance) {
                     return new IntLanguageCom(intLanguageDataAbstract);
                 }
+
+                return m_instance;
             }
 
         private:

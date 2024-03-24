@@ -9,8 +9,8 @@ namespace HiddenButNotExposed {
         namespace ILS_INT_LANGUAGE_MANAGER_MANAGER {
             TEST(FIRST_CASE, INT_COM)
             {
-                IntLanguageManagerManager* test =
-                    IntLanguageManagerManager::getInstance(new IntLanguageDataXML(DEFAULT_PATH));
+                IntLanguageManager* test =
+                    IntLanguageManager::getInstance(new IntLanguageDataXML(DEFAULT_PATH));
 
                 auto result = test->iniCom();
 				EXPECT_EQ(result, true) << "初始化失败";
@@ -19,8 +19,8 @@ namespace HiddenButNotExposed {
             }
 			TEST(FIRST_SHALLOW, DES_COM)
 			{
-				IntLanguageManagerManager* test =
-					IntLanguageManagerManager::getInstance(new IntLanguageDataXML(DEFAULT_PATH));
+				IntLanguageManager* test =
+					IntLanguageManager::getInstance(new IntLanguageDataXML(DEFAULT_PATH));
 
 				auto result = test->iniCom();
 				result = test->desCom();
@@ -33,12 +33,12 @@ namespace HiddenButNotExposed {
 
 			TEST(FIRST_SHALLOW, SEARCH_STRING)
 			{
-				IntLanguageManagerManager* test =
-					IntLanguageManagerManager::getInstance(new IntLanguageDataXML(DEFAULT_PATH));
+				IntLanguageManager* test =
+					IntLanguageManager::getInstance(new IntLanguageDataXML(DEFAULT_PATH));
 
 				auto iniDesResult = test->iniCom();
 
-				IntLanguageManagerManager::String s;
+				IntLanguageManager::String s;
 				auto CRUDResult = test->searchString("1", "CHN", s);
 
 				EXPECT_NE(CRUDResult, IntLanguageDataAbstract::ErrorInfo::SUCCESS) << "请检查是否存在内存未清理的异常情况";
@@ -64,12 +64,12 @@ namespace HiddenButNotExposed {
 
 			TEST(FIRST_SHALLOW, STORE_STRING)
 			{
-				IntLanguageManagerManager* test =
-					IntLanguageManagerManager::getInstance(new IntLanguageDataXML(DEFAULT_PATH));
+				IntLanguageManager* test =
+					IntLanguageManager::getInstance(new IntLanguageDataXML(DEFAULT_PATH));
 
 				auto iniDesResult = test->iniCom();
 
-				IntLanguageManagerManager::String s = "ABABAB";
+				IntLanguageManager::String s = "ABABAB";
 				auto CRUDResult = test->storeString("1", "CHN", s);
 
 				EXPECT_EQ(CRUDResult, IntLanguageDataAbstract::ErrorInfo::SUCCESS) << "将字符串存储到文件中失败";
@@ -87,8 +87,8 @@ namespace HiddenButNotExposed {
 
 			TEST(FIRST_SHALLOW, DEL_STRING)
 			{
-				IntLanguageManagerManager* test =
-					IntLanguageManagerManager::getInstance(new IntLanguageDataXML(DEFAULT_PATH));
+				IntLanguageManager* test =
+					IntLanguageManager::getInstance(new IntLanguageDataXML(DEFAULT_PATH));
 
 				auto iniDesResult = test->iniCom();
 
@@ -106,8 +106,8 @@ namespace HiddenButNotExposed {
 
 			TEST(FIRST_SHALLOW, GET_MAP1)
 			{
-				IntLanguageManagerManager* test =
-					IntLanguageManagerManager::getInstance(new IntLanguageDataXML(DEFAULT_PATH));
+				IntLanguageManager* test =
+					IntLanguageManager::getInstance(new IntLanguageDataXML(DEFAULT_PATH));
 
 				auto iniDesResult = test->iniCom();
 
@@ -127,12 +127,12 @@ namespace HiddenButNotExposed {
 
 			TEST(FIRST_DEEP, SEARCH_STRING)
 			{
-				IntLanguageManagerManager* test =
-					IntLanguageManagerManager::getInstance(new IntLanguageDataXML(DEFAULT_PATH));
+				IntLanguageManager* test =
+					IntLanguageManager::getInstance(new IntLanguageDataXML(DEFAULT_PATH));
 
 				auto iniDesResult = test->iniCom();
 
-				IntLanguageManagerManager::String  s, s1, s2;
+				IntLanguageManager::String  s, s1, s2;
 
 				auto CRUDResult = test->searchString(" ", " ", s);
 
@@ -180,12 +180,12 @@ namespace HiddenButNotExposed {
 
 			TEST(FIRST_DEEP, STORE_STRING)
 			{
-				IntLanguageManagerManager* test =
-					IntLanguageManagerManager::getInstance(new IntLanguageDataXML(DEFAULT_PATH));
+				IntLanguageManager* test =
+					IntLanguageManager::getInstance(new IntLanguageDataXML(DEFAULT_PATH));
 
 				auto iniDesResult = test->iniCom();
 
-				IntLanguageManagerManager::String s, s1;
+				IntLanguageManager::String s, s1;
 
 				auto CRUDResult = test->searchString("1", "CHN", s);
 
@@ -213,12 +213,12 @@ namespace HiddenButNotExposed {
 
 			TEST(FIRST_DEEP, DEL_STRING)
 			{
-				IntLanguageManagerManager* test =
-					IntLanguageManagerManager::getInstance(new IntLanguageDataXML(DEFAULT_PATH));
+				IntLanguageManager* test =
+					IntLanguageManager::getInstance(new IntLanguageDataXML(DEFAULT_PATH));
 
 				auto iniDesResult = test->iniCom();
 
-				IntLanguageManagerManager::String s = "CBDA", s1, s2;
+				IntLanguageManager::String s = "CBDA", s1, s2;
 				auto CRUDResult = test->storeString("1", "CHN", s);
 
 				EXPECT_EQ(CRUDResult, IntLanguageDataAbstract::ErrorInfo::SUCCESS) << "将字符串存储到文件中失败";
@@ -248,12 +248,12 @@ namespace HiddenButNotExposed {
 
 			TEST(SECOND_DEEP, SEARCH_STRING)
 			{
-				IntLanguageManagerManager* test =
-					IntLanguageManagerManager::getInstance(new IntLanguageDataXML(DEFAULT_PATH));
+				IntLanguageManager* test =
+					IntLanguageManager::getInstance(new IntLanguageDataXML(DEFAULT_PATH));
 
 				auto iniDesResult = test->iniCom();
 
-				IntLanguageManagerManager::String s, s1 = "CBD", s2 = "abbb";
+				IntLanguageManager::String s, s1 = "CBD", s2 = "abbb";
 				auto CRUDResult = test->searchString("1", "CHN", s);
 
 				EXPECT_NE(CRUDResult, IntLanguageDataAbstract::ErrorInfo::SUCCESS) << "请检查是否有未清空内存的异常情况";
@@ -294,12 +294,12 @@ namespace HiddenButNotExposed {
 
 			TEST(SECOND_DEEP, STORE_STRING)
 			{
-				IntLanguageManagerManager* test =
-					IntLanguageManagerManager::getInstance(new IntLanguageDataXML(DEFAULT_PATH));
+				IntLanguageManager* test =
+					IntLanguageManager::getInstance(new IntLanguageDataXML(DEFAULT_PATH));
 
 				auto iniDesResult = test->iniCom();
 
-				IntLanguageManagerManager::String s, s1 = "CBD", s2 = "abbb";
+				IntLanguageManager::String s, s1 = "CBD", s2 = "abbb";
 				auto CRUDResult = test->storeString("1", "CHN", s1);
 
 				EXPECT_EQ(CRUDResult, IntLanguageDataAbstract::ErrorInfo::SUCCESS) << "存储字符串s1失败";
@@ -335,12 +335,12 @@ namespace HiddenButNotExposed {
 
 			TEST(SECOND_DEEP, DEL_STRING)
 			{
-				IntLanguageManagerManager* test =
-					IntLanguageManagerManager::getInstance(new IntLanguageDataXML(DEFAULT_PATH));
+				IntLanguageManager* test =
+					IntLanguageManager::getInstance(new IntLanguageDataXML(DEFAULT_PATH));
 
 				auto iniDesResult  = test->iniCom();
 
-				IntLanguageManagerManager::String s, s1 = "CBD", s2 = "abbb", s3;
+				IntLanguageManager::String s, s1 = "CBD", s2 = "abbb", s3;
 				auto CRUDResult = test->storeString("1", "CHN", s1);
 
 				EXPECT_EQ(CRUDResult, IntLanguageDataAbstract::ErrorInfo::SUCCESS) << "将字符串s1存储到文件中失败";
@@ -389,12 +389,12 @@ namespace HiddenButNotExposed {
 
 			TEST(DEEP, SOME)
 			{
-				IntLanguageManagerManager* test =
-					IntLanguageManagerManager::getInstance(new IntLanguageDataXML(DEFAULT_PATH));
+				IntLanguageManager* test =
+					IntLanguageManager::getInstance(new IntLanguageDataXML(DEFAULT_PATH));
 
 				auto iniDesResult = test->iniCom();
 
-				IntLanguageManagerManager::String  s1 = "CBD", s2 = "abbb", s3, s4, s;
+				IntLanguageManager::String  s1 = "CBD", s2 = "abbb", s3, s4, s;
 
 				auto CRUDResult = test->storeString("1", "CHN", s1);
 
