@@ -1,7 +1,9 @@
 #ifndef ILS_INTLANGUAGEDATAXML_H_
 #define ILS_INTLANGUAGEDATAXML_H_
 
-#include"ILS_IntLanguageDataAbstract.h"
+#include<ILS_IntLanguageDataAbstract.h>
+
+#include<ILS_IntLanguageUtility.h>
 
 namespace pugi {
     class xml_document;

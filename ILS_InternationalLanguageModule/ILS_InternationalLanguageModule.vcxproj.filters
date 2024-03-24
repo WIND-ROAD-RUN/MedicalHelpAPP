@@ -27,7 +27,7 @@
     <ClCompile Include="src\ILS_IntLanguageDataAbstract.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\ILS_IntlanguageData.cpp">
+    <ClCompile Include="src\ILS_IntlanguageUtility.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -41,7 +41,7 @@
     <ClInclude Include="include\ILS_IntLanguage.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="include\ILS_IntlanguageData.h">
+    <ClInclude Include="include\ILS_IntlanguageUtility.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

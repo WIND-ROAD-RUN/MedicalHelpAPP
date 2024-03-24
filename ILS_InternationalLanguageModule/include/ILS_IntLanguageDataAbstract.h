@@ -1,7 +1,7 @@
 ﻿#ifndef ILS_INTLANGUAGEDATAABSTRACT_H_
 #define ILS_INTLANGUAGEDATAABSTRACT_H_
 
-#include"ILS_IntlanguageData.h"
+#include<ILS_IntlanguageUtility.h>
 
 #include<string>
 #include<vector>
@@ -13,18 +13,18 @@ namespace HiddenButNotExposed {
 
         class IntLanguageDataAbstract {
         public:
-            using String = IntLanguageData::String;
+            using String = IntLanguageUtility::String;
 
-            using ErrorInfo = IntLanguageData::ErrorInfo;
+            using ErrorInfo = IntLanguageUtility::ErrorInfo;
 
             template<typename T>
-            using Vector = IntLanguageData::Vector<T>;
+            using Vector = IntLanguageUtility::Vector<T>;
 
             template<typename T1, typename T2>
-            using Map = IntLanguageData::Map<T1, T2>;
+            using Map = IntLanguageUtility::Map<T1, T2>;
 
             template<typename T1, typename T2>
-            using Pair = IntLanguageData::Pair<T1, T2>;
+            using Pair = IntLanguageUtility::Pair<T1, T2>;
 
             using IntLanMap = Map<String, Map<String, String>>;
 

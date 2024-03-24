@@ -3,10 +3,12 @@
 
 #include"pch.h"
 
+#include<ILS_IntLanguageDataXML.h>
+#include<ILS_IntLanguage.h>
+
 namespace HiddenButNotExposed {
 namespace ILS {
-
-    const static IntLanguageDataAbstract::String DEFAULT_PATH = R"(.\database\dataFile.xml)";
+    const static IntLanguageDataAbstract::String  DEFAULT_PATH = R"(D:\code\Repo\ILS_InternationalLanguageModule_Test\database\dataFile.xml)";
 
     class IntLanguageDataXMLTest {
     private:
@@ -26,7 +28,7 @@ namespace ILS {
         IntLanguageDataAbstract* m_intLanguage{ nullptr };
     public:
         IntLanguageTest() {
-            m_intLanguage = new IntLanguage(new IntLanguageDataXML(DEFAULT_PATH));
+            m_intLanguage = new IntLanguage_Database(new IntLanguageDataXML(DEFAULT_PATH));
         }
         ~IntLanguageTest() { delete m_intLanguage; }
     public:

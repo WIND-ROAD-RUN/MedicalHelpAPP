@@ -74,21 +74,25 @@
     <OutDir>$(ProjectDir)\bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(ProjectDir)\build\$(Platform)\$(Configuration)\</IntDir>
     <Linkage-pugixml>header</Linkage-pugixml>
+    <ExternalIncludePath>$(ProjectDir)\include;$(ExternalIncludePath)</ExternalIncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>$(ProjectDir)\bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(ProjectDir)\build\$(Platform)\$(Configuration)\</IntDir>
     <Linkage-pugixml>header</Linkage-pugixml>
+    <ExternalIncludePath>$(ProjectDir)\include;$(ExternalIncludePath)</ExternalIncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(ProjectDir)\bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(ProjectDir)\build\$(Platform)\$(Configuration)\</IntDir>
     <Linkage-pugixml>header</Linkage-pugixml>
+    <ExternalIncludePath>$(ProjectDir)\include;$(ExternalIncludePath)</ExternalIncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(ProjectDir)\bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(ProjectDir)\build\$(Platform)\$(Configuration)\</IntDir>
     <Linkage-pugixml>header</Linkage-pugixml>
+    <ExternalIncludePath>$(ProjectDir)\include;$(ExternalIncludePath)</ExternalIncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -152,7 +156,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\ILS_IntLanguage.cpp" />
-    <ClCompile Include="src\ILS_IntlanguageData.cpp" />
+    <ClCompile Include="src\ILS_IntlanguageUtility.cpp" />
     <ClCompile Include="src\ILS_IntLanguageDataAbstract.cpp" />
     <ClCompile Include="src\ILS_IntLanguageDataXML.cpp" />
     <ClCompile Include="src\main.cpp" />
@@ -161,7 +165,7 @@
     <ClInclude Include="include\ILS_IntLanguage.h" />
     <ClInclude Include="include\ILS_IntLanguageDataXML.h" />
     <ClInclude Include="include\ILS_IntLanguageDataAbstract.h" />
-    <ClInclude Include="include\ILS_IntlanguageData.h" />
+    <ClInclude Include="include\ILS_IntlanguageUtility.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
