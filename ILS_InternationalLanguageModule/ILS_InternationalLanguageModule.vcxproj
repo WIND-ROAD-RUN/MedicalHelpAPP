@@ -156,7 +156,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\ILS_IntLanguage.cpp" />
-    <ClCompile Include="src\ILS_IntlanguageData.cpp" />
+    <ClCompile Include="src\ILS_IntlanguageUtility.cpp" />
     <ClCompile Include="src\ILS_IntLanguageDataAbstract.cpp" />
     <ClCompile Include="src\ILS_IntLanguageDataXML.cpp" />
     <ClCompile Include="src\main.cpp" />

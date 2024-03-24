@@ -27,7 +27,7 @@
     <ClCompile Include="src\ILS_IntLanguageDataAbstract.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\ILS_IntlanguageData.cpp">
+    <ClCompile Include="src\ILS_IntlanguageUtility.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

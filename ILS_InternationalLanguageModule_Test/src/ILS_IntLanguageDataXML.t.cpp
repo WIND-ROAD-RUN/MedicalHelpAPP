@@ -1,6 +1,6 @@
 #include"pch.h"
 
-#include"ILS_IntLanguageDataAbstractTest.h"
+#include<ILS_IntLanguageDataXML.h>
 
 namespace HiddenButNotExposed {
 	namespace ILS {

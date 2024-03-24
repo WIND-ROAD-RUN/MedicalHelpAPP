@@ -1,7 +1,7 @@
 #ifndef ILS_INTLANGUAGEMANAGER_H_
 #define ILS_INTLANGUAGEMANAGER_H_
 
-#include"ILS_IntLanguageDataAbstract.h"
+#include<ILS_IntLanguageDataAbstract.h>
 
 namespace HiddenButNotExposed {
     namespace ILS {
