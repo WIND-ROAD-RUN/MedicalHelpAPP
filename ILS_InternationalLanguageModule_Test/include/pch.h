@@ -10,6 +10,10 @@
 
 #include<ILS_IntLanguageUtility.h>
 #include<ILS_IntLanguageDataAbstract.h>
-#include<ILS_IntLanguage.h>
+
+
+
+const static HiddenButNotExposed::ILS::
+IntLanguageDataAbstract::String DEFAULT_PATH = R"(.\database\dataFile.xml)";
 
 
