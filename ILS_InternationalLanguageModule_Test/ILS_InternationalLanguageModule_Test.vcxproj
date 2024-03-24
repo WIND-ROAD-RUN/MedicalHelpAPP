@@ -144,6 +144,7 @@
   <ItemGroup>
     <None Include="IntLanguageDataAbstract 测试编写.md" />
     <None Include="packages.config" />
+    <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ILS_InternationalLanguageModule\ILS_InternationalLanguageModule.vcxproj">
