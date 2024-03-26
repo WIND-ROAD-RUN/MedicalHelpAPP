@@ -518,3 +518,315 @@ virtual ErrorInfo clearData() = 0;
 ---
 
 ## `ConfigLoaderDatabaseXML`XML实现法的子类
+
+### 更新
+
+**在子类ConfigLoadorDatabaseXML中添加了两个私有变量：**
+
+```c++
+        pugi::xml_document* m_operatorDoc;
+        String m_filePath;
+```
+
+其中operatorDoc变量用于指向操作的文件，filePath用于指向操作文件的相对路径。
+
+创建了一个新的名为database的文件夹，在其中新建一个xmlFile.xml文件。
+
+
+
+### XML文件存储风格：
+
+如下
+
+```C++
+<?xml version="1.0"?>
+<ConfigLoaderString>
+	<String id="name">value</String>
+</LanguageTranslate>
+```
+
+
+
+### inicom函数
+
+```c++
+ConfigLoaderDatabaseXML::ErrorInfo 
+    ConfigLoaderDatabaseXML::iniCom()
+{
+    if (m_filePath.empty())return ErrorInfo::INI_ERROR;
+    if (!m_operatorDoc)m_operatorDoc = new pugi::xml_document;
+    auto result = m_operatorDoc->load_file(m_filePath.c_str());
+    if (!result)return ErrorInfo::INI_ERROR;
+    if (m_operatorDoc->child("ConfigLoaderString") == NULL)
+        m_operatorDoc->append_child("ConfigLoaderString");
+    return ErrorInfo::SUCCESS;
+}
+```
+
+如果文件路径为空，那么返回INI_ERROR；利用rusult变量查看是否加载成功，如果没有加载成功，则返回INI_ERROR，如果我们的根节点ConfigLoaderString为空，那我们则新建一个根节点。如果不为空，则返回SUCCESS；
+
+### descom函数
+
+```c++
+ConfigLoaderDatabaseXML::ErrorInfo 
+    ConfigLoaderDatabaseXML::desCom()
+{
+    m_filePath.clear();
+    if (m_operatorDoc)delete m_operatorDoc;
+    return ErrorInfo::SUCCESS;
+}
+```
+
+首先清空文件路径，如果操作文件不为空，则删除该操作的文件，并且返回SUCCESS。
+
+### addConfig函数
+
+```c++
+ConfigLoaderDatabaseXML::ErrorInfo 
+    ConfigLoaderDatabaseXML::addConfig(const String& name, const String& value)
+{
+    if (!m_operatorDoc)return ErrorInfo::ERROR;
+    for (auto tool : m_operatorDoc->child("ConfigLoaderString").children()) {
+        if (tool.first_attribute().value() == name)return ErrorInfo::ADD_ERROR_NAME;
+    }
+    pugi::xml_node node = m_operatorDoc->child("ConfigLoaderString");
+    node.append_child("String");
+    node.last_child().append_attribute("id").set_value(name.c_str());
+    node.last_child().text().set(value.c_str());
+    return ErrorInfo::SUCCESS;
+}
+```
+
+首先如果操作文件为空，则返回ERROR；然后我们从根节点的子节点遍历，如果如果第一个子节点的属性的值与我们给出的值相同，则返回ADD_ERROR_NAME；
+
+如果没有找到与我们给出的值相同的则新建一个string类型元素，同时存储text，并且返回SUCCESS。
+
+### deleteConfig函数
+
+```c++
+ConfigLoaderDatabaseXML::ErrorInfo 
+    ConfigLoaderDatabaseXML::deleteConfig(const String& name, const String& value)
+{
+    if (!m_operatorDoc)return ErrorInfo::ERROR;
+    for (auto& tool : m_operatorDoc->child("ConfigLoaderString").children()) {
+        if (tool.first_attribute().value() == name) {
+            if (tool.text().get() == value) {
+                m_operatorDoc->child("ConfigLoaderString").remove_child(tool);
+                return ErrorInfo::SUCCESS;
+            }
+            return ErrorInfo::DELETE_ERROR_VALUE;
+        }
+    }
+    return ErrorInfo::DELETE_ERROR_NAME;
+}
+```
+
+首先如果操作文件为空，则返回ERROR；其次我们从根节点开始遍历根节点的子节点，如果第一个子节点的属性的值与我们给出的相同，并且存在value这个值，则删除根节点的子节点，并返回DELETE_ERROR_VALUE。如果第一个子节点的属性的值与我们给出的不同，则返回DELETE_ERROR_NAME；
+
+### changeConfig函数
+
+```c++
+ ConfigLoaderDatabaseXML::ErrorInfo 
+     ConfigLoaderDatabaseXML::changeConfig(const String& name, const String& value)
+ {
+     if (!m_operatorDoc)return ErrorInfo::ERROR;
+     for (auto& tool : m_operatorDoc->child("ConfigLoaderString").children()) {
+         if (tool.first_attribute().value() == name) {
+             tool.text().set(value.c_str());
+             return ErrorInfo::SUCCESS;
+         }
+     }
+     return ErrorInfo::CHANGE_ERROR_NAME;
+ }
+```
+
+首先如果操作文件为空，则返回ERROR；其次我们从根节点开始遍历根节点的子节点，如果我的第一个属性的值与我们的name相同，则储存text，对该值进行更改，并返回SUCCESS，否则返回CHANGE_ERROR_NAME。
+
+### searchConfig函数
+
+```c++
+ConfigLoaderDatabaseXML::ErrorInfo 
+    ConfigLoaderDatabaseXML::searchConfig(const String& name, String& value) const
+{
+    if (!m_operatorDoc)return ErrorInfo::ERROR;
+    for (pugi::xml_node& tool : m_operatorDoc->child("ConfigLoaderString")) {
+        if (tool.first_attribute().value() == name) {
+            if (tool.text().get() == value)return ErrorInfo::SUCCESS;
+            return ErrorInfo::SEARCH_ERROR_VALUE;
+        }
+    }
+    return ErrorInfo::SEARCH_ERROR_NAME;
+}
+```
+
+首先如果操作文件为空，则返回ERROR；其次我们从根节点开始遍历根节点的子节点，如果我的第一个属性的值与我们的name相同，并且我的value值也相同，则返回SUCCESS，否则返回SEARCH_ERROR_NAME。
+
+### getConfigMap函数
+
+```c++
+ConfigLoaderDatabaseXML::ErrorInfo 
+    ConfigLoaderDatabaseXML::getConfigMap(ConfigMap* map)
+{
+    if (map == NULL)map = new ConfigMap;
+    map->clear();
+    if (!m_operatorDoc)return ErrorInfo::ERROR;
+    for (auto tool : m_operatorDoc->child("ConfigLoaderString").children()) {
+        (*map)[tool.first_attribute().value()] = tool.text().get();
+    }
+    return ErrorInfo::SUCCESS;
+}
+
+```
+
+首先判断指针是否为空，是否为他开辟新的空间。如果操作文件为空，则返回ERROR，其次我们从根节点开始遍历根节点的子节点，同时间将子节点第一个的属性的值存储text，同时返回SUCCESS。
+
+### clearData函数
+
+```c++
+ConfigLoaderDatabaseXML::ErrorInfo 
+    ConfigLoaderDatabaseXML::clearData()
+{
+    if (!m_operatorDoc)return ErrorInfo::ERROR;
+    m_operatorDoc->child("ConfigLoaderString").remove_children();
+    return ErrorInfo::CLEAR_ERROR;
+}
+```
+
+首先如果操作文件为空，则返回SAVE_ERROR；如果不为空，那么我将会清除操作文件的根节点的子节点，并返回CLEAR_ERROR。
+
+### saveData函数
+
+```c++
+ConfigLoaderDatabaseXML::ErrorInfo 
+    ConfigLoaderDatabaseXML::saveData()
+{
+    if (!m_operatorDoc)return ErrorInfo::SAVE_ERROR;
+    if (m_filePath == "")return ErrorInfo::SAVE_ERROR;
+    m_operatorDoc->save_file(m_filePath.c_str());
+    return ErrorInfo::SUCCESS;
+}
+```
+
+首先如果操作文件为空，则返回SAVE_ERROR；如果我的文件路径为空，则返回SAVE_ERROR；否则，就保存文件路径，并返回SUCCESS。
+
+<h2>ConfigLoader_Database实现法的子类<h2>
+
+该类主要是用于实现在内存中对字符串的增删查改，相当于在内存中进行XML文件数据的修改。
+
+<h3>addConfig函数</h3>
+
+```C++
+ConfigLoader_Database::ErrorInfo
+    ConfigLoader_Database::addConfig
+    (const String& name, const String& value) {
+
+    auto addConfigResult = m_database->addConfig(name, value);
+    if (addConfigResult != ErrorInfo::SUCCESS) {
+        return addConfigResult;
+    }
+    //内存方法实现
+    if (m_configMap->find(name) != m_configMap->end())return ErrorInfo::ADD_ERROR_NAME;
+    (*m_configMap)[name] = value;
+    return ErrorInfo::SUCCESS;
+}
+```
+
+内存方法实现字符串的增加，这里先查找有无重名字符串，若存在则返回查找名称错误信息，否则存储该字符串。
+
+
+
+<h3>deleteConfig函数</h3>
+
+```C++
+ConfigLoader_Database::ErrorInfo
+    ConfigLoader_Database::deleteConfig
+    (const String& name, const String& value) {
+
+    auto addConfigResult = m_database->deleteConfig(name, value);
+    if (addConfigResult != ErrorInfo::SUCCESS) {
+        return addConfigResult;
+    }
+    //内存方法实现
+    if (m_configMap->find(name) == m_configMap->end())return ErrorInfo::DELETE_ERROR_NAME;
+    if ((*m_configMap)[name] != value)return ErrorInfo::DELETE_ERROR_VALUE;
+    (*m_configMap).erase(name);
+
+    return ErrorInfo::SUCCESS;
+}
+```
+
+内存方法实现字符串的删除，这里先查找是否存在这样的一个名称和值都相同的字符串，若存在则删除该字符串，如果只找到了名称而值对不上，就返回删除值错误，如果都没找到就返回名称错误。
+
+
+
+<h3>changeConfig函数</h3>
+
+```C++
+ConfigLoader_Database::ErrorInfo
+    ConfigLoader_Database::changeConfig
+    (const String& name, const String& value) {
+
+    auto addConfigResult = m_database->changeConfig(name, value);
+    if (addConfigResult != ErrorInfo::SUCCESS) {
+        return addConfigResult;
+    }
+    //内存方法实现
+    if (m_configMap->find(name) == m_configMap->end())return ErrorInfo::CHANGE_ERROR_NAME;
+    (*m_configMap)[name] = value;
+
+    return ErrorInfo::SUCCESS;
+}
+```
+
+内存方法实现字符串的修改，这里先查找是否存在这样的一个名称相同的字符串，若存在则修改该字符串为相应的值，如果没找到就返回名称错误。
+
+
+
+<h3>searchConfig函数</h3>
+
+```C++
+ConfigLoader_Database::ErrorInfo
+    ConfigLoader_Database::searchConfig
+    (const String& name, String& value) const {
+
+    //内存方法实现
+    if (m_configMap->find(name) == m_configMap->end())return ErrorInfo::SEARCH_ERROR_NAME;
+    value = (*m_configMap)[name];
+    return ErrorInfo::SUCCESS;
+}
+```
+
+内存方法实现字符串的查找，这里先查找是否存在这样的一个名称相同的字符串，若存在则将我们引用的value字符串赋值为我们内存中 相应名称字符串的value，如果没找到就返回名称错误。
+
+
+
+<h3>clearConfig函数</h3>
+
+```C++
+ConfigLoader_Database::ErrorInfo 
+    ConfigLoader_Database::clearData() {
+    auto clearDataResult = m_database->clearData();
+    if (clearDataResult != ErrorInfo::SUCCESS) {
+        return clearDataResult;
+    }
+    //内存实现
+    m_configMap->clear();
+    return ErrorInfo::SUCCESS;
+}
+```
+
+内存方法实现字符串的清空，直接清空map即可。
+
+
+
+<h3>saveConfig函数</h3>
+
+```C++
+ConfigLoader_Database::ErrorInfo ConfigLoader_Database::saveData() {
+    auto saveDataResult = m_database->saveData();
+    return saveDataResult;
+}
+```
+
+这里并不需要对map修改什么。
+
