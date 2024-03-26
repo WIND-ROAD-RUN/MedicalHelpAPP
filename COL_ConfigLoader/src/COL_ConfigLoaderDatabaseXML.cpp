@@ -69,6 +69,7 @@ namespace HiddenButNotExposed {
         ConfigLoaderDatabaseXML::ErrorInfo 
             ConfigLoaderDatabaseXML::searchConfig(const String& name, String& value) const
         {
+            if (!m_operatorDoc)return ErrorInfo::ERROR;
             for (pugi::xml_node& tool : m_operatorDoc->child("ConfigLoaderString")) {
                 if (tool.first_attribute().value() == name) {
                     for (pugi::xml_node& tools : tool.child("Country").children()) {
