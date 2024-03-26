@@ -56,7 +56,14 @@ namespace HiddenButNotExposed {
         ConfigLoaderDatabaseXML::ErrorInfo 
             ConfigLoaderDatabaseXML::changeConfig(const String& name, const String& value)
         {
-            return ErrorInfo();
+            if (!m_operatorDoc)return ErrorInfo::ERROR;
+            for (auto& tool : m_operatorDoc->child("ConfigLoaderString").children()) {
+                if (tool.first_attribute().value() == name) {
+                    tool.text().set(value.c_str());
+                    return ErrorInfo::SUCCESS;
+                }
+            }
+            return ErrorInfo::CHANGE_ERROR_NAME;
         }
 
         ConfigLoaderDatabaseXML::ErrorInfo 
