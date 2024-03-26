@@ -1,6 +1,5 @@
 #ifndef COL_CONFIGLOADERUTILITY_H_
 #define COL_CONFIGLOADERUTILITY_H_
-
 #include<string>
 #include<vector>
 #include<map>
@@ -11,8 +10,21 @@ namespace HiddenButNotExposed {
         struct ConfigLoaderDataUtility
         {
             enum ErrorInfo {
+                INI_ERROR,
+                DES_ERROR,
+                SEARCH_ERROR_NAME,
+                SEARCH_ERROR_VALUE,
+                ADD_ERROR_NAME,
+                ADD_ERROR_VALUE,
+                DELETE_ERROR_NAME,
+                DELETE_ERROR_VALUE,
+                CHANGE_ERROR_NAME,
+                CHANGE_ERROR_VALUE,
+                GET_CONFIGMAP_ERROR,
+                CLEAR_ERROR,
+                SAVE_ERROR,
+                ERROR,
                 SUCCESS,
-
             };
 
             using String = std::string;
