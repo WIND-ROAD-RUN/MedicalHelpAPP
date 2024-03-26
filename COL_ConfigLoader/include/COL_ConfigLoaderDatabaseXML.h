@@ -11,14 +11,14 @@ namespace HiddenButNotExposed {
         class ConfigLoaderDatabaseXML
             :public ConfigLoaderDatabaseAbstract{
         public:
-            ConfigLoaderDatabaseXML(const String & filePath="");
-            ~ConfigLoaderDatabaseXML();
+            ConfigLoaderDatabaseXML(const String& filePath = "") :m_filePath(filePath) {};
+            ~ConfigLoaderDatabaseXML() {};
 
         public:
             // 通过 ConfigLoaderDatabaseAbstract 继承
-            inline ErrorInfo iniCom() override;
+            ErrorInfo iniCom() override;
 
-            inline ErrorInfo desCom() override;
+            ErrorInfo desCom() override;
 
             ErrorInfo addConfig(const String& name, const String& value) override;
 

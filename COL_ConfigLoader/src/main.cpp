@@ -1,4 +1,9 @@
-int main() {
+#include<iostream>
+#include<COL_ConfigLoaderDatabaseXML.h>
 
-    return 0;
+
+int main()
+{
+	
+	return 0;
 }

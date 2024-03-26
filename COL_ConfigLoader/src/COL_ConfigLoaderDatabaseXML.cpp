@@ -1,6 +1,5 @@
 #include "COL_ConfigLoaderDatabaseXML.h"
 
-
 namespace HiddenButNotExposed {
     namespace COL {
         ConfigLoaderDatabaseXML::ErrorInfo 
@@ -20,7 +19,7 @@ namespace HiddenButNotExposed {
         {
             m_filePath.clear();
             if (m_operatorDoc)delete m_operatorDoc;
-            return ErrorInfo();
+            return ErrorInfo::SUCCESS;
         }
 
         ConfigLoaderDatabaseXML::ErrorInfo 
@@ -32,7 +31,7 @@ namespace HiddenButNotExposed {
             }
             pugi::xml_node node = m_operatorDoc->child("ConfigLoaderString");
             node.append_child("String");
-            node.last_child().append_attribute(name.c_str());
+            node.last_child().append_attribute("id").set_value(name.c_str());
             node.last_child().text().set(value.c_str());
             return ErrorInfo::SUCCESS;
         }
@@ -72,11 +71,7 @@ namespace HiddenButNotExposed {
             if (!m_operatorDoc)return ErrorInfo::ERROR;
             for (pugi::xml_node& tool : m_operatorDoc->child("ConfigLoaderString")) {
                 if (tool.first_attribute().value() == name) {
-                    for (pugi::xml_node& tools : tool.child("Country").children()) {
-                        if (tools.first_attribute().value() == value) {
-                            return ErrorInfo::SUCCESS;
-                        }
-                    }
+                    if (tool.text().get() == value)return ErrorInfo::SUCCESS;
                     return ErrorInfo::SEARCH_ERROR_VALUE;
                 }
             }
@@ -98,7 +93,8 @@ namespace HiddenButNotExposed {
         ConfigLoaderDatabaseXML::ErrorInfo 
             ConfigLoaderDatabaseXML::clearData()
         {
-            m_operatorDoc->remove_children();
+            if (!m_operatorDoc)return ErrorInfo::ERROR;
+            m_operatorDoc->child("ConfigLoaderString").remove_children();
             return ErrorInfo::CLEAR_ERROR;
         }
 
