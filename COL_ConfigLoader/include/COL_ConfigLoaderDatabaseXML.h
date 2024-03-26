@@ -3,6 +3,7 @@
 
 #include<COL_ConfigLoaderDatabaseAbstract.h>
 #include<COL_ConfigLoaderUtility.h>
+#include<pugixml.hpp>
 
 namespace HiddenButNotExposed {
     namespace COL {
@@ -32,6 +33,10 @@ namespace HiddenButNotExposed {
             ErrorInfo clearData() override;
 
             ErrorInfo saveData() override;
+
+        private:
+            pugi::xml_document* m_operatorDoc;
+            String m_filePath;
 
         };
         

@@ -5,18 +5,27 @@ namespace HiddenButNotExposed {
         ConfigLoaderDatabaseXML::ErrorInfo 
             ConfigLoaderDatabaseXML::iniCom()
         {
-            return ErrorInfo();
+            if (m_filePath.empty())return ErrorInfo::INI_ERROR;
+            if (!m_operatorDoc)m_operatorDoc = new pugi::xml_document;
+            auto result = m_operatorDoc->load_file(m_filePath.c_str());
+            if (!result)return ErrorInfo::INI_ERROR;
+            if (m_operatorDoc->child("ConfigLoaderString") == NULL)
+                m_operatorDoc->append_child("ConfigLoaderString");
+            return ErrorInfo::SUCCESS;
         }
 
         ConfigLoaderDatabaseXML::ErrorInfo 
             ConfigLoaderDatabaseXML::desCom()
         {
+            m_filePath.clear();
+            if (m_operatorDoc)delete m_operatorDoc;
             return ErrorInfo();
         }
 
         ConfigLoaderDatabaseXML::ErrorInfo 
             ConfigLoaderDatabaseXML::addConfig(const String& name, const String& value)
         {
+
             return ErrorInfo();
         }
 
@@ -53,7 +62,10 @@ namespace HiddenButNotExposed {
         ConfigLoaderDatabaseXML::ErrorInfo 
             ConfigLoaderDatabaseXML::saveData()
         {
-            return ErrorInfo();
+            if (!m_operatorDoc)return ErrorInfo::SAVE_ERROR;
+            if (m_filePath == "")return ErrorInfo::SAVE_ERROR;
+            m_operatorDoc->save_file(m_filePath.c_str());
+            return ErrorInfo::SUCCESS;
         }
 
     }//package
