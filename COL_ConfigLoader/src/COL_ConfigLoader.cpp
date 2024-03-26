@@ -19,7 +19,8 @@ namespace HiddenButNotExposed {
                 return addConfigResult;
             }
             //内存方法实现
-
+            if (m_configMap->find(name) != m_configMap->end())return ErrorInfo::ADD_ERROR_NAME;
+            (*m_configMap)[name] = value;
             return ErrorInfo::SUCCESS;
         }
 
@@ -32,6 +33,9 @@ namespace HiddenButNotExposed {
                 return addConfigResult;
             }
             //内存方法实现
+            if (m_configMap->find(name) == m_configMap->end())return ErrorInfo::DELETE_ERROR_NAME;
+            if ((*m_configMap)[name] != value)return ErrorInfo::DELETE_ERROR_VALUE;
+            (*m_configMap).erase(name);
 
             return ErrorInfo::SUCCESS;
         }
@@ -45,6 +49,8 @@ namespace HiddenButNotExposed {
                 return addConfigResult;
             }
             //内存方法实现
+            if (m_configMap->find(name) == m_configMap->end())return ErrorInfo::CHANGE_ERROR_NAME;
+            (*m_configMap)[name] = value;
 
             return ErrorInfo::SUCCESS;
         }
@@ -54,6 +60,8 @@ namespace HiddenButNotExposed {
             (const String& name, String& value) const {
 
             //内存方法实现
+            if (m_configMap->find(name) == m_configMap->end())return ErrorInfo::SEARCH_ERROR_NAME;
+            value = (*m_configMap)[name];
             return ErrorInfo::SUCCESS;
         }
 
@@ -64,6 +72,7 @@ namespace HiddenButNotExposed {
                 return clearDataResult;
             }
             //内存实现
+            m_configMap->clear();
             return ErrorInfo::SUCCESS;
         }
 

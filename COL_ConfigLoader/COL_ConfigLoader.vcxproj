@@ -171,6 +171,9 @@
     <None Include="packages.config" />
     <None Include="README.md" />
   </ItemGroup>
+  <ItemGroup>
+    <Xml Include="database\XMLFile.xml" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
     <Import Project="..\packages\pugixml.1.14.0\build\native\pugixml.targets" Condition="Exists('..\packages\pugixml.1.14.0\build\native\pugixml.targets')" />
