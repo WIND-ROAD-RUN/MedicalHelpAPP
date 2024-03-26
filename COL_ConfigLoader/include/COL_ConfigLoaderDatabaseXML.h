@@ -11,7 +11,8 @@ namespace HiddenButNotExposed {
         class ConfigLoaderDatabaseXML
             :public ConfigLoaderDatabaseAbstract{
         public:
-            ConfigLoaderDatabaseXML(const String& filePath = "") :m_filePath(filePath) {};
+            ConfigLoaderDatabaseXML(const String& filePath) :m_filePath(filePath) {};
+            ConfigLoaderDatabaseXML()=default;
             ~ConfigLoaderDatabaseXML() {};
 
         public:
@@ -38,7 +39,7 @@ namespace HiddenButNotExposed {
 
         private:
             pugi::xml_document* m_operatorDoc{nullptr};
-            String m_filePath;
+            String m_filePath{};
 
         };
         
