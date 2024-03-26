@@ -95,6 +95,8 @@ namespace HiddenButNotExposed {
                 m_database = new ConfigLoaderDatabaseXML();
             }
 
+            if (!m_configMap)m_configMap = new ConfigLoaderDatabaseAbstract::ConfigMap;
+
             auto iniDatabaseResult = m_database->iniCom();
             if (iniDatabaseResult != ErrorInfo::SUCCESS) {
                 return iniDatabaseResult;

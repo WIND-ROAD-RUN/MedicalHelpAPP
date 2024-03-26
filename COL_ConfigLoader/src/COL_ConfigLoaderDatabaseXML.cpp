@@ -71,8 +71,8 @@ namespace HiddenButNotExposed {
             if (!m_operatorDoc)return ErrorInfo::ERROR;
             for (pugi::xml_node& tool : m_operatorDoc->child("ConfigLoaderString")) {
                 if (tool.first_attribute().value() == name) {
-                    if (tool.text().get() == value)return ErrorInfo::SUCCESS;
-                    return ErrorInfo::SEARCH_ERROR_VALUE;
+                    value = tool.text().get();
+                    return ErrorInfo::SUCCESS;
                 }
             }
             return ErrorInfo::SEARCH_ERROR_NAME;
