@@ -1,5 +1,6 @@
 #include "COL_ConfigLoaderDatabaseXML.h"
 
+
 namespace HiddenButNotExposed {
     namespace COL {
         ConfigLoaderDatabaseXML::ErrorInfo 
@@ -38,13 +39,26 @@ namespace HiddenButNotExposed {
         ConfigLoaderDatabaseXML::ErrorInfo 
             ConfigLoaderDatabaseXML::changeConfig(const String& name, const String& value)
         {
+
+
+
             return ErrorInfo();
         }
 
         ConfigLoaderDatabaseXML::ErrorInfo 
             ConfigLoaderDatabaseXML::searchConfig(const String& name, String& value) const
         {
-            return ErrorInfo();
+            for (pugi::xml_node& tool : m_operatorDoc->child("ConfigLoaderString")) {
+                if (tool.first_attribute().value() == name) {
+                    for (pugi::xml_node& tools : tool.child("country").children()) {
+                        if (tools.first_attribute().value() == value) {
+                            return ErrorInfo::SUCCESS;
+                        }
+                    }
+                    return ErrorInfo::SEARCH_ERROR_VALUE;
+                }
+            }
+            return ErrorInfo::SEARCH_ERROR_NAME;
         }
 
         ConfigLoaderDatabaseXML::ErrorInfo 
@@ -56,7 +70,8 @@ namespace HiddenButNotExposed {
         ConfigLoaderDatabaseXML::ErrorInfo 
             ConfigLoaderDatabaseXML::clearData()
         {
-            return ErrorInfo();
+            m_operatorDoc->remove_children();
+            return ErrorInfo::CLEAR_ERROR;
         }
 
         ConfigLoaderDatabaseXML::ErrorInfo 

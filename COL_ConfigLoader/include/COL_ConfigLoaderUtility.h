@@ -1,6 +1,5 @@
 #ifndef COL_CONFIGLOADERUTILITY_H_
 #define COL_CONFIGLOADERUTILITY_H_
-
 #include<string>
 #include<vector>
 #include<map>
