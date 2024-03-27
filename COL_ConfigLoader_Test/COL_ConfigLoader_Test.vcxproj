@@ -142,8 +142,8 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\Typora\markdown导出文件\README .md" />
     <None Include="packages.config" />
+    <None Include="README .md" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\COL_ConfigLoader\COL_ConfigLoader.vcxproj">
