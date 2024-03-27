@@ -24,9 +24,9 @@ namespace HiddenButNotExposed {
             using ConfigMap = Map<String, String>;
 
         public:
-             virtual ErrorInfo iniCom() = 0;
+            inline virtual ErrorInfo iniCom() = 0;
 
-             virtual ErrorInfo desCom() = 0;
+            inline virtual ErrorInfo desCom() = 0;
 
         public:
             virtual ErrorInfo addConfig(const String& name, const String& value) = 0;

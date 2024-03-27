@@ -5,13 +5,9 @@ namespace HiddenButNotExposed {
 
         ConfigLoader* ConfigLoader::m_instance = nullptr;
 
-
         //==================================================================
         //          ConfigLoader_Database  FUNCTION RELIZE
         //==================================================================
-
-        ConfigLoader_Database::ConfigLoader_Database() {}
-        ConfigLoader_Database::~ConfigLoader_Database() {}
 
         ConfigLoader_Database::ErrorInfo
             ConfigLoader_Database::addConfig
@@ -138,81 +134,7 @@ namespace HiddenButNotExposed {
 
 
 
-        ConfigLoader_Database::ErrorInfo
-            ConfigLoader_Database::iniCom() {
-            if (!m_database) {
-                m_database = new ConfigLoaderDatabaseXML();
-            }
-
-            if (!m_configMap)m_configMap = new ConfigLoaderDatabaseAbstract::ConfigMap;
-
-            auto iniDatabaseResult = m_database->iniCom();
-            if (iniDatabaseResult != ErrorInfo::SUCCESS) {
-                return iniDatabaseResult;
-            }
-
-            auto iniConfigMapResult = m_database->getConfigMap(m_configMap);
-            if (iniConfigMapResult != ErrorInfo::SUCCESS) {
-                return iniConfigMapResult;
-            }
-
-            return ErrorInfo::SUCCESS;
-        }
-
-        ConfigLoader_Database::ErrorInfo
-            ConfigLoader_Database::desCom() {
-            auto desDatabaseResult = m_database->desCom();
-            if (desDatabaseResult != ErrorInfo::SUCCESS) {
-                return desDatabaseResult;
-            }
-
-            if (m_configMap) {
-                delete m_configMap;
-            }
-
-            if (m_database) {
-                delete m_database;
-            }
-
-            return ErrorInfo::SUCCESS;
-        }
-
-        ConfigLoader::ErrorInfo
-            ConfigLoader::iniCom() {
-            if (!m_databaseLoader) {
-                m_databaseLoader = new ConfigLoader_Database();
-            }
-
-            auto iniDatabaseLoaderResult = m_databaseLoader->iniCom();
-            if (iniDatabaseLoaderResult != ErrorInfo::SUCCESS) {
-                return iniDatabaseLoaderResult;
-            }
-
-            return ErrorInfo::SUCCESS;
-        }
-
-        ConfigLoader::ErrorInfo
-            ConfigLoader::desCom() {
-
-            auto desDatabaseLoaderResult = m_databaseLoader->desCom();
-            if (desDatabaseLoaderResult != ErrorInfo::SUCCESS) {
-                return desDatabaseLoaderResult;
-            }
-
-            if (m_databaseLoader) {
-                delete m_databaseLoader;
-            }
-
-            return ErrorInfo::SUCCESS;
-        }
-
-
-        ConfigLoader* ConfigLoader::getInstance() {
-            if (!m_instance) {
-                m_instance = new ConfigLoader();
-            }
-            return m_instance;
-        }
+        
 
     }//package
 }//Company
