@@ -1,7 +1,31 @@
 #include <COL_ConfigLoaderDatabaseXML.h>
+#include<pugixml.hpp>
 
 namespace HiddenButNotExposed {
     namespace COL {
+        ConfigLoaderDatabaseXML::ErrorInfo
+            ConfigLoaderDatabaseXML::iniCom()
+        {
+            if (m_filePath.empty())return ErrorInfo::INI_ERROR;
+            if (!m_operatorDoc)m_operatorDoc = new pugi::xml_document;
+            auto result = m_operatorDoc->load_file(m_filePath.c_str());
+            if (!result)return ErrorInfo::INI_ERROR;
+            if (m_operatorDoc->child("ConfigLoaderString") == NULL)
+                m_operatorDoc->append_child("ConfigLoaderString");
+            return ErrorInfo::SUCCESS;
+        }
+
+        ConfigLoaderDatabaseXML::ErrorInfo
+            ConfigLoaderDatabaseXML::desCom()
+        {
+            m_filePath.clear();
+            if (m_operatorDoc)delete m_operatorDoc;
+            return ErrorInfo::SUCCESS;
+        }
+
+        void ConfigLoaderDatabaseXML::setFilePath(const String& filePath) {
+            m_filePath = filePath;
+        }
 
         ConfigLoaderDatabaseXML::ErrorInfo 
             ConfigLoaderDatabaseXML::addConfig(const String& name, const String& value)
