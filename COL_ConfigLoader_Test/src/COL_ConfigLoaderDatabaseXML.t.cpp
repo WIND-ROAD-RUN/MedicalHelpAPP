@@ -320,6 +320,21 @@ namespace HiddenButNotExposed {
 
             }
 
+            TEST(GET_CONFIG_MAP, FIRST_LAYER)
+            {
+                ConfigLoaderDatabaseXMLTest testObject;
+                auto test = testObject.getTestObject();
+
+                auto result = test->iniCom();
+
+                ConfigLoaderDatabaseAbstract::ConfigMap* configMap = new ConfigLoaderDatabaseAbstract::ConfigMap();
+
+                result = test->getConfigMap(configMap);
+                EXPECT_EQ(result, ConfigLoaderDataUtility::ErrorInfo::SUCCESS) << "获取文件中所有配置信息失败";
+
+                result = test->desCom();
+            }
+
             TEST(CLEAR_DATA, FIRST_LAYER)
             {
                 ConfigLoaderDatabaseXMLTest testObject;
