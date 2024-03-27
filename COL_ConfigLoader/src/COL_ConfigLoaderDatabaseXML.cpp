@@ -1,4 +1,4 @@
-#include "COL_ConfigLoaderDatabaseXML.h"
+#include <COL_ConfigLoaderDatabaseXML.h>
 
 namespace HiddenButNotExposed {
     namespace COL {
