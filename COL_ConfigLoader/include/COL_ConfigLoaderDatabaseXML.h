@@ -12,17 +12,17 @@ namespace HiddenButNotExposed {
     namespace COL {
 
         class ConfigLoaderDatabaseXML
-            :public ConfigLoaderDatabaseAbstract{
+            :public ConfigLoaderDatabaseAbstract {
         public:
             ConfigLoaderDatabaseXML(const String& filePath) :m_filePath(filePath) {};
-            ConfigLoaderDatabaseXML()=default;
+            ConfigLoaderDatabaseXML() = default;
             ~ConfigLoaderDatabaseXML() {};
 
         public:
             // 通过 ConfigLoaderDatabaseAbstract 继承
-             ErrorInfo iniCom() override;
+            ErrorInfo iniCom() override;
 
-             ErrorInfo desCom() override;
+            ErrorInfo desCom() override;
 
             ErrorInfo addConfig(const String& name, const String& value) override;
 
@@ -38,19 +38,19 @@ namespace HiddenButNotExposed {
 
             ErrorInfo saveData() override;
         public:
-            inline void setFilePath(const String & filePath);
+            inline void setFilePath(const String& filePath);
 
         private:
-            pugi::xml_document* m_operatorDoc{nullptr};
+            pugi::xml_document* m_operatorDoc{ nullptr };
             String m_filePath{};
 
         };
-        
-//=================================================================================
-//                      INLINE  FUNCTION DEFINITIONS
-//=================================================================================
 
-        
+        //=================================================================================
+        //                      INLINE  FUNCTION DEFINITIONS
+        //=================================================================================
+
+
     }//package
 }//Company
 

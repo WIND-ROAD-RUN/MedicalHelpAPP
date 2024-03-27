@@ -11,7 +11,7 @@
 
 namespace HiddenButNotExposed {
 	namespace COL {
-		const static ConfigLoaderDatabaseAbstract::String DEFAULT_PATH = R"(D:\code\Repo\COL_ConfigLoader_Test\database\dataFile.xml)";
+		const static ConfigLoaderDatabaseAbstract::String DEFAULT_PATH = R"(G:\project\code_place\vs_code_place\MedicalHelp\COL_ConfigLoader_Test\database\datafile.xml)";
 	
 		class ConfigLoaderDatabaseXMLTest {
 		private:
