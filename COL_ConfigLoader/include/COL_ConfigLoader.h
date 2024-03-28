@@ -17,7 +17,7 @@ namespace HiddenButNotExposed {
         private:
             ConfigLoaderDatabaseAbstract* m_database{ nullptr };
 
-            ConfigLoaderDatabaseAbstract::ConfigMap* m_configMap{nullptr};
+            ConfigLoaderDatabaseAbstract::ConfigMap* m_configMap{ nullptr };
 
         public:
             ConfigLoader_Database();

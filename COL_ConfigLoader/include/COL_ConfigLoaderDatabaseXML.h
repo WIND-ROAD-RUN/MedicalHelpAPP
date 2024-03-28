@@ -14,8 +14,9 @@ namespace HiddenButNotExposed {
         class ConfigLoaderDatabaseXML
             :public ConfigLoaderDatabaseAbstract{
         public:
-            ConfigLoaderDatabaseXML(const String& filePath) :m_filePath(filePath) {};
-            ConfigLoaderDatabaseXML()=default;
+            ConfigLoaderDatabaseXML(const String& filePath
+            = R"(D:\code\repo1\COL_ConfigLoader\database\XMLFile.xml)") :m_filePath(filePath) {};
+            //ConfigLoaderDatabaseXML()=default;
             ~ConfigLoaderDatabaseXML() {};
 
         public:

@@ -19,7 +19,7 @@ namespace HiddenButNotExposed {
 		public:
 			ConfigLoaderDatabaseXMLTest()
 			{
-				m_intconfigloader = new ConfigLoaderDatabaseXML(R"(D:\code\repo1\COL_ConfigLoader\database\XMLFile.xml)");
+				m_intconfigloader = new ConfigLoaderDatabaseXML();
 			}
 
 			~ConfigLoaderDatabaseXMLTest()
