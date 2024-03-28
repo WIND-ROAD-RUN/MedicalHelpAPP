@@ -10,7 +10,8 @@ namespace HiddenButNotExposed {
         //          ConfigLoader_Database  FUNCTION RELIZE
         //==================================================================
 
-        ConfigLoader_Database::ConfigLoader_Database() {}
+        ConfigLoader_Database::ConfigLoader_Database
+        (ConfigLoaderDatabaseAbstract* database):m_database(database) {}
         ConfigLoader_Database::~ConfigLoader_Database() {}
 
         ConfigLoader_Database::ErrorInfo
@@ -207,10 +208,11 @@ namespace HiddenButNotExposed {
         }
 
 
-        ConfigLoader* ConfigLoader::getInstance() {
+        ConfigLoader* ConfigLoader::getInstance(ConfigLoaderDatabaseAbstract* database ) {
             if (!m_instance) {
-                m_instance = new ConfigLoader();
+                m_instance = new ConfigLoader(database);
             }
+
             return m_instance;
         }
 

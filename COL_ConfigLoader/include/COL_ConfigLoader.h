@@ -20,7 +20,7 @@ namespace HiddenButNotExposed {
             ConfigLoaderDatabaseAbstract::ConfigMap* m_configMap{ nullptr };
 
         public:
-            ConfigLoader_Database();
+            ConfigLoader_Database(ConfigLoaderDatabaseAbstract * database=new ConfigLoaderDatabaseXML);
 
             ~ConfigLoader_Database();
 
@@ -51,12 +51,13 @@ namespace HiddenButNotExposed {
             using String = ConfigLoaderDataUtility::String;
 
         private:
-            ConfigLoader() {}
+            ConfigLoader(ConfigLoaderDatabaseAbstract* database = new ConfigLoaderDatabaseXML):
+                m_databaseLoader(new ConfigLoader_Database(database)) {}
 
             static ConfigLoader* m_instance;
 
         public:
-             static ConfigLoader* getInstance();
+             static ConfigLoader* getInstance(ConfigLoaderDatabaseAbstract* database = new ConfigLoaderDatabaseXML);
 
             ~ConfigLoader() {}
 
