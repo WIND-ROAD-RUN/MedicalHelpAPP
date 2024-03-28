@@ -11,7 +11,7 @@
 
 namespace HiddenButNotExposed {
 	namespace COL {
-		const static ConfigLoaderDatabaseAbstract::String DEFAULT_PATH = R"(D:\code\Repo\COL_ConfigLoader_Test\database\dataFile.xml)";
+		const static ConfigLoaderDatabaseAbstract::String DEFAULT_PATH = R"(D:\code\repo1\COL_ConfigLoader\database\XMLFile.xml)";
 	
 		class ConfigLoaderDatabaseXMLTest {
 		private:
@@ -19,7 +19,7 @@ namespace HiddenButNotExposed {
 		public:
 			ConfigLoaderDatabaseXMLTest()
 			{
-				m_intconfigloader = new ConfigLoaderDatabaseXML(DEFAULT_PATH);
+				m_intconfigloader = new ConfigLoaderDatabaseXML(R"(D:\code\repo1\COL_ConfigLoader\database\XMLFile.xml)");
 			}
 
 			~ConfigLoaderDatabaseXMLTest()
