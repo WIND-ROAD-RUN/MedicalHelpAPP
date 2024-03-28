@@ -57,7 +57,8 @@ namespace HiddenButNotExposed {
             static ConfigLoader* m_instance;
 
         public:
-             static ConfigLoader* getInstance(ConfigLoaderDatabaseAbstract* database = new ConfigLoaderDatabaseXML);
+             static ConfigLoader* getInstance
+             (ConfigLoaderDatabaseAbstract* database = new ConfigLoaderDatabaseXML);
 
             ~ConfigLoader() {}
 
