@@ -19,6 +19,7 @@ namespace HiddenButNotExposed {
             ~InternationalLanguageManagerWindow();
 
         public:
+            void ini_UI();
             void build_ui();
 
             void build_connect();
@@ -26,7 +27,12 @@ namespace HiddenButNotExposed {
         private:
             Ui::InternationalLanguageManagerWindowClass* ui;
 
+        public slots:
+            void pbtn_openFile_clicked();
+
         };
+
+
     }//package
 
 }// company

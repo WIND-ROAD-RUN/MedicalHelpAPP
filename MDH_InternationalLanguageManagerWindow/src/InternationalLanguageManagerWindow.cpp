@@ -1,4 +1,5 @@
 #include "InternationalLanguageManagerWindow.h"
+#include<QMessageBox>
 
 namespace HiddenButNotExposed {
     namespace MDH {
@@ -8,15 +9,20 @@ namespace HiddenButNotExposed {
         {
             ui->setupUi(this);
 
-            build_ui();
-
-            build_connect();
+            ini_UI();
 
         }
 
         InternationalLanguageManagerWindow::~InternationalLanguageManagerWindow()
         {
             delete ui;
+        }
+
+        void InternationalLanguageManagerWindow::ini_UI()
+        {
+            build_ui();
+
+            build_connect();
         }
 
         void InternationalLanguageManagerWindow::build_ui()
@@ -26,7 +32,12 @@ namespace HiddenButNotExposed {
 
         void InternationalLanguageManagerWindow::build_connect()
         {
+            QObject::connect(ui->pbtn_openFile,&QPushButton::clicked,
+                this,&InternationalLanguageManagerWindow::pbtn_openFile_clicked);
+        }
 
+        void InternationalLanguageManagerWindow::pbtn_openFile_clicked() {
+       
         }
     }//package
 
