@@ -100,7 +100,7 @@ namespace HiddenButNotExposed {
         {
             if (!m_operatorDoc)return ErrorInfo::ERROR;
             m_operatorDoc->child("ConfigLoaderString").remove_children();
-            return ErrorInfo::CLEAR_ERROR;
+            return ErrorInfo::SUCCESS;
         }
 
         ConfigLoaderDatabaseXML::ErrorInfo 
