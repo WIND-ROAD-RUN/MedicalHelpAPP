@@ -33,6 +33,22 @@ namespace HiddenButNotExposed {
 				return m_intconfigloader;
 			}
 		};
+
+		/*class ConfigLoaderTest {
+		private:
+			ConfigLoaderDatabaseAbstract* m_intconfigloader{ nullptr };
+		public:
+			ConfigLoaderTest()
+			{
+				m_intconfigloader = new ConfigLoader(new ConfigLoaderDatabaseXML(DEFAULT_PATH));
+			}
+			~ConfigLoaderTest() { delete m_intconfigloader; }
+		public:
+			ConfigLoader* getTestObject()
+			{
+				return m_intconfigloader;
+			}
+		};*/
 	}
 }
 
