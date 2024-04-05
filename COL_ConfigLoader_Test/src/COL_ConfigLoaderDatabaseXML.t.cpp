@@ -6,13 +6,17 @@ namespace HiddenButNotExposed {
 	namespace COL {
 
 		namespace CONFIG_LOADER_DATA_XML {
+
+            const static ConfigLoaderDatabaseAbstract::String DEFAULT_PATH =
+                R"(C:\Users\86158\Desktop\Repo\COL_ConfigLoader\database\XMLFile.xml)";
+
 			TEST(INI_COM, FIRST_LAYER)
 			{
-				ConfigLoaderDatabaseXMLTest testObject;
-				auto test = testObject.getTestObject();
+				/*ConfigLoaderDatabaseXMLTest testObject;
+				auto test = testObject.getTestObject();*/
 
-                /*ConfigLoaderDatabaseAbstract* test;
-                test = new ConfigLoaderDatabaseXML();*/
+                ConfigLoaderDatabaseAbstract* test;
+                test = new ConfigLoaderDatabaseXML(DEFAULT_PATH);
 
 				auto result = test->iniCom();
 
@@ -28,11 +32,11 @@ namespace HiddenButNotExposed {
 
 			TEST(DES_COM, FIRST_LAYER)
 			{
-				ConfigLoaderDatabaseXMLTest testObject;
-				auto test = testObject.getTestObject();
+				/*ConfigLoaderDatabaseXMLTest testObject;
+				auto test = testObject.getTestObject();*/
 
-                /*ConfigLoaderDatabaseAbstract* test;
-                test = new ConfigLoaderDatabaseXML();*/
+                ConfigLoaderDatabaseAbstract* test;
+                test = new ConfigLoaderDatabaseXML(DEFAULT_PATH);
 
 				auto result = test->iniCom();
 
@@ -43,8 +47,11 @@ namespace HiddenButNotExposed {
             
             TEST(ADD_CONFIG, FIRST_LAYER)
             {
-                ConfigLoaderDatabaseXMLTest testObject;
-                auto test = testObject.getTestObject();
+                /*ConfigLoaderDatabaseXMLTest testObject;
+                auto test = testObject.getTestObject();*/
+
+                ConfigLoaderDatabaseAbstract* test;
+                test = new ConfigLoaderDatabaseXML(DEFAULT_PATH);
 
                 auto result = test->iniCom();
 
@@ -72,8 +79,11 @@ namespace HiddenButNotExposed {
             
             TEST(ADD_CONFIG, SECOND_LAYER)
             {
-                ConfigLoaderDatabaseXMLTest testObject;
-                auto test = testObject.getTestObject();
+                /*ConfigLoaderDatabaseXMLTest testObject;
+                auto test = testObject.getTestObject();*/
+
+                ConfigLoaderDatabaseAbstract* test;
+                test = new ConfigLoaderDatabaseXML(DEFAULT_PATH);
 
                 ConfigLoader::String s;
 
@@ -114,8 +124,11 @@ namespace HiddenButNotExposed {
             
             TEST(DEL_CONFIG, FIRST_LAYER)
             {
-                ConfigLoaderDatabaseXMLTest testObject;
-                auto test = testObject.getTestObject();
+                /*ConfigLoaderDatabaseXMLTest testObject;
+                auto test = testObject.getTestObject();*/
+
+                ConfigLoaderDatabaseAbstract* test;
+                test = new ConfigLoaderDatabaseXML(DEFAULT_PATH);
 
                 ConfigLoader::String s;
 
@@ -145,8 +158,11 @@ namespace HiddenButNotExposed {
 
             TEST(DEL_CONFIG, SECOND_LAYER)
             {
-                ConfigLoaderDatabaseXMLTest testObject;
-                auto test = testObject.getTestObject();
+                /*ConfigLoaderDatabaseXMLTest testObject;
+                auto test = testObject.getTestObject();*/
+
+                ConfigLoaderDatabaseAbstract* test;
+                test = new ConfigLoaderDatabaseXML(DEFAULT_PATH);
 
                 ConfigLoader::String s;
 
@@ -190,8 +206,11 @@ namespace HiddenButNotExposed {
 
             TEST(CHANGE_CONFIG, FIRST_LAYER)
             {
-                ConfigLoaderDatabaseXMLTest testObject;
-                auto test = testObject.getTestObject();
+                /*ConfigLoaderDatabaseXMLTest testObject;
+                auto test = testObject.getTestObject();*/
+
+                ConfigLoaderDatabaseAbstract* test;
+                test = new ConfigLoaderDatabaseXML(DEFAULT_PATH);
 
                 ConfigLoader::String s;
 
@@ -224,8 +243,11 @@ namespace HiddenButNotExposed {
 
             TEST(CHANGE_CONFIG, SECOND_LAYER)
             {
-                ConfigLoaderDatabaseXMLTest testObject;
-                auto test = testObject.getTestObject();
+                /*ConfigLoaderDatabaseXMLTest testObject;
+                auto test = testObject.getTestObject();*/
+
+                ConfigLoaderDatabaseAbstract* test;
+                test = new ConfigLoaderDatabaseXML(DEFAULT_PATH);
 
                 ConfigLoader::String s1, s2;
 
@@ -272,8 +294,11 @@ namespace HiddenButNotExposed {
 
             TEST(SEARCH_CONFIG, FIRST_LAYER)
             {
-                ConfigLoaderDatabaseXMLTest testObject;
-                auto test = testObject.getTestObject();
+                /*ConfigLoaderDatabaseXMLTest testObject;
+                auto test = testObject.getTestObject();*/
+
+                ConfigLoaderDatabaseAbstract* test;
+                test = new ConfigLoaderDatabaseXML(DEFAULT_PATH);
 
                 ConfigLoader::String s;
 
@@ -298,8 +323,11 @@ namespace HiddenButNotExposed {
 
             TEST(SEARCH_CONFIG, SECOND_LAYER)
             {
-                ConfigLoaderDatabaseXMLTest testObject;
-                auto test = testObject.getTestObject();
+                /*ConfigLoaderDatabaseXMLTest testObject;
+                auto test = testObject.getTestObject();*/
+
+                ConfigLoaderDatabaseAbstract* test;
+                test = new ConfigLoaderDatabaseXML(DEFAULT_PATH);
 
                 ConfigLoader::String s1, s2;
 
@@ -335,8 +363,11 @@ namespace HiddenButNotExposed {
 
             TEST(SAVE_DATA, FIRST_LAYER)
             {
-                ConfigLoaderDatabaseXMLTest testObject;
-                auto test = testObject.getTestObject();
+                /*ConfigLoaderDatabaseXMLTest testObject;
+                auto test = testObject.getTestObject();*/
+
+                ConfigLoaderDatabaseAbstract* test;
+                test = new ConfigLoaderDatabaseXML(DEFAULT_PATH);
 
                 auto result = test->iniCom();
 
@@ -352,8 +383,11 @@ namespace HiddenButNotExposed {
 
             TEST(SAVE_DATA, SECOND_LAYER)
             {
-                ConfigLoaderDatabaseXMLTest testObject;
-                auto test = testObject.getTestObject();
+                /*ConfigLoaderDatabaseXMLTest testObject;
+                auto test = testObject.getTestObject();*/
+
+                ConfigLoaderDatabaseAbstract* test;
+                test = new ConfigLoaderDatabaseXML(DEFAULT_PATH);
 
                 ConfigLoader::String s;
 
@@ -378,8 +412,11 @@ namespace HiddenButNotExposed {
 
             TEST(GET_CONFIG_MAP, FIRST_LAYER)
             {
-                ConfigLoaderDatabaseXMLTest testObject;
-                auto test = testObject.getTestObject();
+                /*ConfigLoaderDatabaseXMLTest testObject;
+                auto test = testObject.getTestObject();*/
+
+                ConfigLoaderDatabaseAbstract* test;
+                test = new ConfigLoaderDatabaseXML(DEFAULT_PATH);
 
                 auto result = test->iniCom();
 
@@ -393,8 +430,11 @@ namespace HiddenButNotExposed {
 
             TEST(CLEAR_DATA, FIRST_LAYER)
             {
-                ConfigLoaderDatabaseXMLTest testObject;
-                auto test = testObject.getTestObject();
+                /*ConfigLoaderDatabaseXMLTest testObject;
+                auto test = testObject.getTestObject();*/
+
+                ConfigLoaderDatabaseAbstract* test;
+                test = new ConfigLoaderDatabaseXML(DEFAULT_PATH);
 
                 auto result = test->iniCom();
 
@@ -409,8 +449,11 @@ namespace HiddenButNotExposed {
 
             TEST(CLEAR_DATA, SECOND_LAYER)
             {
-                ConfigLoaderDatabaseXMLTest testObject;
-                auto test = testObject.getTestObject();
+                /*ConfigLoaderDatabaseXMLTest testObject;
+                auto test = testObject.getTestObject();*/
+
+                ConfigLoaderDatabaseAbstract* test;
+                test = new ConfigLoaderDatabaseXML(DEFAULT_PATH);
 
                 ConfigLoader::String s;
 
@@ -450,8 +493,11 @@ namespace HiddenButNotExposed {
             
             TEST(SYNTHESISE, FIRST_LAYER)
             {
-                ConfigLoaderDatabaseXMLTest testObject;
-                auto test = testObject.getTestObject();
+                /*ConfigLoaderDatabaseXMLTest testObject;
+                auto test = testObject.getTestObject();*/
+
+                ConfigLoaderDatabaseAbstract* test;
+                test = new ConfigLoaderDatabaseXML(DEFAULT_PATH);
 
                 ConfigLoader::String s1, s2;
 
@@ -519,8 +565,11 @@ namespace HiddenButNotExposed {
 
             TEST(SYNTHESISE, SECOND_LAYER)
             {
-                ConfigLoaderDatabaseXMLTest testObject;
-                auto test = testObject.getTestObject();
+                /*ConfigLoaderDatabaseXMLTest testObject;
+                auto test = testObject.getTestObject();*/
+
+                ConfigLoaderDatabaseAbstract* test;
+                test = new ConfigLoaderDatabaseXML(DEFAULT_PATH);
 
                 ConfigLoader::String s1, s2, s3;
 

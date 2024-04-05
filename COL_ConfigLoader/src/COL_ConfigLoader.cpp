@@ -209,9 +209,11 @@ namespace HiddenButNotExposed {
 
 
         ConfigLoader* ConfigLoader::getInstance(ConfigLoaderDatabaseAbstract* database ) {
-            if (!m_instance) {
+            /*if (!m_instance) {
                 m_instance = new ConfigLoader(database);
-            }
+            }*/
+
+            m_instance = new ConfigLoader(database);
 
             return m_instance;
         }

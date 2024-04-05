@@ -6,7 +6,7 @@ namespace HiddenButNotExposed {
         ConfigLoaderDatabaseXML::ErrorInfo
             ConfigLoaderDatabaseXML::iniCom()
         {
-            if (m_filePath.empty())return ErrorInfo::INI_ERROR;
+            if (m_filePath.empty())m_filePath = DEFAULT_PATH;
             if (!m_operatorDoc)m_operatorDoc = new pugi::xml_document;
             auto result = m_operatorDoc->load_file(m_filePath.c_str());
             if (!result)return ErrorInfo::INI_ERROR;

@@ -1,5 +1,6 @@
 #include<iostream>
 #include<COL_ConfigLoaderDatabaseXML.h>
+#include<COL_ConfigLoader.h>
 
 using namespace HiddenButNotExposed;
 using namespace COL;
@@ -7,8 +8,8 @@ using namespace COL;
 
 int main()
 {
-	ConfigLoaderDatabaseXML* xmlLoader;
-	xmlLoader = new ConfigLoaderDatabaseXML(R"(.\database\XMLFile.xml)");
+	ConfigLoader* xmlLoader;
+	xmlLoader = ConfigLoader::getInstance();
 	xmlLoader->iniCom();
 	xmlLoader->desCom();
 	
