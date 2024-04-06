@@ -9,8 +9,6 @@ namespace HiddenButNotExposed {
 
             TEST(INI_COM, FIRST_LAYER)
             {
-                /*ConfigLoaderDatabaseAbstract* m = new ConfigLoaderDatabaseXML(DEFAULT_PATH);
-                ConfigLoader* test =ConfigLoader::getInstance(m);*/
                 ConfigLoader* test = ConfigLoader::getInstance(new ConfigLoaderDatabaseXML(DEFAULT_PATH));
 
                 auto result = test->iniCom();
@@ -22,31 +20,29 @@ namespace HiddenButNotExposed {
                 result = test->saveData();
 
                 result = test->desCom();
-                //delete test;
+                delete test;
             }
 
-            //TEST(DES_COM, FIRST_LAYER)
-            //{
-            //    ConfigLoader* test = ConfigLoader::getInstance(new ConfigLoaderDatabaseXML(DEFAULT_PATH));
-            //    /*ConfigLoaderDatabaseAbstract* m = new ConfigLoaderDatabaseXML(DEFAULT_PATH);
-            //    ConfigLoader* test = ConfigLoader::getInstance(m);*/
+            TEST(DES_COM, FIRST_LAYER)
+            {
+                ConfigLoader* test = ConfigLoader::getInstance(new ConfigLoaderDatabaseXML(DEFAULT_PATH));
 
-            //    auto result = test->iniCom();
-            //    result = test->saveData();
-            //    EXPECT_TRUE(test != NULL)<<"初始化失败";
-            //    EXPECT_EQ(result, ConfigLoaderDataUtility::ErrorInfo::SUCCESS);
+                auto result = test->iniCom();
+                result = test->saveData();
+                EXPECT_TRUE(test != NULL)<<"初始化失败";
+                EXPECT_EQ(result, ConfigLoaderDataUtility::ErrorInfo::SUCCESS);
 
-            //    result = test->clearData();
-            //    result = test->saveData();
+                result = test->clearData();
+                result = test->saveData();
 
-            //    result = test->desCom();
-            //    EXPECT_EQ(result, ConfigLoaderDataUtility::ErrorInfo::SUCCESS) << "销毁内存准备工作失败";
+                result = test->desCom();
+                EXPECT_EQ(result, ConfigLoaderDataUtility::ErrorInfo::SUCCESS) << "销毁内存准备工作失败";
 
-            //    //delete test;
+                delete test;
 
-            //}
+            }
 
-           /* TEST(ADD_CONFIG, FIRST_LAYER)
+            TEST(ADD_CONFIG, FIRST_LAYER)
             {
                 ConfigLoader* test = ConfigLoader::getInstance(new ConfigLoaderDatabaseXML(DEFAULT_PATH));
 
@@ -70,9 +66,9 @@ namespace HiddenButNotExposed {
                 result = test->desCom();
 
                 delete test;
-            }*/
+            }
 
-           /* TEST(ADD_CONFIG, SECOND_LAYER)
+            TEST(ADD_CONFIG, SECOND_LAYER)
             {
                 ConfigLoader* test = ConfigLoader::getInstance(new ConfigLoaderDatabaseXML(DEFAULT_PATH));
 
@@ -112,9 +108,9 @@ namespace HiddenButNotExposed {
                 result = test->desCom();
 
                 delete test;
-            }*/
+            }
 
-           /* TEST(DEL_CONFIG, FIRST_LAYER)
+            TEST(DEL_CONFIG, FIRST_LAYER)
             {
                 ConfigLoader* test = ConfigLoader::getInstance(new ConfigLoaderDatabaseXML(DEFAULT_PATH));
 
@@ -144,9 +140,9 @@ namespace HiddenButNotExposed {
 
                 delete test;
 
-            }*/
+            }
 
-            /*TEST(DEL_CONFIG, SECOND_LAYER)
+            TEST(DEL_CONFIG, SECOND_LAYER)
             {
                 ConfigLoader* test = ConfigLoader::getInstance(new ConfigLoaderDatabaseXML(DEFAULT_PATH));
 
@@ -191,9 +187,9 @@ namespace HiddenButNotExposed {
 
                 delete test;
 
-            }*/
+            }
 
-           /* TEST(CHANGE_CONFIG, FIRST_LAYER)
+            TEST(CHANGE_CONFIG, FIRST_LAYER)
             {
                 ConfigLoader* test = ConfigLoader::getInstance(new ConfigLoaderDatabaseXML(DEFAULT_PATH));
 
@@ -224,9 +220,9 @@ namespace HiddenButNotExposed {
                 result = test->desCom();
 
                 delete test;
-            }*/
+            }
 
-            /*TEST(CHANGE_CONFIG, SECOND_LAYER)
+            TEST(CHANGE_CONFIG, SECOND_LAYER)
             {
                 ConfigLoader* test = ConfigLoader::getInstance(new ConfigLoaderDatabaseXML(DEFAULT_PATH));
 
@@ -272,9 +268,9 @@ namespace HiddenButNotExposed {
                 result = test->desCom();
 
                 delete test;
-            }*/
+            }
 
-           /* TEST(SEARCH_CONFIG, FIRST_LAYER)
+            TEST(SEARCH_CONFIG, FIRST_LAYER)
             {
                 ConfigLoader* test = ConfigLoader::getInstance(new ConfigLoaderDatabaseXML(DEFAULT_PATH));
 
@@ -299,9 +295,9 @@ namespace HiddenButNotExposed {
                 result = test->desCom();
 
                 delete test;
-            }*/
+            }
 
-           /* TEST(SEARCH_CONFIG, SECOND_LAYER)
+            TEST(SEARCH_CONFIG, SECOND_LAYER)
             {
                 ConfigLoader* test = ConfigLoader::getInstance(new ConfigLoaderDatabaseXML(DEFAULT_PATH));
 
@@ -336,9 +332,9 @@ namespace HiddenButNotExposed {
                 result = test->desCom();
 
                 delete test;
-            }*/
+            }
 
-          /*  TEST(SAVE_DATA, FIRST_LAYER)
+            TEST(SAVE_DATA, FIRST_LAYER)
             {
                 ConfigLoader* test = ConfigLoader::getInstance(new ConfigLoaderDatabaseXML(DEFAULT_PATH));
 
@@ -353,35 +349,35 @@ namespace HiddenButNotExposed {
                 result = test->desCom();
 
                 delete test;
-            }*/
+            }
 
-            //TEST(SAVE_DATA, SECOND_LAYER)
-            //{
-            //    ConfigLoader* test = ConfigLoader::getInstance(new ConfigLoaderDatabaseXML(DEFAULT_PATH));
+            TEST(SAVE_DATA, SECOND_LAYER)
+            {
+                ConfigLoader* test = ConfigLoader::getInstance(new ConfigLoaderDatabaseXML(DEFAULT_PATH));
 
-            //    ConfigLoader::String s;
+                ConfigLoader::String s;
 
-            //    auto result = test->iniCom();
+                auto result = test->iniCom();
 
-            //    result = test->addConfig("CHN", "THRIVE");
-            //    EXPECT_EQ(result, ConfigLoader::ErrorInfo::SUCCESS) << "添加配置信息失败";
+                result = test->addConfig("CHN", "THRIVE");
+                EXPECT_EQ(result, ConfigLoader::ErrorInfo::SUCCESS) << "添加配置信息失败";
 
-            //    result = test->saveData();
-            //    EXPECT_EQ(result, ConfigLoaderDataUtility::ErrorInfo::SUCCESS) << "保存配置信息失败";
+                result = test->saveData();
+                EXPECT_EQ(result, ConfigLoaderDataUtility::ErrorInfo::SUCCESS) << "保存配置信息失败";
 
-            //    result = test->searchConfig("CHN", s);
-            //    EXPECT_EQ(result, ConfigLoader::ErrorInfo::SUCCESS) << "查询配置信息失败";
-            //    EXPECT_EQ(s, "THRIVE") << "配置信息未保存";
+                result = test->searchConfig("CHN", s);
+                EXPECT_EQ(result, ConfigLoader::ErrorInfo::SUCCESS) << "查询配置信息失败";
+                EXPECT_EQ(s, "THRIVE") << "配置信息未保存";
 
-            //    result = test->clearData();
-            //    result = test->saveData();
+                result = test->clearData();
+                result = test->saveData();
 
-            //    result = test->desCom();
+                result = test->desCom();
 
-            //    delete test;
-            //}
+                delete test;
+            }
 
-           /* TEST(CLEAR_DATA, FIRST_LAYER)
+            TEST(CLEAR_DATA, FIRST_LAYER)
             {
                 ConfigLoader* test = ConfigLoader::getInstance(new ConfigLoaderDatabaseXML(DEFAULT_PATH));
 
@@ -393,9 +389,9 @@ namespace HiddenButNotExposed {
                 result = test->desCom();
 
                 delete test;
-            }*/
+            }
 
-            /*TEST(CLEAR_DATA, SECOND_LAYER)
+            TEST(CLEAR_DATA, SECOND_LAYER)
             {
                 ConfigLoader* test = ConfigLoader::getInstance(new ConfigLoaderDatabaseXML(DEFAULT_PATH));
 
@@ -434,9 +430,9 @@ namespace HiddenButNotExposed {
                 result = test->desCom();
 
                 delete test;
-            }*/
+            }
 
-            /*TEST(SYNTHESISE, FIRST_LAYER)
+            TEST(SYNTHESISE, FIRST_LAYER)
             {
                 ConfigLoader* test = ConfigLoader::getInstance(new ConfigLoaderDatabaseXML(DEFAULT_PATH));
 
@@ -501,110 +497,110 @@ namespace HiddenButNotExposed {
                 result = test->desCom();
 
                 delete test;
-            }*/
+            }
 
-            //TEST(SYNTHESISE, SECOND_LAYER)
-            //{
-            //    ConfigLoader* test = ConfigLoader::getInstance(new ConfigLoaderDatabaseXML(DEFAULT_PATH));
+            TEST(SYNTHESISE, SECOND_LAYER)
+            {
+                ConfigLoader* test = ConfigLoader::getInstance(new ConfigLoaderDatabaseXML(DEFAULT_PATH));
 
-            //    ConfigLoader::String s1, s2,s3;
+                ConfigLoader::String s1, s2,s3;
 
-            //    auto result = test->iniCom();
-            //    EXPECT_EQ(result, ConfigLoader::ErrorInfo::SUCCESS) << "初始化错误";
-            //    result = test->saveData();
+                auto result = test->iniCom();
+                EXPECT_EQ(result, ConfigLoader::ErrorInfo::SUCCESS) << "初始化错误";
+                result = test->saveData();
 
-            //    result = test->addConfig("CHN", "THRIVE");
-            //    EXPECT_EQ(result, ConfigLoader::ErrorInfo::SUCCESS) << "添加配置信息失败";
-            //    result = test->saveData();
+                result = test->addConfig("CHN", "THRIVE");
+                EXPECT_EQ(result, ConfigLoader::ErrorInfo::SUCCESS) << "添加配置信息失败";
+                result = test->saveData();
 
-            //    result = test->searchConfig("CHN", s1);
-            //    EXPECT_EQ(result, ConfigLoader::ErrorInfo::SUCCESS) << "查询CHN的配置信息失败";
-            //    EXPECT_EQ(s1, "THRIVE") << "查询的配置信息错误";
+                result = test->searchConfig("CHN", s1);
+                EXPECT_EQ(result, ConfigLoader::ErrorInfo::SUCCESS) << "查询CHN的配置信息失败";
+                EXPECT_EQ(s1, "THRIVE") << "查询的配置信息错误";
 
-            //    result = test->addConfig("chn", "THRIVE");
-            //    EXPECT_EQ(result, ConfigLoader::ErrorInfo::SUCCESS) << "添加配置信息失败";
-            //    result = test->saveData();
+                result = test->addConfig("chn", "THRIVE");
+                EXPECT_EQ(result, ConfigLoader::ErrorInfo::SUCCESS) << "添加配置信息失败";
+                result = test->saveData();
 
-            //    result = test->searchConfig("chn", s2);
-            //    EXPECT_EQ(result, ConfigLoader::ErrorInfo::SUCCESS) << "查询CHN的配置信息失败";
-            //    EXPECT_EQ(s2, "THRIVE") << "查询的配置信息错误";
+                result = test->searchConfig("chn", s2);
+                EXPECT_EQ(result, ConfigLoader::ErrorInfo::SUCCESS) << "查询CHN的配置信息失败";
+                EXPECT_EQ(s2, "THRIVE") << "查询的配置信息错误";
 
-            //    result = test->changeConfig("CHN", "THRIVE");
-            //    EXPECT_EQ(result, ConfigLoader::ErrorInfo::SUCCESS) << "修改配置信息为原值失败";
-            //    result = test->saveData();
+                result = test->changeConfig("CHN", "THRIVE");
+                EXPECT_EQ(result, ConfigLoader::ErrorInfo::SUCCESS) << "修改配置信息为原值失败";
+                result = test->saveData();
 
-            //    result = test->changeConfig("chn", "STRONGER");
-            //    EXPECT_EQ(result, ConfigLoader::ErrorInfo::SUCCESS) << "修改配置信息失败";
-            //    result = test->saveData();
+                result = test->changeConfig("chn", "STRONGER");
+                EXPECT_EQ(result, ConfigLoader::ErrorInfo::SUCCESS) << "修改配置信息失败";
+                result = test->saveData();
 
-            //    result = test->searchConfig("CHN", s1);
-            //    EXPECT_EQ(result, ConfigLoader::ErrorInfo::SUCCESS) << "查询CHN的配置信息失败";
-            //    EXPECT_EQ(s1, "THRIVE") << "查询的配置信息错误";
+                result = test->searchConfig("CHN", s1);
+                EXPECT_EQ(result, ConfigLoader::ErrorInfo::SUCCESS) << "查询CHN的配置信息失败";
+                EXPECT_EQ(s1, "THRIVE") << "查询的配置信息错误";
 
-            //    result = test->searchConfig("chn", s2);
-            //    EXPECT_EQ(result, ConfigLoader::ErrorInfo::SUCCESS) << "查询CHN的配置信息失败";
-            //    EXPECT_NE(s2, "THRIVE") << "查询的配置信息错误";
+                result = test->searchConfig("chn", s2);
+                EXPECT_EQ(result, ConfigLoader::ErrorInfo::SUCCESS) << "查询CHN的配置信息失败";
+                EXPECT_NE(s2, "THRIVE") << "查询的配置信息错误";
 
-            //    result = test->deleteConfig("chn", "THRIVE");
-            //    EXPECT_NE(result, ConfigLoader::ErrorInfo::SUCCESS) << "chn的value错误可以删除对应配置信息";
+                result = test->deleteConfig("chn", "THRIVE");
+                EXPECT_NE(result, ConfigLoader::ErrorInfo::SUCCESS) << "chn的value错误可以删除对应配置信息";
 
-            //    result = test->searchConfig("chn", s2);
-            //    EXPECT_EQ(s2, "STRONGER") << "查询的配置信息错误";
+                result = test->searchConfig("chn", s2);
+                EXPECT_EQ(s2, "STRONGER") << "查询的配置信息错误";
 
-            //    result = test->deleteConfig("CHN", "THRIVE");
-            //    EXPECT_EQ(result, ConfigLoader::ErrorInfo::SUCCESS) << "删除CHN的配置信息失败";
-            //    result = test->saveData();
+                result = test->deleteConfig("CHN", "THRIVE");
+                EXPECT_EQ(result, ConfigLoader::ErrorInfo::SUCCESS) << "删除CHN的配置信息失败";
+                result = test->saveData();
 
-            //    result = test->searchConfig("CHN", s1);
-            //    EXPECT_NE(result, ConfigLoader::ErrorInfo::SUCCESS) << "删除CHN的配置信息失败";
+                result = test->searchConfig("CHN", s1);
+                EXPECT_NE(result, ConfigLoader::ErrorInfo::SUCCESS) << "删除CHN的配置信息失败";
 
-            //    result = test->clearData();
-            //    EXPECT_EQ(result, ConfigLoader::ErrorInfo::SUCCESS) << "清空文件中的配置信息失败";
+                result = test->clearData();
+                EXPECT_EQ(result, ConfigLoader::ErrorInfo::SUCCESS) << "清空文件中的配置信息失败";
 
-            //    result = test->saveData();
+                result = test->saveData();
 
-            //    result = test->searchConfig("chn", s2);
-            //    EXPECT_NE(result, ConfigLoader::ErrorInfo::SUCCESS) << "文件中的配置信息未被全部清空";
+                result = test->searchConfig("chn", s2);
+                EXPECT_NE(result, ConfigLoader::ErrorInfo::SUCCESS) << "文件中的配置信息未被全部清空";
 
-            //    result = test->addConfig("USA", "$$$$$");
-            //    EXPECT_EQ(result, ConfigLoader::ErrorInfo::SUCCESS) << "添加配置信息失败";
-            //    result = test->saveData();
+                result = test->addConfig("USA", "$$$$$");
+                EXPECT_EQ(result, ConfigLoader::ErrorInfo::SUCCESS) << "添加配置信息失败";
+                result = test->saveData();
 
-            //    result = test->changeConfig("BBQ", "$$$$$");
-            //    EXPECT_NE(result, ConfigLoader::ErrorInfo::SUCCESS) << "未添加的配置信息也可被修改，文件是否清空异常";
+                result = test->changeConfig("BBQ", "$$$$$");
+                EXPECT_NE(result, ConfigLoader::ErrorInfo::SUCCESS) << "未添加的配置信息也可被修改，文件是否清空异常";
 
-            //    result = test->searchConfig("UK", s3);
-            //    EXPECT_NE(result, ConfigLoader::ErrorInfo::SUCCESS) << "未添加的配置信息也可被查询，文件是否清空异常";
+                result = test->searchConfig("UK", s3);
+                EXPECT_NE(result, ConfigLoader::ErrorInfo::SUCCESS) << "未添加的配置信息也可被查询，文件是否清空异常";
 
-            //    result = test->deleteConfig("USAA", "$$$$$");
-            //    EXPECT_NE(result, ConfigLoader::ErrorInfo::SUCCESS) << "name错误的配置信息可以被异常删除";
+                result = test->deleteConfig("USAA", "$$$$$");
+                EXPECT_NE(result, ConfigLoader::ErrorInfo::SUCCESS) << "name错误的配置信息可以被异常删除";
 
-            //    result = test->searchConfig("USA", s3);
-            //    EXPECT_EQ(result, ConfigLoader::ErrorInfo::SUCCESS) << "查询配置信息失败";
-            //    EXPECT_EQ(s3, "$$$$$") << "查询到错误的配置信息";
+                result = test->searchConfig("USA", s3);
+                EXPECT_EQ(result, ConfigLoader::ErrorInfo::SUCCESS) << "查询配置信息失败";
+                EXPECT_EQ(s3, "$$$$$") << "查询到错误的配置信息";
 
-            //    result = test->changeConfig("USA", "!@#$%");
-            //    EXPECT_EQ(result, ConfigLoader::ErrorInfo::SUCCESS) << "修改配置信息失败";
-            //    result = test->saveData();
+                result = test->changeConfig("USA", "!@#$%");
+                EXPECT_EQ(result, ConfigLoader::ErrorInfo::SUCCESS) << "修改配置信息失败";
+                result = test->saveData();
 
-            //    result = test->searchConfig("USA", s3);
-            //    EXPECT_EQ(result, ConfigLoader::ErrorInfo::SUCCESS) << "查询配置信息失败";
-            //    EXPECT_EQ(s3, "!@#$%") << "USA的配置信息未被成功修改";
+                result = test->searchConfig("USA", s3);
+                EXPECT_EQ(result, ConfigLoader::ErrorInfo::SUCCESS) << "查询配置信息失败";
+                EXPECT_EQ(s3, "!@#$%") << "USA的配置信息未被成功修改";
 
-            //    result = test->clearData();
-            //    EXPECT_EQ(result, ConfigLoader::ErrorInfo::SUCCESS) << "清空文件中的配置信息失败";
-            //    result = test->saveData();
+                result = test->clearData();
+                EXPECT_EQ(result, ConfigLoader::ErrorInfo::SUCCESS) << "清空文件中的配置信息失败";
+                result = test->saveData();
 
-            //    result = test->searchConfig("USA", s3);
-            //    EXPECT_NE(result, ConfigLoader::ErrorInfo::SUCCESS) << "清空文件中的配置信息失败";
+                result = test->searchConfig("USA", s3);
+                EXPECT_NE(result, ConfigLoader::ErrorInfo::SUCCESS) << "清空文件中的配置信息失败";
 
-            //    result = test->clearData();
-            //    result = test->saveData();
+                result = test->clearData();
+                result = test->saveData();
 
-            //    result = test->desCom();
+                result = test->desCom();
 
-            //    delete test;
-            //}
+                delete test;
+            }
         }
     }
 }

@@ -6,13 +6,10 @@ namespace HiddenButNotExposed {
 	namespace COL {
 
 		namespace CONFIG_LOADER_DATA_XML {
-			TEST(INI_COM, FIRST_LAYER)
+			TEST(INI_COM_, FIRST_LAYER)
 			{
 				ConfigLoaderDatabaseXMLTest testObject;
 				auto test = testObject.getTestObject();
-
-                /*ConfigLoaderDatabaseAbstract* test;
-                test = new ConfigLoaderDatabaseXML();*/
 
 				auto result = test->iniCom();
 
@@ -23,16 +20,12 @@ namespace HiddenButNotExposed {
 
 				result = test->desCom();
 
-                //delete test;
 			}
 
-			TEST(DES_COM, FIRST_LAYER)
+			TEST(DES_COM_, FIRST_LAYER)
 			{
 				ConfigLoaderDatabaseXMLTest testObject;
 				auto test = testObject.getTestObject();
-
-                /*ConfigLoaderDatabaseAbstract* test;
-                test = new ConfigLoaderDatabaseXML();*/
 
 				auto result = test->iniCom();
 
@@ -41,7 +34,7 @@ namespace HiddenButNotExposed {
 
 			}
             
-            TEST(ADD_CONFIG, FIRST_LAYER)
+            TEST(ADD_CONFIG_, FIRST_LAYER)
             {
                 ConfigLoaderDatabaseXMLTest testObject;
                 auto test = testObject.getTestObject();
@@ -70,7 +63,7 @@ namespace HiddenButNotExposed {
 
             }
             
-            TEST(ADD_CONFIG, SECOND_LAYER)
+            TEST(ADD_CONFIG_, SECOND_LAYER)
             {
                 ConfigLoaderDatabaseXMLTest testObject;
                 auto test = testObject.getTestObject();
@@ -112,7 +105,7 @@ namespace HiddenButNotExposed {
 
             }
             
-            TEST(DEL_CONFIG, FIRST_LAYER)
+            TEST(DEL_CONFIG_, FIRST_LAYER)
             {
                 ConfigLoaderDatabaseXMLTest testObject;
                 auto test = testObject.getTestObject();
@@ -143,7 +136,7 @@ namespace HiddenButNotExposed {
 
             }
 
-            TEST(DEL_CONFIG, SECOND_LAYER)
+            TEST(DEL_CONFIG_, SECOND_LAYER)
             {
                 ConfigLoaderDatabaseXMLTest testObject;
                 auto test = testObject.getTestObject();
@@ -188,7 +181,7 @@ namespace HiddenButNotExposed {
 
             }
 
-            TEST(CHANGE_CONFIG, FIRST_LAYER)
+            TEST(CHANGE_CONFIG_, FIRST_LAYER)
             {
                 ConfigLoaderDatabaseXMLTest testObject;
                 auto test = testObject.getTestObject();
@@ -222,7 +215,7 @@ namespace HiddenButNotExposed {
 
             }
 
-            TEST(CHANGE_CONFIG, SECOND_LAYER)
+            TEST(CHANGE_CONFIG_, SECOND_LAYER)
             {
                 ConfigLoaderDatabaseXMLTest testObject;
                 auto test = testObject.getTestObject();
@@ -270,7 +263,7 @@ namespace HiddenButNotExposed {
 
             }
 
-            TEST(SEARCH_CONFIG, FIRST_LAYER)
+            TEST(SEARCH_CONFIG_, FIRST_LAYER)
             {
                 ConfigLoaderDatabaseXMLTest testObject;
                 auto test = testObject.getTestObject();
@@ -296,7 +289,7 @@ namespace HiddenButNotExposed {
                 result = test->desCom();
             }
 
-            TEST(SEARCH_CONFIG, SECOND_LAYER)
+            TEST(SEARCH_CONFIG_, SECOND_LAYER)
             {
                 ConfigLoaderDatabaseXMLTest testObject;
                 auto test = testObject.getTestObject();
@@ -333,7 +326,7 @@ namespace HiddenButNotExposed {
 
             }
 
-            TEST(SAVE_DATA, FIRST_LAYER)
+            TEST(SAVE_DATA_, FIRST_LAYER)
             {
                 ConfigLoaderDatabaseXMLTest testObject;
                 auto test = testObject.getTestObject();
@@ -350,7 +343,7 @@ namespace HiddenButNotExposed {
 
             }
 
-            TEST(SAVE_DATA, SECOND_LAYER)
+            TEST(SAVE_DATA_, SECOND_LAYER)
             {
                 ConfigLoaderDatabaseXMLTest testObject;
                 auto test = testObject.getTestObject();
@@ -376,7 +369,7 @@ namespace HiddenButNotExposed {
 
             }
 
-            TEST(GET_CONFIG_MAP, FIRST_LAYER)
+            TEST(GET_CONFIG_MAP_, FIRST_LAYER)
             {
                 ConfigLoaderDatabaseXMLTest testObject;
                 auto test = testObject.getTestObject();
@@ -391,7 +384,7 @@ namespace HiddenButNotExposed {
                 result = test->desCom();
             }
 
-            TEST(CLEAR_DATA, FIRST_LAYER)
+            TEST(CLEAR_DATA_, FIRST_LAYER)
             {
                 ConfigLoaderDatabaseXMLTest testObject;
                 auto test = testObject.getTestObject();
@@ -407,7 +400,7 @@ namespace HiddenButNotExposed {
 
             }
 
-            TEST(CLEAR_DATA, SECOND_LAYER)
+            TEST(CLEAR_DATA_, SECOND_LAYER)
             {
                 ConfigLoaderDatabaseXMLTest testObject;
                 auto test = testObject.getTestObject();
@@ -448,7 +441,7 @@ namespace HiddenButNotExposed {
 
             }
             
-            TEST(SYNTHESISE, FIRST_LAYER)
+            TEST(SYNTHESISE_, FIRST_LAYER)
             {
                 ConfigLoaderDatabaseXMLTest testObject;
                 auto test = testObject.getTestObject();
@@ -517,7 +510,7 @@ namespace HiddenButNotExposed {
 
             }
 
-            TEST(SYNTHESISE, SECOND_LAYER)
+            TEST(SYNTHESISE_, SECOND_LAYER)
             {
                 ConfigLoaderDatabaseXMLTest testObject;
                 auto test = testObject.getTestObject();
