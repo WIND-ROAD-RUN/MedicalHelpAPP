@@ -14,4 +14,10 @@ public:
 
 private:
     Ui::InternationalLanguageUiClass ui;
+
+private slots:
+    void pushButton_5_Clicked();
+    void pushButton_Clicked();
+    void pushButton_2_Clicked();
+    void pushButton_3_Clicked();
 };

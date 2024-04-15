@@ -272,7 +272,7 @@
     <item>
      <widget class="QStackedWidget" name="stackedWidget_2">
       <property name="currentIndex">
-       <number>3</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="page_5">
        <widget class="QWidget" name="widget_2" native="true">
@@ -814,5 +814,76 @@
  <resources>
   <include location="InternationalLanguageUi.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>pushButton_5</sender>
+   <signal>clicked()</signal>
+   <receiver>InternationalLanguageUiClass</receiver>
+   <slot>pushButton_5_Clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>588</x>
+     <y>33</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>609</x>
+     <y>5</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>InternationalLanguageUiClass</receiver>
+   <slot>pushButton_Clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>538</x>
+     <y>76</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>734</x>
+     <y>73</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>InternationalLanguageUiClass</receiver>
+   <slot>pushButton_2_Clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>619</x>
+     <y>119</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>733</x>
+     <y>123</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_3</sender>
+   <signal>clicked()</signal>
+   <receiver>InternationalLanguageUiClass</receiver>
+   <slot>pushButton_3_Clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>689</x>
+     <y>163</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>731</x>
+     <y>169</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>pushButton_5_Clicked()</slot>
+  <slot>pushButton_Clicked()</slot>
+  <slot>pushButton_2_Clicked()</slot>
+  <slot>pushButton_3_Clicked()</slot>
+ </slots>
 </ui>
