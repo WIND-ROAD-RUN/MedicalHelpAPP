@@ -33,6 +33,23 @@ namespace HiddenButNotExposed {
 
                 auto result = test->iniCom();
                 result = test->saveData();
+                EXPECT_TRUE(test != NULL) << "初始化失败";
+                EXPECT_EQ(result, ConfigLoaderDataUtility::ErrorInfo::SUCCESS) << "初始化失败";
+
+                result = test->clearData();
+                result = test->saveData();
+
+                result = test->desCom();
+                delete test;
+            }
+
+            TEST(DES_COM, FIRST_LAYER)
+            {
+                ConfigLoader* test = ConfigLoader::getInstance(new ConfigLoaderDatabaseXML(DEFAULT_PATH));
+
+                auto result = test->iniCom();
+                result = test->saveData();
+                EXPECT_TRUE(test != NULL)<<"初始化失败";
                 EXPECT_EQ(result, ConfigLoaderDataUtility::ErrorInfo::SUCCESS);
 
                 result = test->clearData();
