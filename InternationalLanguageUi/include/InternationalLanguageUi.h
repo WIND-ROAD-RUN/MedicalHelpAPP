@@ -20,4 +20,6 @@ private slots:
     void pushButton_Clicked();
     void pushButton_2_Clicked();
     void pushButton_3_Clicked();
+    void pushButton_4_Clicked();
+    void pushButton_7_Clicked();
 };

@@ -879,11 +879,45 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>pushButton_4</sender>
+   <signal>clicked()</signal>
+   <receiver>InternationalLanguageUiClass</receiver>
+   <slot>pushButton_4_Clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>677</x>
+     <y>248</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>732</x>
+     <y>229</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_7</sender>
+   <signal>clicked()</signal>
+   <receiver>InternationalLanguageUiClass</receiver>
+   <slot>pushButton_7_Clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>688</x>
+     <y>289</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>733</x>
+     <y>281</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>pushButton_5_Clicked()</slot>
   <slot>pushButton_Clicked()</slot>
   <slot>pushButton_2_Clicked()</slot>
   <slot>pushButton_3_Clicked()</slot>
+  <slot>pushButton_4_Clicked()</slot>
+  <slot>pushButton_7_Clicked()</slot>
  </slots>
 </ui>

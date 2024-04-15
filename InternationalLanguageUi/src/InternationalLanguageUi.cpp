@@ -28,3 +28,13 @@ void InternationalLanguageUi::pushButton_3_Clicked()
 {
     ui.stackedWidget_2->setCurrentIndex(3);
 }
+
+void InternationalLanguageUi::pushButton_4_Clicked()
+{
+    ui.stackedWidget->setCurrentIndex(0);
+}
+
+void InternationalLanguageUi::pushButton_7_Clicked()
+{
+    ui.stackedWidget->setCurrentIndex(1);
+}
