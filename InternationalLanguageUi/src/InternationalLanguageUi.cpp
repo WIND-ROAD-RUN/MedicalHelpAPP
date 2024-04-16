@@ -112,3 +112,162 @@ void InternationalLanguageUi::pushButton_7_Clicked()
 {
     ui.stackedWidget->setCurrentIndex(1);
 }
+
+void InternationalLanguageUi::pushButton_8_Clicked()
+{
+    QString id, language, string;
+    id = ui.lineEdit_2->text();
+    language = ui.lineEdit_3->text();
+    string = ui.lineEdit->text();
+    bool is_success = true;
+    if (id.isEmpty() || language.isEmpty() || string.isEmpty())is_success = false;
+    if (is_success) {
+        auto result = tool->storeString(id.toStdString(), language.toStdString(), string.toStdString());
+        if (result != HiddenButNotExposed::ILS::IntLanguageUtility::ErrorInfo::SUCCESS)is_success = false;
+    }
+    if (is_success) {
+        tool->desCom();
+        tool->iniCom();
+        tool->getMap(intLanMap);
+        ui.treeWidget->clear();
+        initTree1();
+        ui.treeWidget_2->clear();
+        initTree2();
+        ui.label_4->setText("运行结果：AC");
+    }
+    else {
+        ui.label_4->setText("运行结果：WA");
+    }
+}
+
+void InternationalLanguageUi::pushButton_10_Clicked()
+{
+    QString id = ui.lineEdit_6->text(), language = ui.lineEdit_7->text();
+    std::string s;
+    bool is_success = true;
+    auto result = tool->searchString(id.toStdString(), language.toStdString(), s);
+    if (result != HiddenButNotExposed::ILS::IntLanguageUtility::ErrorInfo::SUCCESS)is_success = false;
+    if (is_success) {
+        ui.label_10->setText("result：SUCCESS");
+        ui.label_11->setText(QString("id:%1").arg(id));
+        ui.label_12->setText(QString("语言:%1").arg(language));
+        ui.label_13->setText(QString("字符:%1").arg(QString::fromStdString(s)));
+    }
+    else {
+        ui.label_10->setText("result：NONE");
+        ui.label_11->setText("id:");
+        ui.label_12->setText("语言:");
+        ui.label_13->setText("字符:");
+    }
+}
+
+void InternationalLanguageUi::pushButton_11_Clicked()
+{
+    pushButton_10_Clicked();
+}
+
+void InternationalLanguageUi::pushButton_9_Clicked()
+{
+    QString id = ui.lineEdit_4->text(), language = ui.lineEdit_5->text();
+    bool is_success = true;
+    auto result = tool->delString(id.toStdString(), language.toStdString());
+    if (result != HiddenButNotExposed::ILS::IntLanguageUtility::ErrorInfo::SUCCESS)is_success = false;
+    if (is_success) {
+        tool->desCom();
+        tool->iniCom();
+        tool->getMap(intLanMap);
+        ui.treeWidget->clear();
+        initTree1();
+        ui.treeWidget_2->clear();
+        initTree2();
+        ui.label_7->setText("运行结果：AC");
+    }
+    else {
+        ui.label_7->setText("运行结果：WA");
+    }
+}
+
+void InternationalLanguageUi::pushButton_12_Clicked()
+{
+    int idx = ui.stackedWidget->currentIndex();
+    QString s = ui.lineEdit_8->text();
+    QString id, language;
+    QList<QTreeWidgetItem*> selectItem;
+
+    if (idx == 0) {
+        selectItem = ui.treeWidget->selectedItems();
+    }
+    else {
+        selectItem = ui.treeWidget_2->selectedItems();
+    }
+
+    if (selectItem.isEmpty() || s.isEmpty()) {
+        ui.label_15->setText("运行结果：ERROR");
+        return;
+    }
+
+    if (idx == 0) {
+
+        int layer = 0;
+        QTreeWidgetItem* st = selectItem.first();
+        while (st && st->parent()) {
+            layer++; st = st->parent();
+        }
+
+        if (layer != 2) {
+            ui.label_15->setText("运行结果：ERROR");
+            return;
+        }
+
+        st = selectItem.first();
+        language = st->parent()->text(0);
+        language = language.mid(8);
+        id = st->parent()->parent()->text(0);
+        id = id.mid(3);
+    }
+    else {
+        int layer = 0;
+        QTreeWidgetItem* st = selectItem.first();
+        while (st && st->parent()) {
+            layer++; st = st->parent();
+        }
+
+        if (layer != 2) {
+            ui.label_15->setText("运行结果：ERROR");
+            return;
+        }
+
+        st = selectItem.first();
+        id = st->parent()->text(0);
+        id = id.mid(3);
+        language = st->parent()->parent()->text(0);
+        language = language.mid(8);
+    }
+
+    auto result = tool->changeString(id.toStdString(), language.toStdString(), s.toStdString());
+    if (result != HiddenButNotExposed::ILS::IntLanguageUtility::ErrorInfo::SUCCESS) {
+        ui.label_15->setText("运行结果：ERROR");
+        return;
+    }
+
+    tool->desCom();
+    tool->iniCom();
+    tool->getMap(intLanMap);
+    ui.treeWidget->clear();
+    initTree1();
+    ui.treeWidget_2->clear();
+    initTree2();
+    ui.label_15->setText("运行结果：SUCCESS");
+}
+
+void InternationalLanguageUi::pushButton_6_Clicked()
+{
+    tool->clearData();
+    tool->desCom();
+    tool->iniCom();
+    tool->getMap(intLanMap);
+    ui.treeWidget->clear();
+    initTree1();
+    ui.treeWidget_2->clear();
+    initTree2();
+}

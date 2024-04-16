@@ -127,6 +127,8 @@ namespace HiddenButNotExposed {
 
             IntLanguageDataAbstract::ErrorInfo getMap(const String& language, IntLanguageDataAbstract::LanStringMap* &lanStringMap) const;
 
+            IntLanguageDataAbstract::ErrorInfo changeString(const String& id, const String& language, const String& s);
+
             bool clearData();
         };
 

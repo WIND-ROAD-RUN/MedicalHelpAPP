@@ -2,8 +2,8 @@
 <LanguageTranslate>
 	<String id="1">
 		<Country>
-			<language language="USA">Hello</language>
 			<language language="CHN">你好</language>
+			<language language="USA">hello</language>
 		</Country>
 	</String>
 </LanguageTranslate>

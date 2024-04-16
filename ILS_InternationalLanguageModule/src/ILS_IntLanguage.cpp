@@ -222,9 +222,9 @@ namespace HiddenButNotExposed {
                 return false;
             }
 
-            if (m_intLanguageData) {
+            /*if (m_intLanguageData) {
                 delete m_intLanguageData;
-            }
+            }*/
 
             return true;
         }
@@ -277,6 +277,14 @@ namespace HiddenButNotExposed {
         bool IntLanguageManager::clearData()
         {
             auto result = m_intLanguageData->clearData();
+
+            return result;
+        }
+
+        IntLanguageDataAbstract::ErrorInfo
+            IntLanguageManager::changeString
+            (const String& id, const String& language, const String& s) {
+            auto result = m_intLanguageData->changeString(id, language, s);
 
             return result;
         }

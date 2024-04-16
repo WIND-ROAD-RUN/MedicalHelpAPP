@@ -42,7 +42,7 @@ namespace HiddenButNotExposed {
                 m_operatorDoc->save_file(m_filePath.c_str());
                 delete m_operatorDoc;
             }
-            m_filePath.clear();
+            //m_filePath.clear();
             return IntLanguageDataAbstract::ErrorInfo::SUCCESS;
         }
 

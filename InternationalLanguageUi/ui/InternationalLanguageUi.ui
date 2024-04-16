@@ -272,7 +272,7 @@
     <item>
      <widget class="QStackedWidget" name="stackedWidget_2">
       <property name="currentIndex">
-       <number>0</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="page_5">
        <widget class="QWidget" name="widget_2" native="true">
@@ -567,7 +567,7 @@
                </font>
               </property>
               <property name="text">
-               <string>查找的字符串字符</string>
+               <string>查找的字符串语言</string>
               </property>
              </widget>
             </item>
@@ -628,18 +628,18 @@
          <property name="font">
           <font>
            <family>华文楷体</family>
-           <pointsize>12</pointsize>
+           <pointsize>13</pointsize>
           </font>
          </property>
          <property name="text">
-          <string>result(id/语言/字符串)：</string>
+          <string>result：</string>
          </property>
         </widget>
         <widget class="QLabel" name="label_11">
          <property name="geometry">
           <rect>
            <x>510</x>
-           <y>50</y>
+           <y>40</y>
            <width>201</width>
            <height>21</height>
           </rect>
@@ -658,7 +658,7 @@
          <property name="geometry">
           <rect>
            <x>510</x>
-           <y>80</y>
+           <y>70</y>
            <width>201</width>
            <height>21</height>
           </rect>
@@ -666,7 +666,7 @@
          <property name="font">
           <font>
            <family>华文楷体</family>
-           <pointsize>10</pointsize>
+           <pointsize>13</pointsize>
           </font>
          </property>
          <property name="text">
@@ -685,6 +685,7 @@
          <property name="font">
           <font>
            <family>华文楷体</family>
+           <pointsize>13</pointsize>
           </font>
          </property>
          <property name="text">
@@ -911,6 +912,102 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>pushButton_8</sender>
+   <signal>clicked()</signal>
+   <receiver>InternationalLanguageUiClass</receiver>
+   <slot>pushButton_8_Clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>571</x>
+     <y>346</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>735</x>
+     <y>336</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_10</sender>
+   <signal>clicked()</signal>
+   <receiver>InternationalLanguageUiClass</receiver>
+   <slot>pushButton_10_Clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>477</x>
+     <y>359</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>735</x>
+     <y>310</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_11</sender>
+   <signal>clicked()</signal>
+   <receiver>InternationalLanguageUiClass</receiver>
+   <slot>pushButton_11_Clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>454</x>
+     <y>415</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>733</x>
+     <y>383</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_9</sender>
+   <signal>clicked()</signal>
+   <receiver>InternationalLanguageUiClass</receiver>
+   <slot>pushButton_9_Clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>637</x>
+     <y>342</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>736</x>
+     <y>415</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_12</sender>
+   <signal>clicked()</signal>
+   <receiver>InternationalLanguageUiClass</receiver>
+   <slot>pushButton_12_Clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>430</x>
+     <y>427</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>488</x>
+     <y>476</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_6</sender>
+   <signal>clicked()</signal>
+   <receiver>InternationalLanguageUiClass</receiver>
+   <slot>pushButton_6_Clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>660</x>
+     <y>203</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>733</x>
+     <y>200</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>pushButton_5_Clicked()</slot>
@@ -919,5 +1016,11 @@
   <slot>pushButton_3_Clicked()</slot>
   <slot>pushButton_4_Clicked()</slot>
   <slot>pushButton_7_Clicked()</slot>
+  <slot>pushButton_8_Clicked()</slot>
+  <slot>pushButton_10_Clicked()</slot>
+  <slot>pushButton_11_Clicked()</slot>
+  <slot>pushButton_9_Clicked()</slot>
+  <slot>pushButton_12_Clicked()</slot>
+  <slot>pushButton_6_Clicked()</slot>
  </slots>
 </ui>
