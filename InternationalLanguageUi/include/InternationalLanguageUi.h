@@ -2,7 +2,10 @@
 
 #include <QtWidgets/QWidget>
 #include "ui_InternationalLanguageUi.h"
-#include "ILS_IntLanguage.h";
+#include "ILS_IntLanguage.h"
+#include "ILS_IntLanguageDataXML.h"
+#include "ILS_IntLanguageDataAbstract.h"
+#include "ILS_IntlanguageUtility.h"
 
 class InternationalLanguageUi : public QWidget
 {
@@ -13,11 +16,15 @@ public:
     ~InternationalLanguageUi();
 
 public:
-    const HiddenButNotExposed::ILS::IntLanguageDataAbstract::String DEFAULT_PATH;
+    HiddenButNotExposed::ILS::IntLanguageDataAbstract::String DEFAULT_PATH;
     HiddenButNotExposed::ILS::IntLanguageManager* tool;
+    HiddenButNotExposed::ILS::IntLanguageDataAbstract::IntLanMap* intLanMap;
+    HiddenButNotExposed::ILS::IntLanguageDataAbstract::IntLanMap* intLanStringMap;
 
 private:
     Ui::InternationalLanguageUiClass ui;
+    void initTree1();
+    void initTree2();
 
 private slots:
     void pushButton_5_Clicked();

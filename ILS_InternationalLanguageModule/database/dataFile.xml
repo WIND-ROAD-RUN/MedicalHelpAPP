@@ -1,2 +1,9 @@
 <?xml version="1.0"?>
-<LanguageTranslate />
+<LanguageTranslate>
+	<String id="1">
+		<Country>
+			<language language="USA">Hello</language>
+			<language language="CHN">你好</language>
+		</Country>
+	</String>
+</LanguageTranslate>
