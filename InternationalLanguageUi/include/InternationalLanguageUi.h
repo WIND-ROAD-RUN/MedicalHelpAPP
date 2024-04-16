@@ -12,6 +12,10 @@ public:
     InternationalLanguageUi(QWidget *parent = nullptr);
     ~InternationalLanguageUi();
 
+public:
+    const HiddenButNotExposed::ILS::IntLanguageDataAbstract::String DEFAULT_PATH;
+    HiddenButNotExposed::ILS::IntLanguageManager* tool;
+
 private:
     Ui::InternationalLanguageUiClass ui;
 

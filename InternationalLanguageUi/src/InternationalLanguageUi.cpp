@@ -3,6 +3,8 @@
 InternationalLanguageUi::InternationalLanguageUi(QWidget *parent)
     : QWidget(parent)
 {
+    /*tool = HiddenButNotExposed::ILS::IntLanguageManager::getInstance(new
+        HiddenButNotExposed::ILS::IntLanguageDataXML(DEFAULT_PATH));*/
     ui.setupUi(this);
 }
 
