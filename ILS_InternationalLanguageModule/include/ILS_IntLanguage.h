@@ -65,9 +65,8 @@ namespace HiddenButNotExposed {
             static IntLanguageCom*
                 getInstance(IntLanguageDataAbstract* intLanguageDataAbstract) {
                 if (!m_instance) {
-                    return new IntLanguageCom(intLanguageDataAbstract);
+                    return m_instance = new IntLanguageCom(intLanguageDataAbstract);
                 }
-
                 return m_instance;
             }
 
@@ -102,7 +101,7 @@ namespace HiddenButNotExposed {
             static IntLanguageManager*
                 getInstance(IntLanguageDataAbstract* intLanguageDataAbstract) {
                 if (!m_instance) {
-                    return new IntLanguageManager(intLanguageDataAbstract);
+                    return m_instance = new IntLanguageManager(intLanguageDataAbstract);
                 }
 
                 return m_instance;

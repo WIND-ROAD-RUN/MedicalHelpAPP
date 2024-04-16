@@ -6,6 +6,8 @@
 #include "QDir.h"
 #include "QWidget.h"
 #include "QTreeWidget.h"
+#include "ILS_IntLanguage.cpp"
+#include "ILS_IntLanguageDataXML.cpp"
 
 InternationalLanguageUi::InternationalLanguageUi(QWidget *parent)
     : QWidget(parent)
@@ -13,11 +15,11 @@ InternationalLanguageUi::InternationalLanguageUi(QWidget *parent)
     DEFAULT_PATH = R"(C:\Users\86158\Desktop\Repo\ILS_InternationalLanguageModule\database\dataFile.xml)";
     tool = HiddenButNotExposed::ILS::IntLanguageManager::getInstance(new
         HiddenButNotExposed::ILS::IntLanguageDataXML(DEFAULT_PATH));
-    //tool->getMap(intLanMap);
+    tool->getMap(intLanMap);
     ui.setupUi(this);
 
-    //initTree1();
-    //initTree2();
+    initTree1();
+    initTree2();
 }
 
 void InternationalLanguageUi::initTree1()
