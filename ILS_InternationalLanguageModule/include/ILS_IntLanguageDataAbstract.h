@@ -44,7 +44,7 @@ namespace HiddenButNotExposed {
 
             virtual ErrorInfo delString(const String& id, const String& language) = 0;
 
-            virtual ErrorInfo getMap(IntLanMap* intLanMap) const = 0;
+            virtual ErrorInfo getMap(IntLanMap* &intLanMap) const = 0;
 
             virtual ErrorInfo getMap(const String& language, LanStringMap* lanStringMap) const = 0;
 

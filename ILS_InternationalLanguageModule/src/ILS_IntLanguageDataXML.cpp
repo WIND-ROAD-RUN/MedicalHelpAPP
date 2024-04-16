@@ -137,7 +137,7 @@ namespace HiddenButNotExposed {
 
         IntLanguageDataAbstract::ErrorInfo
             IntLanguageDataXML::getMap
-            (IntLanguageDataAbstract::IntLanMap* intLanMap)const
+            (IntLanguageDataAbstract::IntLanMap* &intLanMap)const
         {
             if (!intLanMap)intLanMap = new IntLanMap;
             intLanMap->clear();

@@ -15,15 +15,19 @@ InternationalLanguageUi::InternationalLanguageUi(QWidget *parent)
     DEFAULT_PATH = R"(C:\Users\86158\Desktop\Repo\ILS_InternationalLanguageModule\database\dataFile.xml)";
     tool = HiddenButNotExposed::ILS::IntLanguageManager::getInstance(new
         HiddenButNotExposed::ILS::IntLanguageDataXML(DEFAULT_PATH));
+    intLanMap = new HiddenButNotExposed::ILS::IntLanguageDataAbstract::IntLanMap;
+    tool->iniCom();
     tool->getMap(intLanMap);
+    if (intLanMap)std::cout << "YES";
     ui.setupUi(this);
 
     initTree1();
-    initTree2();
+    //initTree2();
 }
 
 void InternationalLanguageUi::initTree1()
 {
+    if (!intLanMap)return;
     for (auto& Node:(*intLanMap)) {
         QTreeWidgetItem* p = new QTreeWidgetItem;
         QString s = QString("id-%1").arg(QString::fromStdString(Node.first));
@@ -31,7 +35,7 @@ void InternationalLanguageUi::initTree1()
         ui.treeWidget->addTopLevelItem(p);
         for (auto& sonNode : Node.second) {
             QTreeWidgetItem* pp = new QTreeWidgetItem;
-            QString ss = QString("country:").arg(QString::fromStdString(sonNode.first));
+            QString ss = QString("country:%1").arg(QString::fromStdString(sonNode.first));
             pp->setText(0, ss);
             p->addChild(pp);
 

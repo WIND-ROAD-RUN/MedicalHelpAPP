@@ -36,7 +36,7 @@ namespace HiddenButNotExposed {
 
             ErrorInfo delString(const String& id, const String& language) override;
 
-            ErrorInfo getMap(IntLanMap* intLanMap)const override;
+            ErrorInfo getMap(IntLanMap* &intLanMap)const override;
 
             ErrorInfo getMap(const String& language, LanStringMap* lanStringMap)const override;
 

@@ -122,7 +122,7 @@ namespace HiddenButNotExposed {
         }
 
         IntLanguageDataAbstract::ErrorInfo
-            IntLanguage_Database::getMap(IntLanMap* intLanMap) const
+            IntLanguage_Database::getMap(IntLanMap* &intLanMap) const
         {
             if (!intLanMap)intLanMap = new IntLanMap;
             intLanMap->clear();
@@ -258,7 +258,7 @@ namespace HiddenButNotExposed {
 
         IntLanguageDataAbstract::ErrorInfo 
             IntLanguageManager::getMap
-            (IntLanguageDataAbstract::IntLanMap* intLanMap) const
+            (IntLanguageDataAbstract::IntLanMap* &intLanMap) const
         {
             auto result = m_intLanguageData->getMap(intLanMap);
 
