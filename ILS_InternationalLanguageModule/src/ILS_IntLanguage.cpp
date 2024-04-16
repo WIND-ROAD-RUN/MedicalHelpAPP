@@ -132,7 +132,7 @@ namespace HiddenButNotExposed {
         }
 
         IntLanguageDataAbstract::ErrorInfo
-            IntLanguage_Database::getMap(const String& language, LanStringMap* lanStringMap) const
+            IntLanguage_Database::getMap(const String& language, LanStringMap* &lanStringMap) const
         {
             if (!lanStringMap)lanStringMap = new LanStringMap;
             if (!m_intLanMap)return ErrorInfo::GET_MAP_ERROR;
@@ -267,7 +267,7 @@ namespace HiddenButNotExposed {
 
         IntLanguageDataAbstract::ErrorInfo 
             IntLanguageManager::getMap
-            (const String& language, IntLanguageDataAbstract::LanStringMap* lanStringMap) const
+            (const String& language, IntLanguageDataAbstract::LanStringMap* &lanStringMap) const
         {
             auto result = m_intLanguageData->getMap(language, lanStringMap);
 

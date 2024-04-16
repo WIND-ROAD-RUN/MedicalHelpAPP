@@ -19,7 +19,7 @@ public:
     HiddenButNotExposed::ILS::IntLanguageDataAbstract::String DEFAULT_PATH;
     HiddenButNotExposed::ILS::IntLanguageManager* tool{ nullptr };
     HiddenButNotExposed::ILS::IntLanguageDataAbstract::IntLanMap* intLanMap{ nullptr };
-    HiddenButNotExposed::ILS::IntLanguageDataAbstract::IntLanMap* intLanStringMap{ nullptr };
+    HiddenButNotExposed::ILS::IntLanguageDataAbstract::LanStringMap* intLanStringMap{ nullptr };
 
 private:
     Ui::InternationalLanguageUiClass ui;

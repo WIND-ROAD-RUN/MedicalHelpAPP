@@ -81,7 +81,7 @@
             </property>
             <column>
              <property name="text">
-              <string notr="true">1</string>
+              <string notr="true">id排序</string>
              </property>
             </column>
            </widget>
@@ -121,7 +121,7 @@
             </property>
             <column>
              <property name="text">
-              <string notr="true">1</string>
+              <string notr="true">语言排序</string>
              </property>
             </column>
            </widget>

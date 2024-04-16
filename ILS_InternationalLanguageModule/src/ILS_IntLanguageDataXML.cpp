@@ -154,7 +154,7 @@ namespace HiddenButNotExposed {
         IntLanguageDataAbstract::ErrorInfo
             IntLanguageDataXML::getMap
             (const IntLanguageDataAbstract::String& language,
-                IntLanguageDataAbstract::LanStringMap* lanStringMap)const
+                IntLanguageDataAbstract::LanStringMap* &lanStringMap)const
         {
             if (!lanStringMap)lanStringMap = new LanStringMap;
             lanStringMap->clear();

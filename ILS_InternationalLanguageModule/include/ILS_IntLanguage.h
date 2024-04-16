@@ -41,7 +41,7 @@ namespace HiddenButNotExposed {
 
             ErrorInfo getMap(IntLanMap* &intLanMap) const override;
 
-            ErrorInfo getMap(const String& language, LanStringMap* lanStringMap) const override;
+            ErrorInfo getMap(const String& language, LanStringMap* &lanStringMap) const override;
 
             ErrorInfo clearData() override;
 
@@ -125,7 +125,7 @@ namespace HiddenButNotExposed {
 
             IntLanguageDataAbstract::ErrorInfo getMap(IntLanguageDataAbstract::IntLanMap* &intLanMap) const;
 
-            IntLanguageDataAbstract::ErrorInfo getMap(const String& language, IntLanguageDataAbstract::LanStringMap* lanStringMap) const;
+            IntLanguageDataAbstract::ErrorInfo getMap(const String& language, IntLanguageDataAbstract::LanStringMap* &lanStringMap) const;
 
             bool clearData();
         };

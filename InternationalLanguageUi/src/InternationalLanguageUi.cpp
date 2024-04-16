@@ -8,6 +8,7 @@
 #include "QTreeWidget.h"
 #include "ILS_IntLanguage.cpp"
 #include "ILS_IntLanguageDataXML.cpp"
+#include<set>
 
 InternationalLanguageUi::InternationalLanguageUi(QWidget *parent)
     : QWidget(parent)
@@ -18,11 +19,11 @@ InternationalLanguageUi::InternationalLanguageUi(QWidget *parent)
     intLanMap = new HiddenButNotExposed::ILS::IntLanguageDataAbstract::IntLanMap;
     tool->iniCom();
     tool->getMap(intLanMap);
-    if (intLanMap)std::cout << "YES";
+    //if (intLanMap)std::cout << "YES";
     ui.setupUi(this);
 
     initTree1();
-    //initTree2();
+    initTree2();
 }
 
 void InternationalLanguageUi::initTree1()
@@ -49,7 +50,34 @@ void InternationalLanguageUi::initTree1()
 
 void InternationalLanguageUi::initTree2()
 {
-
+    if (!intLanMap)return;
+    std::set<std::string> st;
+    for (auto& i : (*intLanMap)) {
+        for (auto& j : i.second) {
+            st.insert(j.first);
+        }
+    }
+    if (!intLanStringMap)intLanStringMap = new 
+        HiddenButNotExposed::ILS::IntLanguageDataAbstract::LanStringMap;
+    intLanStringMap->clear();
+    for (auto& coun : st) {
+        intLanStringMap->clear();
+        QTreeWidgetItem* p = new QTreeWidgetItem;
+        QString s = QString("country-%1").arg(QString::fromStdString(coun));
+        p->setText(0, s);
+        ui.treeWidget_2->addTopLevelItem(p);
+        tool->getMap(coun, intLanStringMap);
+        for (auto& lan : (*intLanStringMap)) {
+            QTreeWidgetItem* pp = new QTreeWidgetItem;
+            QString ss = QString("id-%1").arg(QString::fromStdString(lan.first));
+            pp->setText(0, ss);
+            p->addChild(pp);
+            QTreeWidgetItem* ppp = new QTreeWidgetItem;
+            QString sss = QString::fromStdString(lan.second);
+            ppp->setText(0, sss);
+            pp->addChild(ppp);
+        }
+    }
 }
 
 InternationalLanguageUi::~InternationalLanguageUi()
