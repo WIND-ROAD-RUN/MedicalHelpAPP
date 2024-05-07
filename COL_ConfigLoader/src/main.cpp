@@ -9,8 +9,12 @@ using namespace COL;
 int main()
 {
 	ConfigLoader* xmlLoader;
-	xmlLoader = ConfigLoader::getInstance();
+	std::string DEFAULT_PATH = R"(C:\Users\86158\Desktop\Repo\COL_ConfigLoader\database\XMLFile.xml)";
+	xmlLoader = ConfigLoader::getInstance(
+		new HiddenButNotExposed::COL::ConfigLoaderDatabaseXML(DEFAULT_PATH));
 	xmlLoader->iniCom();
+	xmlLoader->addConfig("CHN", "china");
+	xmlLoader->saveData();
 	xmlLoader->desCom();
 	
 	return 0;

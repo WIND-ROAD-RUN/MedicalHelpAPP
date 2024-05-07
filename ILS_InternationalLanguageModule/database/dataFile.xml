@@ -6,4 +6,9 @@
 			<language language="USA">hello</language>
 		</Country>
 	</String>
+	<String id="2">
+		<Country>
+			<language language="CHN">结束</language>
+		</Country>
+	</String>
 </LanguageTranslate>

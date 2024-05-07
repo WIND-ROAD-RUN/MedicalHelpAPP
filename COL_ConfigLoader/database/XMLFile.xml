@@ -1,2 +1,9 @@
 <?xml version="1.0"?>
-<ConfigLoaderString />
+<ConfigLoaderString>
+	<String id="1">china</String>
+	<String id="2">usa</String>
+	<String id="3">uk</String>
+</ConfigLoaderString>
+
+
+
